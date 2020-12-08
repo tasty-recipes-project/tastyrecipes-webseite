@@ -1,0 +1,104 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Display:wght@100;300;400;500;600;700;800;900&display=swap');
+
+.logo {
+    margin-left: 160px;
+}
+.menu {
+    list-style: none;
+}
+
+
+
+li {
+    display: inline-block;
+    font-family: 'Big Shoulders Stencil Display', arial, sans-serif;
+    font-weight: 700;
+    color: white;
+    background-color: black;
+    font-size: 25px;
+    padding: 10px;
+}
+
+.header_image{
+    margin-left: 160px;
+}
+
+.login_area {
+    background-color: white;
+    color: black;
+    margin-right: 160px;
+    font-family: 'Big Shoulders Stencil Display', arial, sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.main_content {
+    margin-left: 160px;
+    font-family: 'Big Shoulders Stencil Display', arial, sans-serif;
+    font-weight: 400;
+    font-size: 16px;    
+}
+
+.anmeldeFehler {
+    color: red;
+    font-size: 20px;
+}
+
+.erfolgreicheAnmeldung {
+    color: green;
+    font-size: 20px;
+}
+
+
+.hr_black {
+    width: 30%;
+    height: 5px;
+    background-color: black;
+    margin-left: 0px;
+}
+
+.w3-red {
+    background-color: red;
+}
+
+.w3-center {
+    margin-left: 300px;
+    margin-top: 20px;
+}
+
+.waskochen {
+    font-family: 'Big Shoulders Stencil Display', arial, sans-serif;
+    margin-top: 50px;
+    margin-right: 160px;
+}
+
+.kat1 h2 {
+    text-align: center;
+    font-family: 'Big Shoulders Stencil Display', arial, sans-serif;
+}
+
+.kat2 h2 {
+    text-align: center;
+    font-family: 'Big Shoulders Stencil Display', arial, sans-serif;
+}
+
+.kat3 h2 {
+    text-align: center;
+    font-family: 'Big Shoulders Stencil Display', arial, sans-serif;
+}
+
+.kategorien {
+    text-align: center;
+    background: linear-gradient(70deg, green, yellowgreen);
+    margin-right: 160px;
+}
+
+.waskochen_button {
+    margin-top: 20px;
+    background-color: green;
+    color: white; 
+    border-radius: 10px;
+}
+
+
