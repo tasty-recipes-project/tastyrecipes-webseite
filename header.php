@@ -6,9 +6,9 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <title>tastyrecipes</title>
+        <title>TastyRecipes</title>
         <link rel="stylesheet" href="styles.css">
     </head>
     <body>
@@ -22,11 +22,18 @@
             <nav>
                 <ul class="menu">
                     <li><a href="index.php">Startseite</a></li>
-                    <li>Rezepte</li>
-                    <li>Wissenwertes</li>
-                    <li>Kontakt</li>
+                    <li class="dropdown"><a href="#" class="dropbtn">Rezepte</a>
+                      <div class="dropdown-content">
+                        <a href="#">Alle Rezepte</a>
+                        <a href="#">Vorspeisen</a>
+                        <a href="#">Hauptgerichte</a>
+                        <a href="#">Desserts</a>
+                      </div>
+                    </li>
+                    <li><a href="#">Über uns</a></li>
+                    <li><a href="#">Kontakt</a></li>
                 </ul>
-            </nav>    
+            </nav>
         </header>
         </div>
         <div class="col-lg-5">
@@ -54,6 +61,3 @@
                     <img src="images/header_kochbar1600x300.jpeg">
                 </div>
         </div>
-
-
-

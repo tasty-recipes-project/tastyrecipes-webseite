@@ -1,23 +1,63 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Display:wght@100;300;400;500;600;700;800;900&display=swap');
 
+* {
+  list-style-type: none;
+  text-decoration: none;
+}
+
 .logo {
     margin-left: 160px;
 }
 .menu {
-    list-style: none;
+    list-style-type: none;
+    text-decoration: none;
 }
 
 
 
 li {
+    position: relative;
     display: inline-block;
+    text-decoration: none;
     font-family: 'Big Shoulders Stencil Display', arial, sans-serif;
     font-weight: 700;
     color: white;
     background-color: black;
     font-size: 25px;
     padding: 10px;
+}
+
+li a, .dropbtn {
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  text-align: center;
+}
+
+li a:hover, .dropdown:hover .dropbtn{
+  text-decoration: none;
+  color: green;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: black;
+    min-width: 160px;
+    z-index: 1;
+}
+
+.dropdown-content a {
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
 }
 
 .header_image{
@@ -37,7 +77,7 @@ li {
     margin-left: 160px;
     font-family: 'Big Shoulders Stencil Display', arial, sans-serif;
     font-weight: 400;
-    font-size: 16px;    
+    font-size: 16px;
 }
 
 .anmeldeFehler {
@@ -97,8 +137,6 @@ li {
 .waskochen_button {
     margin-top: 20px;
     background-color: green;
-    color: white; 
+    color: white;
     border-radius: 10px;
 }
-
-
