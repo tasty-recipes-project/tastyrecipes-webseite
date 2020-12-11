@@ -8,25 +8,25 @@
             echo '<p>Glückwunsch, du bist erfolgreich eingeloggt</p>';
 
             //Persönlicher Bereich
+
+            //@Olivia hier bitte dein Formular rein für das Hochladen vom Rezept
         }
         else {
             
             //Startseite im uneingeloggten Modus
 
             //Slider Bereich
-
             //Slider Bereich Header
-            echo '<div class="container-fluid">
-            
-            <div class"row">
+            echo '
+                 <div class"row">
                     <div class="col-lg-12">
                         <h2>Unsere besten Jeder Kategorie</h2>
                         <hr class="hr_black">
                     </div>
                  </div>';
                   
-            echo '<div class="row" style="max-width:800px">
-                  <div class="col-lg-12">
+            echo '<div class="row">
+                    <div class="col-lg-12">
                         <img class="mySlides" src="images/dummy1.jpg" style="width:100%">
                         <img class="mySlides" src="images/dummy2.jpg" style="width:100%">
                         <img class="mySlides" src="images/dummy3.jpg" style="width:100%">
@@ -37,24 +37,24 @@
                             <button class="w3-button w3-light-grey" onclick="plusDivs(-1)">❮ Prev</button>
                             <button class="w3-button w3-light-grey" onclick="plusDivs(1)">Next ❯</button>
                         </div>
+                        <div>
                             <button class="w3-button demo" onclick="currentDiv(1)">1</button> 
                             <button class="w3-button demo" onclick="currentDiv(2)">2</button> 
                             <button class="w3-button demo" onclick="currentDiv(3)">3</button> 
                         </div>
                   </div>
                   </div>
-                </div>
-                </div>';
+                ';
                 
             //Was kochen Bereich
             //Überschrift was kochen Bereich
-                echo '<div class="container-fluid">
-                <div class="row waskochen">
+                echo '
+                <div class="row">
                         <div class="col-lg-12">
                         <h2>Was koche ich heute?</h2>
                         <hr class="hr_black">
                         </div>
-                      </div>';
+                </div>';
 
             //Kontent was kochen Bereich
                 echo '<div class="row kategorien">
@@ -72,11 +72,9 @@
                             <h2>Dessert</h2>
                             <img src="images/dessertkat3.jpg" /><br>
                             <button class="waskochen_button">Zum Rezept</button>
-                        </div>
-                        
-                      </div>
+                        </div>  
                       </div>';
-            }
+                }
         ?>
 </main>
 

@@ -6,14 +6,13 @@
   text-decoration: none;
 }
 
-.logo {
-    margin-left: 160px;
-}
+/* ab hier CSS Content hauptsächlich für den Header Bereich */
+
+
 .menu {
     list-style-type: none;
     text-decoration: none;
 }
-
 
 
 li {
@@ -60,9 +59,7 @@ li a:hover, .dropdown:hover .dropbtn{
   display: block;
 }
 
-.header_image{
-    margin-left: 160px;
-}
+
 
 .login_area {
     background-color: white;
@@ -73,13 +70,18 @@ li a:hover, .dropdown:hover .dropbtn{
     font-size: 20px;
 }
 
+
+/*header CSS Ende */
+
+
+/* CSS Main Content */ 
 .main_content {
-    margin-left: 160px;
     font-family: 'Big Shoulders Stencil Display', arial, sans-serif;
     font-weight: 400;
     font-size: 16px;
 }
 
+/*CSS bezieht sich auf den Registrierungsprozess */
 .anmeldeFehler {
     color: red;
     font-size: 20px;
@@ -91,6 +93,7 @@ li a:hover, .dropdown:hover .dropbtn{
 }
 
 
+/* Nachfolgendes CSS bezieht sich auf die Trennlininen z.B. unter Unsere besten Kategorien */
 .hr_black {
     width: 30%;
     height: 5px;
@@ -98,6 +101,8 @@ li a:hover, .dropdown:hover .dropbtn{
     margin-left: 0px;
 }
 
+
+/*CSS Slider */
 .w3-red {
     background-color: red;
 }
@@ -107,15 +112,30 @@ li a:hover, .dropdown:hover .dropbtn{
     margin-top: 20px;
 }
 
+
+/*Was kochen Bereich */
 .waskochen {
-    font-family: 'Big Shoulders Stencil Display', arial, sans-serif;
-    margin-top: 50px;
-    margin-right: 160px;
+    font-family: 'Big Shoulders Stencil Display', arial, sans-serif;   
 }
 
 .kat1 h2 {
     text-align: center;
     font-family: 'Big Shoulders Stencil Display', arial, sans-serif;
+}
+
+.kat1 img {
+    max-width: 90%;
+    max-height: 90%;
+}
+
+.kat2 img {
+    max-width: 90%;
+    max-height: 90%;
+}
+
+.kat3 img {
+    max-width: 90%;
+    max-height: 90%;
 }
 
 .kat2 h2 {
@@ -129,13 +149,14 @@ li a:hover, .dropdown:hover .dropbtn{
 }
 
 .kategorien {
+    background: linear-gradient(60deg, green, yellowgreen);
     text-align: center;
-    background: linear-gradient(70deg, green, yellowgreen);
-    margin-right: 160px;
+    font-family: 'Big Shoulders Stencil Display', arial, sans-serif;
 }
 
 .waskochen_button {
     margin-top: 20px;
+    width: 60%;
     background-color: green;
     color: white;
     border-radius: 10px;
