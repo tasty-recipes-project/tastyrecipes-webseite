@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Rezept hochladen</title>
+		<meta charset="utf8" />
+	</head>
+	<body>
+		<form action="uploadRecipe.html" method = "post">
+		<h1>Rezept hochladen</h1>
+		<p>
+		<label for="name">Rezeptname:
+			<input type="text" id="name" name="name" size="80"><br />
+		</label>
+		
+		<label for="des">Beschreibung:
+			<input type="text" id="des" name="des"><br />
+		</label>
+		
+		<label for="pers">Portionen: für
+			<input id="pers" type="number" min="1" max="10" step="1" value="2">Personen<br />
+		</label>
+		
+		
+		Zutaten und Mengenangaben:<br />
+		<input type="text" id="name" name="name" size="100"><br />
+		
+		Schritte:
+		<ol id="list">
+			<li> Schritt: <input type="text" id="step" name="step" size="80"></li>
+
+		</ol>
+		
+		<button id="myBtn">Schritt hinzufügen</button>
+
+		<script>
+			function addAChild () {
+				var myH2 = document.createElement('li');
+				var myText = document.createTextNode('Schritt:');
+				myH2.appendChild(myText);
+				var Ausgabebereich = document.getElementById('list');
+				Ausgabebereich.appendChild(myH2);
+			}
+
+			function init () {
+				var element  = document.getElementById ('myBtn');
+				element.addEventListener ('click', addAChild);
+			}
+	
+			document.addEventListener('DOMContentLoaded', init);
+		</script>
+	
+		Schwierigkeitsgrad:<br />
+		
+			<input type="radio" id="ei" name="Schwierigkeitsgrad" value="einfach">
+			<label for="ei"> einfach</label> 
+			<input type="radio" id="mi" name="Schwierigkeitsgrad" value="mittel">
+			<label for="mi"> mittel</label>
+			<input type="radio" id="schw" name="Schwierigkeitsgrad" value="schwer">
+			<label for="schw">  schwer</label><br />
+	
+
+		<label for="time">Zubereitungsdauer:
+			<input id="time" type="number" min="0" step="1" value="0">min<br />
+		</label>
+		
+		<!-- <form action="manage_uploads.php" method="post" enctype="multipart/form-data"> -->
+			<label>Biler hochladen:
+			<input name="datei[]" type="file" multiple><br/>
+			</label>  
+		<!--	<button>hochladen</button>
+			</form> -->
+
+		
+		<button type="submit" name="action">Rezept hochladen</button>
+		
+		
+		</p>
+		</form
+	</body>
+</html>
