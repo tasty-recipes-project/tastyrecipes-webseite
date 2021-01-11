@@ -11,20 +11,20 @@
         <title>TastyRecipes</title>
         <link rel="stylesheet" href="styles.css">
 	</head>
-	
+
 	<body>
-	
+
 	<!-- Footer Bereich ist responsiv und besteht aus Datenschutzerklärung und Impressum-->
 		  <div class="container">
-		
+
 		 <div class="footer-left">
 			<img src="images/logo_tastyrecipes.jpg" height="100px" width="100px">
 			<p class="footer-company-name">© 2020 Tasty Recipes</p>
-			
+
 		 <div class="footer-center">
-			<a href="#">Datenschutzerklärung</a>
-			<a href="#">Impressum</a>
-			
+			<a href="Datenschutzerklärung.php">Datenschutzerklärung</a>
+			<a href="Impressum.php">Impressum</a>
+
 			<div>
 					<i class="fa fa-map-marker"></i>
 					  <p><span>Leipziger Straße 123,
