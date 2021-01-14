@@ -1,7 +1,7 @@
 <?php
 
 if(isset($_POST['registrieren-submit'])) {
-    //Einbinden der Datenbankverbindung    
+    //Einbinden der Datenbankverbindung
     require 'dbc.inc.php';
 
     //hole die Information aus der registrieren.php
@@ -27,7 +27,7 @@ if(isset($_POST['registrieren-submit'])) {
     }
     else if(!preg_match("/^[a-zA-Z0-9]*$/", $benutzername)) {
         header("Location: ../registrieren.php?error=invaliduid&mail=".$email);
-        exit(); 
+        exit();
     }
     else if($passwort !== $passwortWdh) {
         header("Location: ../registrieren.php?error=passwordcheck&uid=".$benutzername."&mail=".$email);
@@ -47,7 +47,7 @@ if(isset($_POST['registrieren-submit'])) {
         mysqli_stmt_store_result($stmt);
         $resultCheck = mysqli_stmt_num_rows();
         if($resultCheck > 0) {
-            header("Location: ../registrieren.php?error=benutzervergeben&mail=".$eamil);
+            header("Location: ../registrieren.php?error=benutzervergeben&mail=".$email);
             exit();
         }
         else {
@@ -78,3 +78,4 @@ else {
     exit();
 }
 
+?>

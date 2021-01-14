@@ -15,11 +15,11 @@
 
     <!-- Header Bereich: Besteht aus Logo, Nav-Bar und Login Bereich -->
         <div class="container">
-        
+
         <!-- Erste Reihe im Front-End -->
-        
+
         <div class="row">
-        
+
         <!-- Erste Spalte für das Logo -->
             <div class="col-lg-1 col-md-12 col-xs-12 navbar-logo">
                 <img src="images/logo_tastyrecipes.jpg" height="100px" width="100px">
@@ -39,11 +39,12 @@
                         </li>
                         <li><a href="#">Über uns</a></li>
                         <li><a href="#">Kontakt</a></li>
+                        <li><a href="uploadRecipe.php">Rezept hochladen</a></li>
                     </ul>
                 </nav>
                 </div>
-        
-        
+
+
         <!-- Dritte Spalte für die Anzeige des Login-Bereichs -->
             <div class="col-lg-5 col-md-12 col-xs-12">
 
