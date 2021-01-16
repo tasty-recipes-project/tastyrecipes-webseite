@@ -23,16 +23,16 @@
             }
         }
 
-        else if($_GET["registrieren"] == "erfolgreich") {
+        else if($_GET['registrieren'] == "erfolgreich") {
             echo '<p class="erfolgreicheAnmeldung">Du hast dich Erfolgreich registriert</p>';
         }
     ?>
     <h1>Registrieren</h1>
     <form action="includes/registrieren.inc.php" method="post">
-        <p><input type="text" name="username" placeholder="Benutzername"></p>
-        <p><input type="text" name="email" placeholder="Email"></p>
-        <p><input type="password" name="pwd" placeholder="Passwort"></p>
-        <p><input type="password" name="pwd-repeat" placeholder="Repeat password"></p>
+        <p><input type="text" name="username" placeholder="Benutzername" required></p>
+        <p><input type="email" name="email" placeholder="Email" required></p>
+        <p><input type="password" name="pwd" placeholder="Passwort" required></p>
+        <p><input type="password" name="pwd-repeat" placeholder="Repeat password" required></p>
         <p><button type="submit" name="registrieren-submit">Jetzt Registrieren</button>
         <a href="index.php">Zur Startseite</a></p>
     </form>

@@ -10,6 +10,7 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <title>TastyRecipes</title>
         <link rel="stylesheet" href="styles.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js" charset="utf-8"></script>
     </head>
     <body>
 
@@ -39,7 +40,6 @@
                         </li>
                         <li><a href="#">Über uns</a></li>
                         <li><a href="#">Kontakt</a></li>
-                        <li><a href="uploadRecipe.php">Rezept hochladen</a></li>
                     </ul>
                 </nav>
                 </div>
@@ -50,18 +50,30 @@
 
                 <?php
                     if (isset($_SESSION['nameBenutzer'])) {
-                        echo '<form action="includes/logout.inc.php" method="post" class="login_area">
-                                <button type="submit" name="logout-submit">Logout</button>
-                                </form>';
+                        ?>
+                        <ul class="usermenu">
+                          <li class="userdropdown"><a href="#" class="usrdropbtn"><?php echo 'Hallo ' .$_SESSION['nameBenutzer'] .'   <i class="fas fa-angle-down"></i>'; ?></a>
+                              <div class="userdropdown-content">
+                                  <a href="#">Mein Profil</a>
+                                  <a href="#">Meine Rezepte</a>
+                                  <a href="#">Lieblingsrezepte</a>
+                                  <a href="uploadRecipe.php">Rezept hochladen</a>
+                                  <a href="includes/logout.inc.php">Logout</a>
+                              </div>
+                          </li>
+                        </ul>
+                        <?php
+                    } else {
+                        ?>
+
+                        <form action="includes/login.inc.php" method="post" class="login_area">
+                          <input type="text" name="username" placeholder="Name/Emailadresse" required>
+                          <input type="password" name="passwort" placeholder="Passwort" required>
+                          <button type="submit" name="login-submit">Login</button>
+                        </form>
+                        <p class="registrieren">Noch kein Konto? Dann aber fix <a href="registrieren.php">Registrieren</a></p>
+                        <?php
                     }
-                    else {
-                    echo    '<form action="includes/login.inc.php" method="post" class="login_area">
-                            <input type="text" name="username" placeholder="Name/Emailadresse">
-                            <input type="password" name="passwort" placeholder="Passwort">
-                            <button type="submit" name="login-submit">Login</button>
-                            </form>
-                            <p>Noch kein Konto? Dann aber fix <a href="registrieren.php">Registrieren</a></p>';
-                        }
                     ?>
 
             </div>

@@ -27,6 +27,8 @@
 
     } else {
 
+      //Eintrag in die Datenbank
+
       $sql = "INSERT INTO rezepte (BenutzerName, RezeptName, Beschreibung, PortionenAnzahl, Zutat, Schritt, Schwierigkeit, Dauer, Bild, Datum) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
       $stmt = mysqli_stmt_init($con);
       if (!mysqli_stmt_prepare($stmt, $sql)) {
@@ -42,7 +44,7 @@
 
       }
     }
-
+    //Datenbankverbindung schließen
     mysqli_stmt_close($stmt);
     mysqli_close($con);
 

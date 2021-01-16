@@ -1,4 +1,4 @@
-<?php  
+<?php
 	require('header.php')
 ?>
 
@@ -12,19 +12,19 @@
 	<body>
 		<form action="includes/upload.inc.php" method = "post">
 		<h1>Rezept hochladen</h1>
-		
+
 		<p>
 			<label for="name">Rezeptname:
 				<input type="text" id="name" name="rezeptname" size="80"><br />
 			</label>
 		</p>
-		
+
 		<p>
 			<label for="des">Beschreibung:
 				<input type="text" id="des" name="rezeptdescr"><br />
 			</label>
 		</p>
-		
+
 		<p>
 			<label for="pers">Portionen: für
 				<input id="pers" type="number" name="portionen" min="1" max="10" step="1" value="2">Personen<br />
@@ -65,14 +65,14 @@
 						}
 					}
 				}
-	
+
 				function speicher2(inhalt, feld2) {
 					document.getElementById("speicher2" + feld2).value = inhalt;
 				}
 			</script>
-		
 
-			
+
+
 			Zutat
 			<input type="button" value="hinzufügen" onClick="add_field2();">
 			<input type="button" value="löschen" onClick="delete_field2();">
@@ -91,7 +91,7 @@
 
 			</label>
 		</p>
-		
+
 		<p>
 			<label for="step">Schritte:
 			<script>
@@ -150,7 +150,7 @@
 
 			</label>
 		</p>
-		
+
 		<p>
 			Schwierigkeitsgrad:<br />
 
@@ -161,13 +161,13 @@
 			<input type="radio" id="schw" name="Schwierigkeitsgrad" value="schwer">
 			<label for="schw">  schwer</label><br />
 		</p>
-		
+
 		<p>
 			<label for="time">Zubereitungsdauer:
 				<input id="time" type="number" name="dauer" min="0" step="1" value="0">min<br />
 			</label>
 		</p>
-		
+
 		<p>
 			<!-- <form action="manage_uploads.php" method="post" enctype="multipart/form-data"> -->
 			<label>Bilder hochladen:
@@ -176,15 +176,27 @@
 			<!--	<button>hochladen</button>
 			</form> -->
 		</p>
-		
+
 		<p>
 			<button type="submit" name="rezept-upload">Rezept hochladen</button>
 		</p>
-		</form
+		</form>
+
+		<?php
+			//Errorhandling vom Upload Formular
+			if (isset($_GET['error'])) {
+				if ($_GET['error'] == "emptyfields") {
+					echo '<p class="uploadFehler">Bitte fülle alle Felder aus!</p>';
+				} else if ($_GET['error'] == "sqlerror") {
+					echo '<p class="uploadFehler">Ups.. Da ist wohl etwas schiefgelaufen!</p>';
+				}
+			}
+		?>
+
 	</body>
 </html>
 </main>
 
-<?php  
+<?php
 	require('footer.php')
 ?>
