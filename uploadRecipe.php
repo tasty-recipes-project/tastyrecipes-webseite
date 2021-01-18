@@ -24,6 +24,15 @@
 				<input type="text" id="des" name="rezeptdescr"><br />
 			</label>
 		</p>
+		
+		<p>
+			<label for="cat">Kategorie:
+				<select name="kategorie" size="1">
+					<option value="vorspeise">Vorspeise</option>
+					<option value="hauptspeise">Hauptspeise</option>
+					<option value="dessert">Dessert</option>
+				</select>
+		</p>
 
 		<p>
 			<label for="pers">Portionen: für
