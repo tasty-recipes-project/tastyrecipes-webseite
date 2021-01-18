@@ -15,22 +15,24 @@
       <div class="login-formular">
         <form action="includes/login.inc.php" method="post" class="login_area">
           <div class="welcome">
-            <strong>Willkommen bei TastyRecipes</strong>
+            <strong>Willkommen bei TastyRecipes!</strong>
           </div>
           <div class="input-username">
-            <input type="text" name="username" placeholder="Name/Email" required>
+            <input class="input-username__feld" type="text" name="username" placeholder="Benutzername" required>
           </div>
           <div class="input-password">
-            <input type="password" name="passwort" placeholder="Passwort" required>
+            <input class="input-password__feld" type="password" name="passwort" placeholder="Passwort" required>
           </div>
           <div class="login-button">
-            <button type="submit" name="login-submit">Login</button>
+            <button class="login-button__btn" type="submit" name="login-submit">Anmelden</button>
           </div>
-          <strong>
-            Noch kein Mitglied?
-            <br>
-            <a href="registrieren.php" class="">Registrieren</a>
-          </strong>
+          <div class="register-link">
+            <strong>
+              Du bist noch kein Mitglied?
+              <br>
+              <a href="registrieren.php" class="register-link__link">Registrieren</a>
+            </strong>
+          </div>
         </form>
       </div>
     </div>

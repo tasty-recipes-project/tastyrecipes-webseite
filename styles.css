@@ -172,11 +172,12 @@ li a:hover, .userdropdown:hover .usrdropbtn{
 
 .login {
   padding: 0px;
+  margin: 0;
   margin-top: 70px;
 }
 
 .login-content {
-  max-width: 400px;
+  max-width: 350px;
   margin: 0 auto;
   padding: 0 16px;
 }
@@ -192,22 +193,72 @@ li a:hover, .userdropdown:hover .usrdropbtn{
 
 .welcome {
   text-align: center;
-  margin-bottom: 35px;
+  margin-top: 50px;
+  margin-bottom: 32px;
 }
 
 .input-username {
-  text-align: center;
+  position: relative;
   margin-bottom: 8px;
+}
+
+.input-username__feld {
+  width: 100%;
+  min-height: 2.75rem;
+  line-height: 1.375rem;
+  padding: 5px;
+  border: 1px solid;
+  border-color: green;
+  box-sizing: border-box;
+  border-radius: 8px;
+  font-size: 16px;
 }
 
 .input-password {
-  text-align: center;
-  margin-bottom: 8px;
+  position: relative;
+  margin-bottom: 12px;
+}
+
+.input-password__feld {
+  width: 100%;
+  min-height: 2.75rem;
+  line-height: 1.375rem;
+  padding: 5px;
+  border: 1px solid;
+  border-color: green;
+  box-sizing: border-box;
+  border-radius: 8px;
+  font-size: 16px;
 }
 
 .login-button {
-  text-align: center;
-  margin: 16px 0;
+  position: relative;
+  margin: 32px 0;
+}
+
+.login-button__btn {
+  background-color: green;
+  min-height: 44px;
+  color: white;
+  width: 100%;
+  box-sizing: border-box;
+  border: 0;
+  border-radius: 10px;
+  font-size: 18px;
+  font-family: 'Roboto', arial, sans-serif;
+  font-weight: 400;
+  letter-spacing: .5px;
+  cursor: pointer;
+}
+
+.register-link {
+  float: left;
+}
+
+.register-link__link {
+  float: left;
+  color: green;
+  text-decoration: none;
 }
 
 .login_area {
@@ -223,7 +274,128 @@ li a:hover, .userdropdown:hover .usrdropbtn{
 
 /* Registrieren Seite */
 
+.register {
+  padding: 0;
+  margin: 0;
+  margin-top: 70px;
+}
 
+.register-content {
+  max-width: 350px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.register-formular {
+  position: relative;
+}
+
+.register-username {
+  position: relative;
+  margin-bottom: 8px;
+}
+
+.register-username__feld {
+  width: 100%;
+  min-height: 2.75rem;
+  line-height: 1.375rem;
+  padding: 5px;
+  border: 1px solid;
+  border-color: green;
+  box-sizing: border-box;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.register-mail {
+  position: relative;
+  margin-bottom: 8px;
+}
+
+.register-mail__feld {
+  width: 100%;
+  min-height: 2.75rem;
+  line-height: 1.375rem;
+  padding: 5px;
+  border: 1px solid;
+  border-color: green;
+  box-sizing: border-box;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.register-pwd {
+  position: relative;
+  margin-bottom: 8px;
+}
+
+.register-pwd__feld {
+  width: 100%;
+  min-height: 2.75rem;
+  line-height: 1.375rem;
+  padding: 5px;
+  border: 1px solid;
+  border-color: green;
+  box-sizing: border-box;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.register-pwd-wdh {
+  position: relative;
+  margin-bottom: 8px;
+}
+
+.register-pwd-wdh__feld {
+  width: 100%;
+  min-height: 2.75rem;
+  line-height: 1.375rem;
+  padding: 5px;
+  border: 1px solid;
+  border-color: green;
+  box-sizing: border-box;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.register-button {
+  position: relative;
+  margin: 32px 0;
+}
+
+.register-button__btn {
+  background-color: green;
+  min-height: 44px;
+  color: white;
+  width: 100%;
+  box-sizing: border-box;
+  border: 0;
+  border-radius: 10px;
+  font-size: 18px;
+  font-family: 'Roboto', arial, sans-serif;
+  font-weight: 400;
+  letter-spacing: .5px;
+  cursor: pointer;
+}
+
+.login-link {
+  float: left;
+}
+
+.login-link__link {
+  float: left;
+  color: green;
+  text-decoration: none;
+}
+
+.register-area {
+  background-color: white;
+  color: black;
+  font-family: 'Roboto', arial, sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  text-align: center;
+}
 
 /* Ende der Registrieren Seite */
 
