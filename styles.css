@@ -9,25 +9,80 @@
 
 /* ab hier CSS Content hauptsächlich für den Header Bereich */
 
-.col-lg-5  {
-  padding: 20px 15px;
+.website-name {
+  position: relative;
+  text-decoration: none;
+  color: black;
+  font-size: 41.5px;
+  font-family: 'Roboto', arial, sans-serif;
 }
 
-.col-lg-1 {
-  padding: 20px 15px;
+.website-name:hover {
+  text-decoration: none;
+  color: green;
+}
+
+.header-top {
+  width: 100%;
+  margin: 0px;
+}
+
+.navmenu {
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+
+.col-lg-5  {
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-top: 20px;
+  float: right;
+}
+
+.col-lg-4 {
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-top: 20px;
 }
 
 .col-lg-6 {
-  padding: 20px;
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-top: 10px;
 }
+
+.col-lg-8 {
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-top: 20px;
+  text-align: center;
+}
+
+/* Suchfeld */
+
+.search-container {
+  background-color: white;
+  color: black;
+  font-family: 'Roboto', arial, sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  float: right;
+
+}
+
+/* Navigationsmenu */
 
 .navbar {
   padding: 0px;
 }
 
 .menu {
+    width: 100%;
     list-style-type: none;
     text-decoration: none;
+    margin: 0px;
+    padding: 0px;
 }
 
 
@@ -113,7 +168,47 @@ li a:hover, .userdropdown:hover .usrdropbtn{
   display: block;
 }
 
+/* Login Seite */
 
+.login {
+  padding: 0px;
+  margin-top: 70px;
+}
+
+.login-content {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.login-logo {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.login-formular {
+  text-align: center;
+}
+
+.welcome {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.input-username {
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.input-password {
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.login-button {
+  text-align: center;
+  margin: 16px 0;
+}
 
 .login_area {
     background-color: white;
@@ -121,14 +216,16 @@ li a:hover, .userdropdown:hover .usrdropbtn{
     font-family: 'Roboto', arial, sans-serif;
     font-weight: 400;
     font-size: 20px;
-    float: right;
+    text-align: center;
 }
 
-.registrieren {
-  float: right;
-  padding-top: 10px;
-  font-size: 18px;
-}
+/* Ende der Login Seite */
+
+/* Registrieren Seite */
+
+
+
+/* Ende der Registrieren Seite */
 
 /*header CSS Ende */
 
@@ -137,7 +234,7 @@ li a:hover, .userdropdown:hover .usrdropbtn{
 
 .container {
   max-width: 1500px;
-  width: 1500px;
+  width: 100%;
   align-items: center;
 }
 
@@ -145,6 +242,7 @@ li a:hover, .userdropdown:hover .usrdropbtn{
     font-family: 'Roboto', arial, sans-serif;
     font-weight: 400;
     font-size: 16px;
+    padding-top: 20px;
 }
 
 /*CSS bezieht sich auf den Registrierungsprozess */
@@ -215,8 +313,10 @@ li a:hover, .userdropdown:hover .usrdropbtn{
 }
 
 .kategorien {
+    width: 100%;
     background: linear-gradient(60deg, green, yellowgreen);
     text-align: center;
+    margin: 0px;
     font-family: 'Roboto', arial, sans-serif;
 }
 
@@ -233,8 +333,9 @@ li a:hover, .userdropdown:hover .usrdropbtn{
 
 .container-footer {
   width: 100%;
-  height: 300px;
+  height: 200px;
   padding: 0px;
+  padding-top: 20px;
   margin: 0px;
   border: 0px;
 }
@@ -260,4 +361,9 @@ li a:hover, .userdropdown:hover .usrdropbtn{
 .footer-company-about {
   font-size: 20px;
   font-weight: bold;
+}
+
+.footer-items {
+  text-decoration: none;
+
 }

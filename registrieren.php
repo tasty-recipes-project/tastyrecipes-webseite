@@ -23,8 +23,10 @@
             }
         }
 
-        else if($_GET['registrieren'] == "erfolgreich") {
-            echo '<p class="erfolgreicheAnmeldung">Du hast dich Erfolgreich registriert</p>';
+        else if(isset($_GET['registrieren'])) {
+            if ($_GET['registrieren'] == "erfolgreich") {
+              echo '<p class="erfolgreicheAnmeldung">Du hast dich Erfolgreich registriert</p>';
+            }
         }
     ?>
     <h1>Registrieren</h1>
@@ -32,7 +34,7 @@
         <p><input type="text" name="username" placeholder="Benutzername" required></p>
         <p><input type="email" name="email" placeholder="Email" required></p>
         <p><input type="password" name="pwd" placeholder="Passwort" required></p>
-        <p><input type="password" name="pwd-repeat" placeholder="Repeat password" required></p>
+        <p><input type="password" name="pwd-repeat" placeholder="Passwort wiederholen" required></p>
         <p><button type="submit" name="registrieren-submit">Jetzt Registrieren</button>
         <a href="index.php">Zur Startseite</a></p>
     </form>

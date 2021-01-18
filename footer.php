@@ -24,7 +24,7 @@
 			      <p><a href="Impressum.php">Impressum</a></p>
 
 			      <div>
-					         <p><i class="fa fa-map-marker"></i>   Leipziger Straße 123, 36037 Fulda</p>
+					         <p><i class="fas fa-map-marker-alt"></i>   Leipziger Straße 123, 36037 Fulda</p>
 
 				    </div>
 
@@ -42,11 +42,11 @@
 				<p class="footer-company-about">Über uns</p>
 				<p>Wir stehen für gute uns schmackhafte Rezepte, die zu jeder Zeit einfach zu machen sind.</p>
 				<div class="footer-icons">
-					<a href="#"><i class="fa fa-facebook"></i></a>
-					<a href="#"><i class="fa fa-twitter"></i></a>
-					<a href="#"><i class="fa fa-instagram"></i></a>
-					<a href="#"><i class="fa fa-linkedin"></i></a>
-					<a href="#"><i class="fa fa-youtube"></i></a>
+					<a href="#"><i class="fab fa-facebook fa-lg"></i></a>
+					<a href="#"><i class="fab fa-twitter fa-lg"></i></a>
+					<a href="#"><i class="fab fa-instagram fa-lg"></i></a>
+					<a href="#"><i class="fab fa-linkedin fa-lg"></i></a>
+					<a href="#"><i class="fab fa-youtube fa-lg"></i></a>
 				</div>
 			</div>
     </div>
