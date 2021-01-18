@@ -38,7 +38,7 @@
                                 <a href="#">Desserts</a>
                             </div>
                         </li>
-                        <li><a href="#">Über uns</a></li>
+                        <li><a href="aboutUs.php">Über uns</a></li>
                         <li><a href="#">Kontakt</a></li>
                     </ul>
                 </nav>
