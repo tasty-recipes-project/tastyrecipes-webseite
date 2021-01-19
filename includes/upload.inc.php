@@ -19,6 +19,7 @@
     $difficulty = $_POST['Schwierigkeitsgrad'];
     $dauer = $_POST['dauer'];
     $rezeptBild = $_POST['datei'];
+    $kategorie = $_POST['kategorie'];
 
     //Fehlerbehandlung wenn ein Feld nicht ausgefüllt ist
     if (empty($rezeptname) || empty($difficulty) || empty($dauer)) {
@@ -29,7 +30,7 @@
 
       //Eintrag in die Datenbank
 
-      $sql = "INSERT INTO rezepte (BenutzerName, RezeptName, Beschreibung, PortionenAnzahl, Zutat, Schritt, Schwierigkeit, Dauer, Bild, Datum) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+      $sql = "INSERT INTO rezepte (BenutzerName, RezeptName, Beschreibung, PortionenAnzahl, Zutat, Schritt, Schwierigkeit, Dauer, Bild, Kategorie) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
       $stmt = mysqli_stmt_init($con);
       if (!mysqli_stmt_prepare($stmt, $sql)) {
           header("Location: ../uploadRecipe.php?error=sqlerror");
@@ -37,7 +38,7 @@
 
       } else {
 
-        mysqli_stmt_bind_param($stmt, "sssssssss", $benutzername, $rezeptname, $rezeptdescr, $portionen, $zutat, $schritt, $difficulty, $dauer, $rezeptBild);
+        mysqli_stmt_bind_param($stmt, "ssssssssss", $benutzername, $rezeptname, $rezeptdescr, $portionen, $zutat, $schritt, $difficulty, $dauer, $rezeptBild, $kategorie);
         mysqli_stmt_execute($stmt);
         header("Location: ../uploadRecipe.php");
         exit();
