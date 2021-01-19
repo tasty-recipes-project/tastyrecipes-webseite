@@ -14,20 +14,20 @@
 		<h1>Rezept hochladen</h1>
 
 		<p>
-			<label for="name">Rezeptname:
-				<input type="text" id="name" name="rezeptname" size="80"><br />
+			<label for="name" class="upload-text">Rezeptname:
+				<input type="text" id="name" name="rezeptname" placeholder="z.B. Bananenbrot" class="input-rezeptname__feld"><br />
 			</label>
-		</p>
+		<p>
 
 		<p>
-			<label for="des">Beschreibung:
-				<input type="text" id="des" name="rezeptdescr"><br />
+			<label for="des" class="upload-text">Beschreibung:
+				<input type="text" id="des" name="rezeptdescr" placeholder="z.B. glutenfreies und leckeres Rezept" class="input-rezeptname__feld"><br />
 			</label>
 		</p>
 		
 		<p>
-			<label for="cat">Kategorie:
-				<select name="kategorie" size="1">
+			<label for="cat" class="upload-text">Kategorie:
+				<select class="input-rezeptname__feld" name="kategorie" size="1">
 					<option value="vorspeise">Vorspeise</option>
 					<option value="hauptspeise">Hauptspeise</option>
 					<option value="dessert">Dessert</option>
@@ -35,13 +35,13 @@
 		</p>
 
 		<p>
-			<label for="pers">Portionen: für
-				<input id="pers" type="number" name="portionen" min="1" max="10" step="1" value="2">Personen<br />
+			<label for="pers" class="upload-text">Portionen: für
+				<input class="input-rezeptname__feld" id="pers" type="number" name="portionen" min="1" max="10" step="1" value="2" size="2">Personen<br />
 			</label>
 		</p>
 
 		<p>
-			<label for="zut">Zutaten und Mengenangaben:<br />
+			<label for="zut" class="upload-text">Zutaten und Mengenangaben:<br />
 			<div id="dynamic_input2"></div>
 			<script>
 				var feld2 = 0;
@@ -102,7 +102,7 @@
 		</p>
 
 		<p>
-			<label for="step">Schritte:
+			<label for="step" class="upload-text">Schritte:
 			<script>
 				var feld = 0;
 				var feldm = 0;
@@ -161,7 +161,7 @@
 		</p>
 
 		<p>
-			Schwierigkeitsgrad:<br />
+			<label class="upload-text">Schwierigkeitsgrad:</label><br />
 
 			<input type="radio" id="ei" name="Schwierigkeitsgrad" value="einfach">
 			<label for="ei"> einfach</label>
@@ -170,24 +170,26 @@
 			<input type="radio" id="schw" name="Schwierigkeitsgrad" value="schwer">
 			<label for="schw">  schwer</label><br />
 		</p>
+		
+		
 
 		<p>
-			<label for="time">Zubereitungsdauer:
-				<input id="time" type="number" name="dauer" min="0" step="1" value="0">min<br />
+			<label for="time" class="upload-text">Zubereitungsdauer:
+				<input class="input-rezeptname__feld" size="2" id="time" type="number" name="dauer" min="0" step="1" value="0">min<br />
 			</label>
 		</p>
 
 		<p>
 			<!-- <form action="manage_uploads.php" method="post" enctype="multipart/form-data"> -->
-			<label>Bilder hochladen:
+			<label class="upload-text">Bilder hochladen:</label>
 			<input name="datei" type="file" multiple><br/>
-			</label>
+			
 			<!--	<button>hochladen</button>
 			</form> -->
 		</p>
 
 		<p>
-			<button type="submit" name="rezept-upload">Rezept hochladen</button>
+			<button class="login-button__btn" type="submit" name="rezept-upload">Rezept hochladen</button>
 		</p>
 		</form>
 
