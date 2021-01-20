@@ -10,6 +10,7 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <title>TastyRecipes</title>
         <link rel="stylesheet" type="text/css" href="styles.css">
+        <link rel="icon" href="images/logo_tastyrecipes.jpg">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js" charset="utf-8"></script>
     </head>
     <body>
