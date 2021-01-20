@@ -9,13 +9,14 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <title>TastyRecipes</title>
-        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" type="text/css" href="styles.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js" charset="utf-8"></script>
     </head>
     <body>
 
     <!-- Header Bereich: Besteht aus Logo, Nav-Bar und Login Bereich -->
         <div class="container">
+
 
         <!-- Erste Reihe im Header -->
 
@@ -46,27 +47,28 @@
         </div>
 
 
-        <!-- Zweiter Reihe im Header für Navigationsmenu und Loginbereich -->
+        <!-- Zweite Reihe im Header für Navigationsmenu und Loginbereich -->
         <div class="row navmenu">
+          <!-- erste Spalte für Navigationsmenu -->
           <div class="col-lg-6 col-md-12 col-xs-12">
               <nav class="navbar">
                   <ul class="menu">
-                      <li><a href="index.php">Startseite</a></li>
+                      <li class="menu-li"><a class="menu-li-a" href="index.php">Startseite</a></li>
                       <li class="dropdown"><a href="#" class="dropbtn">Rezepte <i class="fas fa-angle-down"></i></a>
                           <div class="dropdown-content">
-                              <a href="#">Alle Rezepte</a>
-                              <a href="#">Vorspeisen</a>
-                              <a href="#">Hauptgerichte</a>
-                              <a href="#">Desserts</a>
+                              <a class="dropdowncontent-a" href="#">Alle Rezepte</a>
+                              <a class="dropdowncontent-a" href="#">Vorspeisen</a>
+                              <a class="dropdowncontent-a" href="#">Hauptgerichte</a>
+                              <a class="dropdowncontent-a" href="#">Desserts</a>
                           </div>
                       </li>
-                      <li><a href="aboutUs.php">Über uns</a></li>
-                      <li><a href="#">Kontakt</a></li>
+                      <li class="menu-li"><a class="menu-li-a" href="aboutUs.php">Über uns</a></li>
+                      <li class="menu-li"><a class="menu-li-a" href="#">Kontakt</a></li>
                   </ul>
               </nav>
           </div>
 
-          <!-- Loginbereich -->
+          <!-- zweite Spalte für Loginbereich / Usermenu -->
           <div class="col-lg-6 col-md-12 col-xs-12">
 
               <?php
@@ -75,21 +77,22 @@
                       <ul class="usermenu">
                         <li class="userdropdown"><a href="#" class="usrdropbtn"><?php echo 'Hallo ' .$_SESSION['nameBenutzer'] .'   <i class="fas fa-angle-down"></i>'; ?></a>
                             <div class="userdropdown-content">
-                                <a href="#">Mein Profil</a>
-                                <a href="#">Meine Rezepte</a>
-                                <a href="#">Lieblingsrezepte</a>
-                                <a href="uploadRecipe.php">Rezept hochladen</a>
-                                <a href="includes/logout.inc.php">Logout</a>
+                                <a class="menu-li-a" href="profile.php?profile=MeineDaten">Mein Profil</a>
+                                <a class="menu-li-a" href="#">Meine Rezepte</a>
+                                <a class="menu-li-a" href="#">Lieblingsrezepte</a>
+                                <a class="menu-li-a" href="uploadRecipe.php">Rezept hochladen</a>
+                                <a class="menu-li-a" href="includes/logout.inc.php">Logout</a>
                             </div>
                         </li>
                       </ul>
                       <?php
                   } else {
                     ?>
-                    <li style="float: right"><a href="login.php"><i class="fas fa-user"></i> Login</a></li>
+                    <li class="menu-li" style="float: right"><a class="menu-li-a" href="login.php"><i class="fas fa-user"></i> Login</a></li>
                     <?php
                   }
                   ?>
 
           </div>
         </div>
+      </body>
