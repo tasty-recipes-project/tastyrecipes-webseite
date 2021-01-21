@@ -17,24 +17,24 @@
                     $ersteller = mysqli_query($con, "SELECT * FROM rezepte WHERE Kategorie = 'hauptspeise'")
                         or die("Fehler: " . mysqli_error($con));
 
-                        while ($row = mysqli_fetch_array($ersteller)) 
+                        while ($row = mysqli_fetch_array($ersteller))
                         {
-                
-                
+
+
                 //Ausgabebereich für Rezepte
                         echo('<div class="rezept_Info">');
                         //Header Section RezeptName und Kategorie
-                            
+
                                 echo('<div class="col-lg-12 rezept_header"');
                                     echo('<p><h3> ' . $row['RezeptName'] . '</h3></p>');
                                 echo('</div>');
                                 echo('<div class="col-lg-12"');
                                     echo('<p><b>Kategorie:</b> ' . $row['Kategorie'] . '</p>');
                                 echo('</div>');
-                          
-                        
+
+
                         //Section Dauer und Schwierigkeit
-                            
+
                                 echo('<div class="col-lg-2 duration"');
                                     echo('<p><b>Dauer</b>: ' . $row['Dauer'] . ' Minuten</p>');
                                 echo('</div>');
@@ -44,14 +44,15 @@
                                 echo('<div class="col-lg-2 duration"');
                                     echo('<p><b>Rezept für</b>: ' . $row['PortionenAnzahl'] . ' Personen</p>');
                                 echo('</div>');
-                
+
 
                          //Bild Section
-                            
+
                                 echo('<div class="col-lg-12"');
-                                    echo('<p>' . $row['Bild'] . '</p>');
+                                    $image = $row['Bild'];
+                                    echo('<p>' . '<img src="data:image/png/jpg/jpeg;base64,'.base64_decode($image).'">' . '</p>');
                                 echo('</div>');
-                                
+
 
                         //Zutaten Liste
 
@@ -78,7 +79,7 @@
                                         echo('</tr>');
                                     //Content Ende
                                 echo('</table>');
-                                
+
                         //Bearbeitungsschritte
 
                         echo('<div class="col-lg-12"');
@@ -93,13 +94,13 @@
                         echo('<div class="col-lg-12"');
                                     echo('<p><b>Ersteller:</b> ' . $row['BenutzerName'] . '</p>');
                         echo('</div>');
-                            
-                        echo('</div>');    
-                        
+
+                        echo('</div>');
+
                     }
                 ?>
 
-                
+
         </div>
     </div>
 </main>

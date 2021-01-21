@@ -18,7 +18,7 @@
     $schritt = $_POST['schritt1'];
     $difficulty = $_POST['Schwierigkeitsgrad'];
     $dauer = $_POST['dauer'];
-    $rezeptBild = $_POST['datei'];
+    $rezeptBild = base64_encode($_POST['datei']);
     $kategorie = $_POST['kategorie'];
 
     //Fehlerbehandlung wenn ein Feld nicht ausgefüllt ist

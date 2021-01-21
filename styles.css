@@ -17,7 +17,8 @@
 
 .website-name:hover {
   text-decoration: none;
-  color: green;
+  color: black;
+  /*color: green; */
 }
 
 .header-top {
@@ -29,6 +30,10 @@
   width: 100%;
   margin: 0px;
   padding: 0px;
+}
+
+.navmenu-col {
+  width: 100%;
 }
 
 .col-lg-5  {
@@ -48,6 +53,7 @@
   padding-left: 0px;
   padding-right: 0px;
   padding-top: 10px;
+
 }
 
 .col-lg-8 {
@@ -72,7 +78,10 @@
 /* Navigationsmenu */
 
 .navbar {
-  padding: 0px;
+  padding: 5px;
+  margin-top: 10px;
+  width: 100%;
+  background-color: green;
 }
 
 .menu {
@@ -92,7 +101,7 @@
     font-weight: 700;
     color: white;
     background-color: black;
-    font-size: 25px;
+    font-size: 20px;
     padding: 10px;
 }
 
@@ -410,7 +419,7 @@
 /* CSS Main Content */
 
 .container {
-  max-width: 1500px;
+  max-width: 1200px;
   width: 100%;
   align-items: center;
 }
@@ -516,6 +525,7 @@
   height: 100%;
   width: 225px;
   margin: 0;
+  margin-right: 100px;
   padding: 0;
   box-sizing: border-box;
   border: 1px solid #f0f0f0;
@@ -546,8 +556,8 @@
 
 .profile_content {
   height: 100%;
-  width: 800px;
-  margin: 0 auto;
+  width: 70%;
+  float: left;
   padding: 15px;
   background-color: #f0f0f0;
   box-sizing: border-box;
@@ -649,5 +659,3 @@ table, tr, td {
   background: linear-gradient(65deg, lightgreen, green);
   color: white;
 }
-
-

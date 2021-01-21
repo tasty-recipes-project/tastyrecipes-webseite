@@ -51,7 +51,6 @@
         <!-- Zweite Reihe im Header für Navigationsmenu und Loginbereich -->
         <div class="row navmenu">
           <!-- erste Spalte für Navigationsmenu -->
-          <div class="col-lg-6 col-md-12 col-xs-12">
               <nav class="navbar">
                   <ul class="menu">
                       <li class="menu-li"><a class="menu-li-a" href="index.php">Startseite</a></li>
@@ -65,35 +64,26 @@
                       </li>
                       <li class="menu-li"><a class="menu-li-a" href="aboutUs.php">Über uns</a></li>
                       <li class="menu-li"><a class="menu-li-a" href="#">Kontakt</a></li>
+                      <?php
+                          if (isset($_SESSION['nameBenutzer'])) {
+                            ?>
+                            <li class="userdropdown"><a href="#" class="usrdropbtn"><?php echo 'Hallo ' .$_SESSION['nameBenutzer'] .'   <i class="fas fa-angle-down"></i>'; ?></a>
+                                <div class="userdropdown-content">
+                                    <a class="menu-li-a" href="profile.php?profile=MeineDaten">Mein Profil</a>
+                                    <a class="menu-li-a" href="#">Meine Rezepte</a>
+                                    <a class="menu-li-a" href="#">Lieblingsrezepte</a>
+                                    <a class="menu-li-a" href="uploadRecipe.php">Rezept hochladen</a>
+                                    <a class="menu-li-a" href="includes/logout.inc.php">Logout</a>
+                                </div>
+                            </li>
+                            <?php
+                          } else {
+                            ?>
+                            <li class="menu-li" style="float: right"><a class="menu-li-a" href="login.php"><i class="fas fa-user"></i> Login</a></li>
+                            <?php
+                          }
+                          ?>
                   </ul>
               </nav>
-          </div>
-
-          <!-- zweite Spalte für Loginbereich / Usermenu -->
-          <div class="col-lg-6 col-md-12 col-xs-12">
-
-              <?php
-                  if (isset($_SESSION['nameBenutzer'])) {
-                      ?>
-                      <ul class="usermenu">
-                        <li class="userdropdown"><a href="#" class="usrdropbtn"><?php echo 'Hallo ' .$_SESSION['nameBenutzer'] .'   <i class="fas fa-angle-down"></i>'; ?></a>
-                            <div class="userdropdown-content">
-                                <a class="menu-li-a" href="profile.php?profile=MeineDaten">Mein Profil</a>
-                                <a class="menu-li-a" href="#">Meine Rezepte</a>
-                                <a class="menu-li-a" href="#">Lieblingsrezepte</a>
-                                <a class="menu-li-a" href="uploadRecipe.php">Rezept hochladen</a>
-                                <a class="menu-li-a" href="includes/logout.inc.php">Logout</a>
-                            </div>
-                        </li>
-                      </ul>
-                      <?php
-                  } else {
-                    ?>
-                    <li class="menu-li" style="float: right"><a class="menu-li-a" href="login.php"><i class="fas fa-user"></i> Login</a></li>
-                    <?php
-                  }
-                  ?>
-
-          </div>
         </div>
       </body>
