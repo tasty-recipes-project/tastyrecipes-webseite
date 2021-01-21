@@ -55,18 +55,8 @@
 							var label = "Zutat " + zaehler;
 							var inhalt = document.getElementById("speicher2" + zaehler).value;
 							document.getElementById('dynamic_input2').innerHTML +=
-							"<label>" + label + ": <input type='text' placeholder='Zutat' name='zutat" + feld2 + "' value='" + inhalt +
-							"' onInput='speicher2(this.value, \"" + feld2 + "\")'></label>";
-							
-							var inhalt2 = document.getElementById("speicherMenge" + zaehler).value;
-							document.getElementById('dynamic_input2').innerHTML +=
-							"<input type='text' placeholder='Menge' name='menge" + feld2 + "' value='" + inhalt2 +
-							"' onInput='speicherMenge(this.value, \"" + feld2 + "\")'>";
-							
-							var inhalt3 = document.getElementById("speicherEinheit" + zaehler).value;
-							document.getElementById('dynamic_input2').innerHTML +=
-							"<input type='text' placeholder='Einheit' name='einheit" + feld2 + "' value='" + inhalt3 +
-							"' onInput='speicherEinheit(this.value, \"" + feld2 + "\")'><br/>";
+							"<label>" + label + ": <input type='text' name='zutat" + feld2 + "' value='" + inhalt +
+							"' onInput='speicher2(this.value, \"" + feld2 + "\")'></label><br>";
 						}
 					}
 				}
@@ -88,15 +78,6 @@
 				function speicher2(inhalt, feld2) {
 					document.getElementById("speicher2" + feld2).value = inhalt;
 				}
-				
-				function speicherMenge(inhalt2, feld2){
-					document.getElementById("speicherMenge" + feld2).value = inhalt2;
-				}
-				
-				function speicherEinheit(inhalt3, feld2){
-					document.getElementById("speicherEinheit" + feld2).value = inhalt3;
-				}
-				
 			</script>
 
 
@@ -116,28 +97,6 @@
 			<input type="hidden" id="speicher28">
 			<input type="hidden" id="speicher29">
 			<input type="hidden" id="speicher210"><br />
-			
-			<input type="hidden" id="speicherMenge1">
-			<input type="hidden" id="speicherMenge2">
-			<input type="hidden" id="speicherMenge3">
-			<input type="hidden" id="speicherMenge4">
-			<input type="hidden" id="speicherMenge5">
-			<input type="hidden" id="speicherMenge6">
-			<input type="hidden" id="speicherMenge7">
-			<input type="hidden" id="speicherMenge8">
-			<input type="hidden" id="speicherMenge9">
-			<input type="hidden" id="speicherMenge10"><br />
-			
-			<input type="hidden" id="speicherEinheit1">
-			<input type="hidden" id="speicherEinheit2">
-			<input type="hidden" id="speicherEinheit3">
-			<input type="hidden" id="speicherEinheit4">
-			<input type="hidden" id="speicherEinheit5">
-			<input type="hidden" id="speicherEinheit6">
-			<input type="hidden" id="speicherEinheit7">
-			<input type="hidden" id="speicherEinheit8">
-			<input type="hidden" id="speicherEinheit9">
-			<input type="hidden" id="speicherEinheit10"><br />
 
 			</label>
 		</p>
@@ -158,7 +117,6 @@
 							document.getElementById('dynamic_input').innerHTML +=
 							"<label>" + label + ": <input type='text' name='schritt" + feld + "' value='" + inhalt +
 							"' onInput='speicher(this.value, \"" + feld + "\")'></label><br>";
-				
 						}
 					}
 				}

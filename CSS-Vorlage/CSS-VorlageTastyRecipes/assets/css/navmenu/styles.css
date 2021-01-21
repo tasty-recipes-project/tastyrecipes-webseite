@@ -28,6 +28,10 @@ a:hover {
   text-decoration:none
 }*/
 
+.content_recipes_small {
+    background-color: grey;
+}
+
 nav {
     height:80px;
     background:#fff;

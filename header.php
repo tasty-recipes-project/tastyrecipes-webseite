@@ -57,10 +57,10 @@
                       <li class="menu-li"><a class="menu-li-a" href="index.php">Startseite</a></li>
                       <li class="dropdown"><a href="#" class="dropbtn">Rezepte <i class="fas fa-angle-down"></i></a>
                           <div class="dropdown-content">
-                              <a class="dropdowncontent-a" href="#">Alle Rezepte</a>
-                              <a class="dropdowncontent-a" href="#">Vorspeisen</a>
-                              <a class="dropdowncontent-a" href="#">Hauptgerichte</a>
-                              <a class="dropdowncontent-a" href="#">Desserts</a>
+                              <a class="dropdowncontent-a" href="alleRezepte.php">Alle Rezepte</a>
+                              <a class="dropdowncontent-a" href="vorspeisen.php">Vorspeisen</a>
+                              <a class="dropdowncontent-a" href="hauptspeisen.php">Hauptgerichte</a>
+                              <a class="dropdowncontent-a" href="desserts.php">Desserts</a>
                           </div>
                       </li>
                       <li class="menu-li"><a class="menu-li-a" href="aboutUs.php">Über uns</a></li>
