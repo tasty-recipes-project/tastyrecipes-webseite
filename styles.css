@@ -72,7 +72,41 @@
   font-weight: 400;
   font-size: 20px;
   float: right;
+  width: 100%;
+}
 
+.search-button, .input-select, .input-search {
+  float: right;
+}
+
+.input-search__feld {
+  height: 48px;
+  padding: 5px;
+  border: 1px solid;
+  border-right: none;
+  border-color: green;
+  border-radius: 8px 0 0 8px;
+  font-size: 16px;
+}
+
+.search-select {
+  height: 48px;
+  line-height: 1.375rem;
+  padding: 5px;
+  border: 1px solid;
+  border-color: green;
+  font-size: 16px;
+  font-family: 'Roboto', arial, sans-serif;
+}
+
+.search-button__btn {
+  height: 48px;
+  width: 48px;
+  padding: 0;
+  background-color: green;
+  color: white;
+  border: none;
+  border-radius: 0 8px 8px 0;
 }
 
 /* Navigationsmenu */
@@ -544,7 +578,7 @@
 
 .profilenavmenu-li-a {
   font-family: 'Roboto', arial, sans-serif;
-  font-size: 20px;
+  font-size: 18px;
   color: black;
 }
 
@@ -565,9 +599,15 @@
   border-radius: 5px;
 }
 
+.myData-left, .myData-middle, .myData-right {
+  width: 33%;
+  height: 70%;
+  float: left;
+}
+
 .myData {
   font-family: 'Roboto', arial, sans-serif;
-  font-size: 20px;
+  font-size: 18px;
   color: black;
 
 }

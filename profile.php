@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="images/logo_tastyrecipes.jpg">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js" charset="utf-8"></script>
   </head>
 
@@ -49,12 +50,24 @@
                 ?>
                   <h4>Allgemeine Daten</h4>
                   <br>
-                  <label class="myData">Benutzername: <span class="usrname"><?php echo '' .$_SESSION['nameBenutzer']; ?></span> <button type="button" name="button">ändern</button> </label>
-                  <br>
-                  <label class="myData">E-Mail: <span class="email"><?php echo '' .$email; ?></span> <button type="button" name="button">ändern</button> </label>
-                  <br>
-                  <br>
-                  <button type="submit" name="button">Passwort ändern</button>
+                  <div class="myData-left">
+                    <label class="myData">Benutzername:</label>
+                    <br>
+                    <label class="myData">E-Mail:</label>
+                    <br>
+                    <br>
+                    <button type="submit" name="button">Passwort ändern</button>
+                  </div>
+                  <div class="myData-middle">
+                    <label class="myData"><?php echo '' .$_SESSION['nameBenutzer']; ?></label>
+                    <br>
+                    <label class="myData"><?php echo '' .$email; ?></label>
+                  </div>
+                  <div class="myData-right">
+                    <label class="myData"><a href="#">ändern</a></label>
+                    <br>
+                    <label class="myData"><a href="#">ändern</a></label>
+                  </div>
                 <?php
               }
               elseif ($_GET['profile'] == "MeineRezepte") {
