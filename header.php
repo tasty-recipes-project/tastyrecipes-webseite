@@ -70,7 +70,7 @@
                             <li class="userdropdown"><a href="#" class="usrdropbtn"><?php echo 'Hallo ' .$_SESSION['nameBenutzer'] .'   <i class="fas fa-angle-down"></i>'; ?></a>
                                 <div class="userdropdown-content">
                                     <a class="menu-li-a" href="profile.php?profile=MeineDaten">Mein Profil</a>
-                                    <a class="menu-li-a" href="#">Meine Rezepte</a>
+                                    <a class="menu-li-a" href="meineRezepte.php">Meine Rezepte</a>
                                     <a class="menu-li-a" href="#">Lieblingsrezepte</a>
                                     <a class="menu-li-a" href="uploadRecipe.php">Rezept hochladen</a>
                                     <a class="menu-li-a" href="includes/logout.inc.php">Logout</a>
