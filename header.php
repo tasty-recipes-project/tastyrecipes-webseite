@@ -32,13 +32,19 @@
 
             <div class="col-lg-6 col-md-12 col-xs-12 search-col">
               <form action="suchen.php" method="post" class="search-container">
-                <input type="text" name="search" placeholder="Suchen.." size="32">
-                <select class="search-select" name="search-select">
-                  <option value="Vorspeise">Vorspeisen</option>
-                  <option value="Hauptspeise">Hauptspeisen</option>
-                  <option value="Dessert">Desserts</option>
-                </select>
-                <button type="submit" name="search-submit"><i class="fas fa-search"></i></button>
+                <div class="search-button">
+                  <button type="submit" name="search-submit" class="search-button__btn"><i class="fas fa-search"></i></button>
+                </div>
+                <div class="input-select">
+                  <select class="search-select" name="search-select">
+                    <option value="Vorspeise">Vorspeisen</option>
+                    <option value="Hauptspeise">Hauptspeisen</option>
+                    <option value="Dessert">Desserts</option>
+                  </select>
+                </div>
+                <div class="input-search">
+                  <input type="text" name="search" placeholder="Suchen.." size="40" class="input-search__feld">
+                </div>
               </form>
             </div>
 
