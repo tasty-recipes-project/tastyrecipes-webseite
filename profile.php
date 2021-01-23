@@ -147,18 +147,47 @@
                 // code...
               }
               elseif ($_GET['profile'] == "edit-pw") {
+                //UserID aus Datenbank abrufen
+                $sql = "SELECT BenutzerId FROM benutzer WHERE BenutzerName = '$_SESSION[nameBenutzer]'";
+                $stmt = mysqli_stmt_init($con);
+                if (!mysqli_stmt_prepare($stmt, $sql)) {
+                    header("Location: ../profile.php?error=sqlerror");
+                    exit();
+                }
+                else {
+                  mysqli_stmt_execute($stmt);
+                  $result = mysqli_stmt_get_result($stmt);
+                  if ($row = mysqli_fetch_assoc($result)) {
+                    $userID = $row['BenutzerId'];
+                  }
+                }
+                mysqli_stmt_close($stmt);
+                mysqli_close($con);
+
                 ?>
                 <h4>Passwort ändern</h4>
                 <br>
-                <div class="myData-edit_pw">
-                  <form class="edit-pw_form" action="includes/edit.inc.php?userID=<?php echo $userID ?>&pw=edit" method="post">
-                    <input type="text" name="pw_old" placeholder="Altes Kennwort" required>
-                    <input type="text" name="pw_neu" placeholder="Neues Kennwort" required>
-                    <input type="text" name="pw_wdh" placeholder="Kennwort wiederholen" required>
-                    <button type="submit" name="button">Passwort ändern</button>
-                    <button type="button" name="cancel_btn" onclick="window.location.href='profile.php?profile=MeineDaten'">zurück</button>
-                  </form>
-                </div>
+                <form class="edit-pw_form" action="includes/edit.inc.php?userID=<?php echo $userID ?>&pw=edit" method="post">
+                  <input type="password" name="pw_old" placeholder="Altes Kennwort" required>
+                  <input type="password" name="pw_neu" placeholder="Neues Kennwort" required>
+                  <input type="password" name="pw_wdh" placeholder="Kennwort wiederholen" required>
+                  <button type="submit" name="speichern">Passwort ändern</button>
+                  <button type="button" name="cancel_btn" onclick="window.location.href='profile.php?profile=MeineDaten'">zurück</button>
+                </form>
+                <br>
+                <br>
+                <label class="myData_error">
+                  <?php
+                    if (isset($_GET['error'])) {
+                      if ($_GET['error'] == "invalidpw") {
+                        echo "Passwort ist falsch";
+                      }
+                      elseif ($_GET['error'] == "invalidwdh") {
+                        echo "Passwörter stimmen nicht überein";
+                      }
+                    }
+                  ?>
+                </label>
                 <?php
               }
             }

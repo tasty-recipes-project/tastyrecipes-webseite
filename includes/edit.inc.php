@@ -78,10 +78,56 @@
       mysqli_close($con);
     }
     elseif (isset($_GET['pw'])) {
-      //altes PW überprüfen
-        //wenn true überprüfen ob neues Kennwort = Wiederholung
-          //wenn true neues Kennwort in Datenbank verschlüsselt speichern
-      //wenn false Fehlerausgabe bei Eingabeformular
+      //Variablen aus Formular laden
+      $pw_alt = $_POST['pw_old'];
+      $pw_neu = $_POST['pw_neu'];
+      $pw_wdh = $_POST['pw_wdh'];
+
+      //altes PW aus Datenbank lesen
+      $sql = "SELECT BenutzerPasswort FROM benutzer WHERE BenutzerId = '$userID'";
+      $stmt = mysqli_stmt_init($con);
+      if (!mysqli_stmt_prepare($stmt, $sql)) {
+          exit();
+      }
+      else {
+        mysqli_stmt_execute($stmt);
+        $result = mysqli_stmt_get_result($stmt);
+        if ($row = mysqli_fetch_assoc($result)) {
+          //Passwort abgleichen
+          $passwortCheck = password_verify($pw_alt, $row['BenutzerPasswort']);
+          if ($passwortCheck == false) {
+            //falsches Passwort
+            //Fehlerausgabe auf Passwortseite
+            header("Location: ../profile.php?profile=edit-pw&error=invalidpw");
+          }
+          else {
+            //Passwort stimmt überein
+            //Überprüfung ob neues Kennwort = Wiederholung
+            if ($pw_neu == $pw_wdh) {
+              //Passwörter stimmen überein
+              //Passwort verschlüsseln und in Datenbank speichern
+              $hashedPasswort = password_hash($pw_neu, PASSWORD_DEFAULT);
+              $sql = "UPDATE benutzer SET BenutzerPasswort = '$hashedPasswort' WHERE BenutzerId = '$userID'";
+              $stmt = mysqli_stmt_init($con);
+              if (!mysqli_stmt_prepare($stmt, $sql)) {
+                  exit();
+              }
+              else {
+                mysqli_stmt_execute($stmt);
+              }
+              //Weiterleitung auf Profilseite
+              header("Location: ../profile.php?profile=MeineDaten&edit=pw");
+            }
+            else {
+              //Neue Passwörter stimmen nicht überein
+              //Fehlerausgabe auf Passwortseite
+              header("Location: ../profile.php?profile=edit-pw&error=invalidwdh");
+            }
+          }
+        }
+      }
+      mysqli_stmt_close($stmt);
+      mysqli_close($con);
     }
   }
 ?>
