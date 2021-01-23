@@ -8,6 +8,7 @@
 	<head>
 		<title>Rezept hochladen</title>
 		<meta charset="utf8" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	</head>
 	<body>
 		<form action="includes/upload.inc.php" method = "post">
@@ -76,11 +77,22 @@
 						feld2--;
 						document.getElementById('dynamic_input2').innerHTML = "";
 						for (var zaehler = 1; zaehler <= feld2; zaehler++) {
-							var label = "Schritt " + zaehler;
+							var label = "Zutat " + zaehler;
+							
 							var inhalt = document.getElementById("speicher2" + zaehler).value;
 							document.getElementById('dynamic_input2').innerHTML +=
-							"<label>" + label + ": <input type='text' name='zutat" + feld2 + "' value='" + inhalt +
-							"' onInput='speicher2(this.value, \"" + feld2 + "\")'></label><br>";
+							"<label>" + label + ": <input type='text' placeholder='Zutat' name='zutat" + feld2 + "' value='" + inhalt +
+							"' onInput='speicher2(this.value, \"" + feld2 + "\")'></label>";
+							
+							var inhalt2 = document.getElementById("speicherMenge" + zaehler).value;
+							document.getElementById('dynamic_input2').innerHTML +=
+							"<input type='text' placeholder='Menge' name='menge" + feld2 + "' value='" + inhalt2 +
+							"' onInput='speicherMenge(this.value, \"" + feld2 + "\")'>";
+							
+							var inhalt3 = document.getElementById("speicherEinheit" + zaehler).value;
+							document.getElementById('dynamic_input2').innerHTML +=
+							"<input type='text' placeholder='Einheit' name='einheit" + feld2 + "' value='" + inhalt3 +
+							"' onInput='speicherEinheit(this.value, \"" + feld2 + "\")'><br/>";
 						}
 					}
 				}
