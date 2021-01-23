@@ -599,26 +599,50 @@
   border-radius: 5px;
 }
 
-.myData-left, .myData-middle, .myData-right {
+.myData-left {
   width: 33%;
   height: 70%;
   float: left;
+}
+
+.myData-right {
+  width: 66%;
+  height: 70%;
+  float: left;
+}
+
+.myData-edit_pw {
+  width: 100%;
+  height: 80%;
+  padding: 0;
 }
 
 .myData {
   font-family: 'Roboto', arial, sans-serif;
   font-size: 18px;
   color: black;
-
 }
 
-.usrname {
-  margin-left: 5px;
+.myData_error {
+  font-family: 'Roboto', arial, sans-serif;
+  font-size: 14px;
+  color: black;
 }
 
-.email {
-  margin-left: 79px;
+.edit {
+  float: right;
+  font-family: 'Roboto', arial, sans-serif;
+  font-size: 18px;
+  text-decoration: underline;
+  color: green;
+  margin-right: 260px;
 }
+
+.edit:hover {
+  text-decoration: none;
+  color: green;
+}
+
 
 /* Ende Profilbereich */
 

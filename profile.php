@@ -32,20 +32,22 @@
             if (isset($_GET['profile'])) {
               if ($_GET['profile'] == "MeineDaten") {
                 //Datenbankabfrage zum speichern der BenutzerEmail in eine Stringvariable
-                $sql = "SELECT BenutzerEmail FROM benutzer WHERE BenutzerName = '$_SESSION[nameBenutzer]'";
+                $sql = "SELECT BenutzerId, BenutzerEmail FROM benutzer WHERE BenutzerName = '$_SESSION[nameBenutzer]'";
                 $stmt = mysqli_stmt_init($con);
                 if (!mysqli_stmt_prepare($stmt, $sql)) {
-                    header("Location: ../index.php?error=sqlerror");
+                    header("Location: ../profile.php?error=sqlerror");
                     exit();
                 }
                 else {
                   mysqli_stmt_execute($stmt);
                   $result = mysqli_stmt_get_result($stmt);
                   if ($row = mysqli_fetch_assoc($result)) {
+                    $userID = $row['BenutzerId'];
                     $email = $row['BenutzerEmail'];
                   }
-
                 }
+                mysqli_stmt_close($stmt);
+                mysqli_close($con);
 
                 ?>
                   <h4>Allgemeine Daten</h4>
@@ -56,17 +58,85 @@
                     <label class="myData">E-Mail:</label>
                     <br>
                     <br>
-                    <button type="submit" name="button">Passwort ändern</button>
-                  </div>
-                  <div class="myData-middle">
-                    <label class="myData"><?php echo '' .$_SESSION['nameBenutzer']; ?></label>
                     <br>
-                    <label class="myData"><?php echo '' .$email; ?></label>
+                    <br>
+                    <button class="pw-reset" type="button" name="button" onclick="window.location.href='profile.php?profile=edit-pw'">Passwort ändern</button>
                   </div>
                   <div class="myData-right">
-                    <label class="myData"><a href="#">ändern</a></label>
-                    <br>
-                    <label class="myData"><a href="#">ändern</a></label>
+                    <?php
+                      //aktiv wenn Benutzername geändert werden soll
+                      if (isset($_GET['user'])) {
+                        ?>
+                        <label>
+                          <form class="myData-edit" action="includes/edit.inc.php?userID=<?php echo $userID ?>&user=edit" method="post">
+                            <input type="text" name="username_neu">
+                            <button type="submit" name="speichern">speichern</button>
+                            <button type="button" name="cancel" onclick="window.location.href='profile.php?profile=MeineDaten'">abbrechen</button>
+                          </form>
+                        </label>
+                        <br>
+                        <label class="myData"><?php echo $email; ?></label> <a class="edit" href="profile.php?profile=MeineDaten&mail=<?php echo $userID ?>">ändern</a>
+                        <br>
+                        <br>
+                        <label class="myData_error">
+                          <?php
+                            if (isset($_GET['error'])) {
+                              echo "Benutzername bereits vergeben!";
+                            }
+                          ?>
+                        </label>
+
+                        <?php
+                      }
+                      //aktiv wenn Email geändert werden soll
+                      elseif (isset($_GET['mail'])) {
+                        ?>
+                        <label class="myData"><?php echo $_SESSION['nameBenutzer']; ?></label> <a class="edit" href="profile.php?profile=MeineDaten&user=<?php echo $userID ?>">ändern</a>
+                        <br>
+                        <label class="myData">
+                          <form class="myData-edit" action="includes/edit.inc.php?userID=<?php echo $userID ?>&mail=edit" method="post">
+                            <input type="text" name="email_neu">
+                            <button type="submit" name="speichern">speichern</button>
+                            <button type="button" name="cancel" onclick="window.location.href='profile.php?profile=MeineDaten'">abbrechen</button>
+                          </form>
+                        </label>
+                        <br>
+                        <br>
+                        <label class="myData_error">
+                          <?php
+                            if (isset($_GET['error'])) {
+                              echo "E-Mail bereits vergeben!";
+                            }
+                          ?>
+                        </label>
+                        <?php
+                      }
+                      //Standardanzeige
+                      else {
+                        ?>
+                        <label class="myData"><?php echo $_SESSION['nameBenutzer'] ; ?></label> <a class="edit" href="profile.php?profile=MeineDaten&user=<?php echo $userID ?>">ändern</a>
+                        <br>
+                        <label class="myData"><?php echo $email ; ?></label> <a class="edit" href="profile.php?profile=MeineDaten&mail=<?php echo $userID ?>">ändern</a>
+                        <br>
+                        <br>
+                        <label class="myData_error">
+                          <?php
+                            if (isset($_GET['edit'])) {
+                              if ($_GET['edit'] == "username") {
+                                echo "Benutzername wurde erfolgreich geändert";
+                              }
+                              elseif ($_GET['edit'] == "mail") {
+                                echo "E-Mail wurde erfolgreich geändert";
+                              }
+                              elseif ($_GET['edit'] == "pw") {
+                                echo "Passwort wurde erfolgreich geändert";
+                              }
+                            }
+                          ?>
+                        </label>
+                        <?php
+                      }
+                    ?>
                   </div>
                 <?php
               }
@@ -75,6 +145,21 @@
               }
               elseif ($_GET['profile'] == "Lieblingsrezepte") {
                 // code...
+              }
+              elseif ($_GET['profile'] == "edit-pw") {
+                ?>
+                <h4>Passwort ändern</h4>
+                <br>
+                <div class="myData-edit_pw">
+                  <form class="edit-pw_form" action="includes/edit.inc.php?userID=<?php echo $userID ?>&pw=edit" method="post">
+                    <input type="text" name="pw_old" placeholder="Altes Kennwort" required>
+                    <input type="text" name="pw_neu" placeholder="Neues Kennwort" required>
+                    <input type="text" name="pw_wdh" placeholder="Kennwort wiederholen" required>
+                    <button type="submit" name="button">Passwort ändern</button>
+                    <button type="button" name="cancel_btn" onclick="window.location.href='profile.php?profile=MeineDaten'">zurück</button>
+                  </form>
+                </div>
+                <?php
               }
             }
             else {
