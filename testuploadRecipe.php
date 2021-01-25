@@ -53,13 +53,13 @@
                     Zutat 1: 
                 </div>
                 <div class="col-lg-3">
-                    <input type="text" id="name" name="rezeptname" placeholder="Zutat" class="input-rezeptname__feld">
+                    <input type="text" id="name" name="zutat1" placeholder="Zutat" class="input-rezeptname__feld">
                 </div>
                 <div class="col-lg-3">
-                    <input type="text" id="name" name="rezeptname" placeholder="Menge" class="input-rezeptname__feld">
+                    <input type="text" id="name" name="menge1" placeholder="Menge" class="input-rezeptname__feld">
                 </div>
                 <div class="col-lg-3">
-                    <input type="text" id="name" name="rezeptname" placeholder="Einheit" class="input-rezeptname__feld">
+                    <input type="text" id="name" name="einheit1" placeholder="Einheit" class="input-rezeptname__feld">
                 </div>
                 <div class="col-lg-1">
                     <input type="button" value="+" onclick="showZutatEingabe('z2'); return false">
@@ -74,13 +74,13 @@
                     Zutat 2: 
                 </div>
                 <div class="col-lg-3">
-                    <input type="text" id="name" name="rezeptname" placeholder="Zutat" class="input-rezeptname__feld">
+                    <input type="text" id="name" name="zutat2" placeholder="Zutat" class="input-rezeptname__feld">
                 </div>
                 <div class="col-lg-3">
-                    <input type="text" id="name" name="rezeptname" placeholder="Menge" class="input-rezeptname__feld">
+                    <input type="text" id="name" name="menge2" placeholder="Menge" class="input-rezeptname__feld">
                 </div>
                 <div class="col-lg-3">
-                    <input type="text" id="name" name="rezeptname" placeholder="Einheit" class="input-rezeptname__feld">
+                    <input type="text" id="name" name="einheit2" placeholder="Einheit" class="input-rezeptname__feld">
                 </div>
                 <div class="col-lg-1">
                 <input type="button" value="+" onclick="showZutatEingabe('z3'); return false">
@@ -95,13 +95,13 @@
                     Zutat 3: 
                 </div>
                 <div class="col-lg-3">
-                    <input type="text" id="name" name="rezeptname" placeholder="Zutat" class="input-rezeptname__feld">
+                    <input type="text" id="name" name="zutat3" placeholder="Zutat" class="input-rezeptname__feld">
                 </div>
                 <div class="col-lg-3">
-                    <input type="text" id="name" name="rezeptname" placeholder="Menge" class="input-rezeptname__feld">
+                    <input type="text" id="name" name="menge3" placeholder="Menge" class="input-rezeptname__feld">
                 </div>
                 <div class="col-lg-3">
-                    <input type="text" id="name" name="rezeptname" placeholder="Einheit" class="input-rezeptname__feld">
+                    <input type="text" id="name" name="einheit3" placeholder="Einheit" class="input-rezeptname__feld">
                 </div>
                 <div class="col-lg-1">
                     <input type="button" value="+" onclick="showZutatEingabe('z4'); return false">

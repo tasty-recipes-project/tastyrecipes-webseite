@@ -20,7 +20,7 @@
     $rezeptBild = base64_encode($_POST['datei']);
     $kategorie = $_POST['kategorie'];
 	
-	$schritt1 = $_POST['schritt1'];
+	$schritt1;
 	$schritt2;
 	$schritt3;
 	$schritt4;
@@ -32,8 +32,8 @@
 	$schritt10;
 	
 	$Zutat1 = $_POST['zutat1'];
-	$Zutat2;
-	$Zutat3;
+	$Zutat2 = $_POST['zutat2'];
+	$Zutat3 = $_POST['zutat3'];
 	$Zutat4;
 	$Zutat5;
 	$Zutat6;
@@ -43,8 +43,8 @@
 	$Zutat10;
 	
 	$Menge1 = $_POST['menge1'];
-	$Menge2;
-	$Menge3;
+	$Menge2 = $_POST['menge2'];
+	$Menge3 = $_POST['menge3'];
 	$Menge4;
 	$Menge5;
 	$Menge6;
@@ -54,8 +54,8 @@
 	$Menge10;
 	
 	$Einheit1 = $_POST['einheit1'];
-	$Einheit2;
-	$Einheit3;
+	$Einheit2 = $_POST['einheit2'];
+	$Einheit3 = $_POST['einheit3'];
 	$Einheit4;
 	$Einheit5;
 	$Einheit6;
