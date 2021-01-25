@@ -28,7 +28,21 @@
     dots[slideIndex-1].className += " w3-red";
   };
 
-  // Javascript für RezeptLogik
+  // Javascript für Rezeptformular
+
+  function showZutatEingabe(id) {
+    if (document.getElementById) {
+      var zutat = document.getElementById(id);
+      zutat.style.display = (zutat.style.display == 'flex' ? 'none' : 'flex');
+    }
+  }
+
+  function hideZutatEingabe(id) {
+    if (document.getElementById) {
+      var zutat = document.getElementById(id);
+      zutat.style.display = (zutat.style.display == 'flex' ? 'none' : 'flex');
+    }
+  }
 
 
 
