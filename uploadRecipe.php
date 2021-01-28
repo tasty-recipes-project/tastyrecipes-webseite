@@ -11,7 +11,7 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	</head>
 	<body>
-		<div class="container">
+		<div class="container-uploadRecipe">
 			<form action="includes/upload.inc.php" method = "post" enctype="multipart/form-data">
 			<h1>Rezept hochladen</h1>
 		<div class="row color">
@@ -23,13 +23,13 @@
 		</div>
 		<div class = "eingabe-beschreibung">
 			<label for="des" class="upload-text">Beschreibung:
-				<textarea id="des" name="rezeptdescr" cols="35" rows="4" placeholder="z.B. glutenfreies und leckeres Rezept" class="input-rezeptname__feld"></textarea><br />
+				<textarea id="des" name="rezeptdescr" cols="130" rows="4" placeholder="z.B. glutenfreies und leckeres Rezept" class="input-rezeptname__feld"></textarea><br />
 			</label>
 		</div>
 		
 		<div class = "eingabe-kategorie">
 			<label for="cat" class="upload-text">Kategorie:
-				<select class="input-rezeptname__feld" name="kategorie" size="1">
+				<select class="select-kategorie" name="kategorie" size="1">
 					<option value="vorspeise">Vorspeise</option>
 					<option value="hauptspeise">Hauptspeise</option>
 					<option value="dessert">Dessert</option>
@@ -48,15 +48,17 @@
 			<label>
 			<details open="">
 				<summary>Zutat 1</summary>
-				<p>
+				<p>	
+					<div class="input-zutat2">
 					<div class="Zutat" style="float:left">
-                    <input type="text" name="zutat1" placeholder="Zutat" class="input-rezeptname__feld">
+                    <input type="text" name="zutat1" placeholder="Zutat" class="input-zutat">
 					</div>
 					 <div style="float:left">
-                    <input type="text" name="menge1" placeholder="Menge" class="input-rezeptname__feld">
+                    <input type="text" name="menge1"  placeholder="Menge"  class="input-zutat">
 					</div>
 					 <div style="float:left">
-                    <input type="text" name="einheit1" placeholder="Einheit" class="input-rezeptname__feld">
+                    <input type="text" name="einheit1"  placeholder="Einheit"  class="input-zutat">
+					</div>
 					</div>
 				</p>
 			</details>
@@ -65,13 +67,13 @@
 				<summary>Zutat 2</summary>
 				<p>
 					<div style="float:left">
-                    <input type="text" name="zutat2" placeholder="Zutat" class="input-rezeptname__feld">
+                    <input type="text" name="zutat2" placeholder="Zutat" class="input-zutat">
 					</div>
 					 <div style="float:left">
-                    <input type="text" name="menge2" placeholder="Menge" class="input-rezeptname__feld">
+                    <input type="text" name="menge2" placeholder="Menge" class="input-zutat">
 					</div>
 					 <div style="float:left">
-                    <input type="text" name="einheit2" placeholder="Einheit" class="input-rezeptname__feld">
+                    <input type="text" name="einheit2" placeholder="Einheit" class="input-zutat">
 					</div>
 				</p>
 			</details>
@@ -80,13 +82,13 @@
 				<summary>Zutat 3</summary>
 				<p>
 					<div style="float:left">
-                    <input type="text" name="zutat3" placeholder="Zutat" class="input-rezeptname__feld">
+                    <input type="text" name="zutat3" placeholder="Zutat" class="input-zutat">
 					</div>
 					 <div style="float:left">
-                    <input type="text" name="menge3" placeholder="Menge" class="input-rezeptname__feld">
+                    <input type="text" name="menge3" placeholder="Menge" class="input-zutat">
 					</div>
 					 <div style="float:left">
-                    <input type="text" name="einheit3" placeholder="Einheit" class="input-rezeptname__feld">
+                    <input type="text" name="einheit3" placeholder="Einheit" class="input-zutat">
 					</div>
 				</p>
 			</details>
@@ -95,13 +97,13 @@
 				<summary>Zutat 4</summary>
 				<p>
 					<div style="float:left">
-                    <input type="text" name="zutat4" placeholder="Zutat" class="input-rezeptname__feld">
+                    <input type="text" name="zutat4" placeholder="Zutat" class="input-zutat">
 					</div>
 					 <div style="float:left">
-                    <input type="text" name="menge4" placeholder="Menge" class="input-rezeptname__feld">
+                    <input type="text" name="menge4" placeholder="Menge" class="input-zutat">
 					</div>
 					 <div style="float:left">
-                    <input type="text" name="einheit4" placeholder="Einheit" class="input-rezeptname__feld">
+                    <input type="text" name="einheit4" placeholder="Einheit" class="input-zutat">
 					</div>
 				</p>
 			</details>
@@ -110,13 +112,13 @@
 				<summary>Zutat 5</summary>
 				<p>
 					<div style="float:left">
-                    <input type="text" name="zutat5" placeholder="Zutat" class="input-rezeptname__feld">
+                    <input type="text" name="zutat5" placeholder="Zutat" class="input-zutat">
 					</div>
 					 <div style="float:left">
-                    <input type="text" name="menge5" placeholder="Menge" class="input-rezeptname__feld">
+                    <input type="text" name="menge5" placeholder="Menge" class="input-zutat">
 					</div>
 					 <div style="float:left">
-                    <input type="text" name="einheit5" placeholder="Einheit" class="input-rezeptname__feld">
+                    <input type="text" name="einheit5" placeholder="Einheit" class="input-zutat">
 					</div>
 				</p>
 			</details>
@@ -125,13 +127,13 @@
 				<summary>Zutat 6</summary>
 				<p>
 					<div style="float:left">
-                    <input type="text" name="zutat6" placeholder="Zutat" class="input-rezeptname__feld">
+                    <input type="text" name="zutat6" placeholder="Zutat" class="input-zutat">
 					</div>
 					 <div style="float:left">
-                    <input type="text" name="menge6" placeholder="Menge" class="input-rezeptname__feld">
+                    <input type="text" name="menge6" placeholder="Menge" class="input-zutat">
 					</div>
 					 <div style="float:left">
-                    <input type="text" name="einheit6" placeholder="Einheit" class="input-rezeptname__feld">
+                    <input type="text" name="einheit6" placeholder="Einheit" class="input-zutat">
 					</div>
 				</p>
 			</details>
@@ -140,13 +142,13 @@
 				<summary>Zutat 7</summary>
 				<p>
 					<div style="float:left">
-                    <input type="text" name="zutat7" placeholder="Zutat" class="input-rezeptname__feld">
+                    <input type="text" name="zutat7" placeholder="Zutat" class="input-zutat">
 					</div>
 					 <div style="float:left">
-                    <input type="text" name="menge7" placeholder="Menge" class="input-rezeptname__feld">
+                    <input type="text" name="menge7" placeholder="Menge" class="input-zutat">
 					</div>
 					 <div style="float:left">
-                    <input type="text" name="einheit7" placeholder="Einheit" class="input-rezeptname__feld">
+                    <input type="text" name="einheit7" placeholder="Einheit" class="input-zutat">
 					</div>
 				</p>
 			</details>
@@ -155,13 +157,13 @@
 				<summary>Zutat 8</summary>
 				<p>
 					<div style="float:left">
-                    <input type="text" name="zutat8" placeholder="Zutat" class="input-rezeptname__feld">
+                    <input type="text" name="zutat8" placeholder="Zutat" class="input-zutat">
 					</div>
 					 <div style="float:left">
-                    <input type="text" name="menge8" placeholder="Menge" class="input-rezeptname__feld">
+                    <input type="text" name="menge8" placeholder="Menge" class="input-zutat">
 					</div>
 					 <div style="float:left">
-                    <input type="text" name="einheit8" placeholder="Einheit" class="input-rezeptname__feld">
+                    <input type="text" name="einheit8" placeholder="Einheit" class="input-zutat">
 					</div>
 				</p>
 			</details>
@@ -170,13 +172,13 @@
 				<summary>Zutat 9</summary>
 				<p>
 					<div style="float:left">
-                    <input type="text" name="zutat9" placeholder="Zutat" class="input-rezeptname__feld">
+                    <input type="text" name="zutat9" placeholder="Zutat" class="input-zutat">
 					</div>
 					 <div style="float:left">
-                    <input type="text" name="menge9" placeholder="Menge" class="input-rezeptname__feld">
+                    <input type="text" name="menge9" placeholder="Menge" class="input-zutat">
 					</div>
 					 <div style="float:left">
-                    <input type="text" name="einheit9" placeholder="Einheit" class="input-rezeptname__feld">
+                    <input type="text" name="einheit9" placeholder="Einheit" class="input-zutat">
 					</div>
 				</p>
 			</details>
@@ -185,13 +187,13 @@
 				<summary>Zutat 10</summary>
 				<p>
 					<div style="float:left">
-                    <input type="text" name="zutat10" placeholder="Zutat" class="input-rezeptname__feld">
+                    <input type="text" name="zutat10" placeholder="Zutat" class="input-zutat">
 					</div>
 					 <div style="float:left">
-                    <input type="text" name="menge10" placeholder="Menge" class="input-rezeptname__feld">
+                    <input type="text" name="menge10" placeholder="Menge" class="input-zutat">
 					</div>
 					 <div style="float:left">
-                    <input type="text" name="einheit10" placeholder="Einheit" class="input-rezeptname__feld">
+                    <input type="text" name="einheit10" placeholder="Einheit" class="input-zutat">
 					</div>
 				</p>
 			</details>
