@@ -48,9 +48,12 @@
 
                          //Bild Section
                             
-                                echo('<div class="col-lg-12"');
-                                    echo('<p>' . $row['Bild'] . '</p>');
+                                 echo('<div class="col-lg-12"');
+                                    ?>
+                                    <p><a href="#"><img class="recipe-img" src="includes/uploads/<?php echo $row['Bild']; ?>" alt=""></a></p>
+                                    <?php
                                 echo('</div>');
+
                                 
 
                         //Zutaten Liste

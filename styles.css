@@ -688,6 +688,7 @@
 /* Rezept hochladen */
 .upload-text {
 	color: green;
+	font-size: 20px;
 }
 
 .input-rezeptname__feld {
@@ -702,6 +703,22 @@
   font-size: 16px;
 
 }
+
+details[open] summary {
+   font-style: italic;
+}
+
+
+/*Rzeptseite */
+
+.color {
+	
+}
+
+
+
+
+
 
 /* Bereich für die Rezeptseiten */
 
@@ -723,3 +740,4 @@ table, tr, td {
   background: linear-gradient(65deg, lightgreen, green);
   color: white;
 }
+

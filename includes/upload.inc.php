@@ -17,52 +17,62 @@
     $zutat = $_POST['zutat1'];
     $difficulty = $_POST['Schwierigkeitsgrad'];
     $dauer = $_POST['dauer'];
-    $rezeptBild = base64_encode($_POST['datei']);
+    $rezeptBild = $_FILES['image']['name'];
     $kategorie = $_POST['kategorie'];
 	
-	$schritt1;
-	$schritt2;
-	$schritt3;
-	$schritt4;
-	$schritt5;
-	$schritt6;
-	$schritt7;
-	$schritt8;
-	$schritt9;
-	$schritt10;
+    $target = "uploads/".basename($_FILES['image']['name']);
+    if(move_uploaded_file($_FILES['image']['tmp_name'], $target)) {
+
+        $nachricht = "Das Bild wurde erfolgreich hochgeladen";
+
+    } else {
+        $nachricht = "Ein Problem ist aufgetreten";
+    }
+
+	
+	$schritt1 = $_POST['schritt1'];
+	$schritt2 = $_POST['schritt2'];
+	$schritt3 = $_POST['schritt3'];
+	$schritt4 = $_POST['schritt4'];
+	$schritt5 = $_POST['schritt5'];
+	$schritt6 = $_POST['schritt6'];
+	$schritt7 = $_POST['schritt7'];
+	$schritt8 = $_POST['schritt8'];
+	$schritt9 = $_POST['schritt9'];
+	$schritt10 = $_POST['schritt10'];
 	
 	$Zutat1 = $_POST['zutat1'];
 	$Zutat2 = $_POST['zutat2'];
 	$Zutat3 = $_POST['zutat3'];
-	$Zutat4;
-	$Zutat5;
-	$Zutat6;
-	$Zutat7;
-	$Zutat8;
-	$Zutat9;
-	$Zutat10;
+	$Zutat4 = $_POST['zutat4'];
+	$Zutat5 = $_POST['zutat5'];
+	$Zutat6 = $_POST['zutat6'];
+	$Zutat7 = $_POST['zutat7'];
+	$Zutat8 = $_POST['zutat8'];
+	$Zutat9 = $_POST['zutat9'];
+	$Zutat10 = $_POST['zutat10'];
 	
 	$Menge1 = $_POST['menge1'];
 	$Menge2 = $_POST['menge2'];
 	$Menge3 = $_POST['menge3'];
-	$Menge4;
-	$Menge5;
-	$Menge6;
-	$Menge7;
-	$Menge8;
-	$Menge9;
-	$Menge10;
+	$Menge4 = $_POST['menge4'];
+	$Menge5 = $_POST['menge5'];
+	$Menge6 = $_POST['menge6'];
+	$Menge7 = $_POST['menge7'];
+	$Menge8 = $_POST['menge8'];
+	$Menge9 = $_POST['menge9'];
+	$Menge10 = $_POST['menge10'];
 	
 	$Einheit1 = $_POST['einheit1'];
 	$Einheit2 = $_POST['einheit2'];
 	$Einheit3 = $_POST['einheit3'];
-	$Einheit4;
-	$Einheit5;
-	$Einheit6;
-	$Einheit7;
-	$Einheit8;
-	$Einheit9;
-	$Einheit10;
+	$Einheit4 = $_POST['einheit4'];
+	$Einheit5 = $_POST['einheit5'];
+	$Einheit6 = $_POST['einheit6'];
+	$Einheit7 = $_POST['einheit7'];
+	$Einheit8 = $_POST['einheit8'];
+	$Einheit9 = $_POST['einheit9'];
+	$Einheit10 = $_POST['einheit10'];
 	
 
     //Fehlerbehandlung wenn ein Feld nicht ausgefüllt ist
@@ -103,7 +113,7 @@
 
       }
 	  // Eintrag Datenbank Schritte
-	  $sql = "INSERT INTO zutaten(Zutat1, Zutat2, Zutat3, Zutat4, Zutat5, Zutat6, Zutat7, Zutat8, Zutat9, Zutat10, Menge1, Menge2, Menge3, Menge4, Menge5,Menge6, Menge7, Menge8, Menge9, Menge10, Einheit1, Einheit2, Einheit3, Einheit4, Einheit5, Einheit6, Einheit7, Einheit8, Einheit9, Einheit10 ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+	  $sql = "INSERT INTO zutaten (Zutat1, Zutat2, Zutat3, Zutat4, Zutat5, Zutat6, Zutat7, Zutat8, Zutat9, Zutat10, Menge1, Menge2, Menge3, Menge4, Menge5, Menge6, Menge7, Menge8, Menge9, Menge10, Einheit1, Einheit2, Einheit3, Einheit4, Einheit5, Einheit6, Einheit7, Einheit8, Einheit9, Einheit10 ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 	  
 	  $stmt = mysqli_stmt_init($con);
       if (!mysqli_stmt_prepare($stmt, $sql)) {
@@ -115,7 +125,7 @@
         mysqli_stmt_bind_param($stmt, "ssssssssssssssssssssssssssssss", $Zutat1, $Zutat2, $Zutat3, $Zutat4, $Zutat5, $Zutat6, $Zutat7, $Zutat8, $Zutat9, $Zutat10, $Menge1, $Menge2, $Menge3, $Menge4, $Menge5, $Menge6, $Menge7, $Menge8, $Menge9, $Menge10, $Einheit1, $Einheit2, $Einheit3, $Einheit4, $Einheit5, $Einheit6, $Einheit7, $Einheit8, $Einheit9, $Einheit10);
         mysqli_stmt_execute($stmt);
 		header("Location: ../uploadRecipe.php");
-        exit();
+		exit();
 
       }
 	
