@@ -82,7 +82,7 @@
 
     } else {
 
-      //Eintrag in die Datenbank
+      //Eintrag in die Datenbank Rezepte
 
       $sql = "INSERT INTO rezepte (BenutzerName, RezeptName, Beschreibung, PortionenAnzahl, Schwierigkeit, Dauer, Bild, Kategorie) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 
@@ -112,7 +112,7 @@
         mysqli_stmt_execute($stmt);
 
       }
-	  // Eintrag Datenbank Schritte
+	  // Eintrag Datenbank Zutaten
 	  $sql = "INSERT INTO zutaten (Zutat1, Zutat2, Zutat3, Zutat4, Zutat5, Zutat6, Zutat7, Zutat8, Zutat9, Zutat10, Menge1, Menge2, Menge3, Menge4, Menge5, Menge6, Menge7, Menge8, Menge9, Menge10, Einheit1, Einheit2, Einheit3, Einheit4, Einheit5, Einheit6, Einheit7, Einheit8, Einheit9, Einheit10 ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 	  
 	  $stmt = mysqli_stmt_init($con);

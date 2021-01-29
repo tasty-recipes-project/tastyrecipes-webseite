@@ -709,16 +709,6 @@ details[open] summary {
 }
 
 
-/*Rzeptseite */
-
-.color {
-	
-}
-
-
-
-
-
 
 /* Bereich für die Rezeptseiten */
 
@@ -727,17 +717,6 @@ details[open] summary {
   color: white;
 }
 
-table, tr, td {
-  border: 1px solid black;
-}
 
-.rezept_Info {
-  border: 1px solid green;
-  margin-top: 10px;
-}
 
-.rezept_header {
-  background: linear-gradient(65deg, lightgreen, green);
-  color: white;
-}
 
