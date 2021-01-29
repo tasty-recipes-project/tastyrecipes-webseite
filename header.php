@@ -37,6 +37,7 @@
                 </div>
                 <div class="input-select">
                   <select class="search-select" name="search-select">
+                    <option value="Alle Rezepte">Alle Rezepte</option>
                     <option value="Vorspeise">Vorspeisen</option>
                     <option value="Hauptspeise">Hauptspeisen</option>
                     <option value="Dessert">Desserts</option>
@@ -76,7 +77,7 @@
                             <li class="userdropdown"><a href="#" class="usrdropbtn"><?php echo 'Hallo ' .$_SESSION['nameBenutzer'] .'   <i class="fas fa-angle-down"></i>'; ?></a>
                                 <div class="userdropdown-content">
                                     <a class="menu-li-a" href="profile.php?profile=MeineDaten">Mein Profil</a>
-                                    <a class="menu-li-a" href="meineRezepte.php">Meine Rezepte</a>
+                                    <a class="menu-li-a" href="profile.php?profile=MeineRezepte">Meine Rezepte</a>
                                     <a class="menu-li-a" href="#">Lieblingsrezepte</a>
                                     <a class="menu-li-a" href="uploadRecipe.php">Rezept hochladen</a>
                                     <a class="menu-li-a" href="bewertung.php">Rezept bewerten</a>

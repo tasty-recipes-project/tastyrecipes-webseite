@@ -9,41 +9,61 @@
   if (isset($_GET['userID'])) {
     $userID = $_GET['userID'];
     if (isset($_GET['user'])) {
-      $username_neu = $_POST['username_neu'];
+      //Abfrage ob Benutzername geändert werden soll
+      if ($_GET['user'] == "edit") {
+        $username_neu = $_POST['username_neu'];
 
-      //Überprüfung ob Username schon vergeben
-      $sql = "SELECT BenutzerId FROM benutzer WHERE BenutzerName = '$username_neu'";
-      $stmt = mysqli_stmt_init($con);
-      if (!mysqli_stmt_prepare($stmt, $sql)) {
-          exit();
-      }
-      else {
-        mysqli_stmt_execute($stmt);
-        mysqli_stmt_store_result($stmt);
-        $result = mysqli_stmt_num_rows($stmt);
-        if ($result > 0) {
-          header("Location: ../profile.php?profile=MeineDaten&user=<?php echo $userID ?>&error=invaliduser");
-          exit();
+        //Überprüfung ob Username schon vergeben
+        $sql = "SELECT BenutzerId FROM benutzer WHERE BenutzerName = '$username_neu'";
+        $stmt = mysqli_stmt_init($con);
+        if (!mysqli_stmt_prepare($stmt, $sql)) {
+            exit();
         }
         else {
-          //Benutzername updaten
-          $sql = "UPDATE benutzer SET BenutzerName = '$username_neu' WHERE BenutzerId = '$userID'";
-          $stmt = mysqli_stmt_init($con);
-          if (!mysqli_stmt_prepare($stmt, $sql)) {
-              exit();
+          mysqli_stmt_execute($stmt);
+          mysqli_stmt_store_result($stmt);
+          $result = mysqli_stmt_num_rows($stmt);
+          if ($result > 0) {
+            header("Location: ../profile.php?profile=MeineDaten&user=<?php echo $userID ?>&error=invaliduser");
+            exit();
           }
           else {
-            mysqli_stmt_execute($stmt);
+            //Benutzername updaten
+            $sql = "UPDATE benutzer SET BenutzerName = '$username_neu' WHERE BenutzerId = '$userID'";
+            $stmt = mysqli_stmt_init($con);
+            if (!mysqli_stmt_prepare($stmt, $sql)) {
+                exit();
+            }
+            else {
+              mysqli_stmt_execute($stmt);
 
-            //Session Variable neu setzen
-            $_SESSION['nameBenutzer'] = $username_neu;
+              //Session Variable neu setzen
+              $_SESSION['nameBenutzer'] = $username_neu;
+            }
+            header("Location: ../profile.php?profile=MeineDaten&edit=username");
           }
-          header("Location: ../profile.php?profile=MeineDaten&edit=username");
         }
+        //Abfrage ob Benutzer gelöscht werden soll
+      } elseif ($_GET['user'] == "delete") {
+        $sql = "DELETE FROM benutzer WHERE BenutzerId = '$userID'";
+        $stmt = mysqli_stmt_init($con);
+        if (!mysqli_stmt_prepare($stmt, $sql)) {
+            exit();
+        }
+        else {
+          mysqli_stmt_execute($stmt);
+
+          //Session stoppen
+          session_unset();
+          session_destroy();
+        }
+        header("Location: ../index.php");
       }
+
       mysqli_stmt_close($stmt);
       mysqli_close($con);
     }
+    //Abfrage ob Mail geändert werden soll
     elseif (isset($_GET['mail'])) {
       $mail_neu = $_POST['email_neu'];
 
@@ -128,6 +148,47 @@
       }
       mysqli_stmt_close($stmt);
       mysqli_close($con);
+    } elseif (isset($_GET[''])) {
+      // code...
+    }
+  //Rezeptdaten ändern
+  } elseif (isset($_GET['rezeptID'])) {
+    //Rezept per GET aus der URL lesen
+    $rezeptID = $_GET['rezeptID'];
+    //Abfragen, was gemacht werden soll
+    if (isset($_GET['rezept'])) {
+      //Rezept löschen
+      if ($_GET['rezept'] == "delete") {
+        //Daten aus Tabelle rezepte löschen
+        $sql = "DELETE FROM rezepte WHERE RezeptId = '$rezeptID'";
+        $stmt = mysqli_stmt_init($con);
+        if (!mysqli_stmt_prepare($stmt, $sql)) {
+            exit();
+        }
+        else {
+          mysqli_stmt_execute($stmt);
+        }
+
+        //Daten aus Tabelle zutaten löschen
+
+        //Daten aus Tabelle steps löschen
+        $sql = "DELETE FROM steps WHERE RezeptId = '$rezeptID'";
+        $stmt = mysqli_stmt_init($con);
+        if (!mysqli_stmt_prepare($stmt, $sql)) {
+            exit();
+        }
+        else {
+          mysqli_stmt_execute($stmt);
+        }
+        //Daten aus Tabelle favoriten löschen
+
+        //Datenbankverbindung trennen
+        mysqli_stmt_close($stmt);
+        mysqli_close($con);
+        
+        //Weiterleitung auf Seite
+        header("Location: ../profile.php?profile=MeineRezepte");
+      }
     }
   }
 ?>
