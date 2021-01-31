@@ -8,7 +8,7 @@
 	<head>
 		<title>Rezept hochladen</title>
 		<meta charset="utf8" />
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		
 	</head>
 	<body>
 		<div class="container-uploadRecipe">
@@ -28,7 +28,7 @@
 		</div>
 		
 		<div class = "eingabe-kategorie">
-			<label for="cat" class="upload-text">Kategorie:
+			<label for="cat" class="upload-text">Kategorie:</br>
 				<select class="select-kategorie" name="kategorie" size="1">
 					<option value="vorspeise">Vorspeise</option>
 					<option value="hauptspeise">Hauptspeise</option>
@@ -36,16 +36,19 @@
 				</select>
 		</div>
 
-		<div class = "eingabe-portionen">
-			<label for="pers" class="upload-text">Portionen: für
-				<input class="input-rezeptname__feld" id="pers" type="number" name="portionen" min="1" max="10" step="1" value="2" size="2">Personen<br />
-			</label>
+		<div class = "eingabe-portionen2">
+			<label for="pers" class="upload-text">Portionen:</br>
+				<label class = "eingabe-portionen">dieses Rezept ist für<br>
+				<input class="input-rezeptname__feld" id="pers" type="number" name="portionen" min="1" max="10" step="1" value="2" size="2"><br> Personen<br>
+				</label>
+				</label>
 		</div>
 
 		<div class = "eingabe-zutaten">
 			<label for="zut" class="upload-text">Zutaten und Mengenangaben:</label></br>
 			
 			<label>
+			<!-- Zutaten ansatzweise dynamisch, mit details/summary -->
 			<details open="">
 				<summary>Zutat 1</summary>
 				<p>	
@@ -204,10 +207,11 @@
 			<label for="step" class="upload-text">Schritte:</label></br>
 			
 			<label>
+			<!-- Schritte ansatzweise dynamisch, mit details/summary -->
 			<details open="">
 				<summary>Schritt 1</summary>
 				<p>
-                    <input type="text" name="schritt1" class="input-rezeptname__feld">
+                    <input type="text" name="schritt1" size="130" placeholder="z.B. Backofen auf 160° vorheizen" class="input-rezeptname__feld">
 				</p>
 			</details>
 			
@@ -215,7 +219,7 @@
 				<summary>Schritt 2</summary>
 				<p>
 					<div style="float:left">
-                    <input type="text" name="schritt2" class="input-rezeptname__feld">
+                    <input type="text" name="schritt2" size="130" class="input-rezeptname__feld">
 					</div>
 				</p>
 			</details>
@@ -224,7 +228,7 @@
 				<summary>Schritt 3</summary>
 				<p>
 					<div style="float:left">
-                    <input type="text" name="schritt3" class="input-rezeptname__feld">
+                    <input type="text" name="schritt3" size="130" class="input-rezeptname__feld">
 					</div>
 				</p>
 			</details>
@@ -233,7 +237,7 @@
 				<summary>Schritt 4</summary>
 				<p>
 					<div style="float:left">
-                    <input type="text" name="schritt4" class="input-rezeptname__feld">
+                    <input type="text" name="schritt4" size="130" class="input-rezeptname__feld">
 					</div>
 				</p>
 			</details>
@@ -242,7 +246,7 @@
 				<summary>Schritt 5</summary>
 				<p>
 					<div style="float:left">
-                    <input type="text" name="schritt5" class="input-rezeptname__feld">
+                    <input type="text" name="schritt5" size="130" class="input-rezeptname__feld">
 					</div>
 				</p>
 			</details>
@@ -251,7 +255,7 @@
 				<summary>Schritt 6</summary>
 				<p>
 					<div style="float:left">
-                    <input type="text" name="schritt6" class="input-rezeptname__feld">
+                    <input type="text" name="schritt6" size="130" class="input-rezeptname__feld">
 					</div>
 				</p>
 			</details>
@@ -260,7 +264,7 @@
 				<summary>Schritt 7</summary>
 				<p>
 					<div style="float:left">
-                    <input type="text" name="schritt7" class="input-rezeptname__feld">
+                    <input type="text" name="schritt7" size="130" class="input-rezeptname__feld">
 					</div>
 				</p>
 			</details>
@@ -269,7 +273,7 @@
 				<summary>Schritt 8</summary>
 				<p>
 					<div style="float:left">
-                    <input type="text" name="schritt8" class="input-rezeptname__feld">
+                    <input type="text" name="schritt8" size="130" class="input-rezeptname__feld">
 					</div>
 				</p>
 			</details>
@@ -278,7 +282,7 @@
 				<summary>Schritt 9</summary>
 				<p>
 					<div style="float:left">
-                    <input type="text" name="schritt9" class="input-rezeptname__feld">
+                    <input type="text" name="schritt9" size="130" class="input-rezeptname__feld">
 					</div>
 				</p>
 			</details>
@@ -287,7 +291,7 @@
 				<summary>Schritt 10</summary>
 				<p>
 					<div style="float:left">
-                    <input type="text" name="schritt10" class="input-rezeptname__feld">
+                    <input type="text" name="schritt10" size="130" class="input-rezeptname__feld">
 					</div>
 				</p>
 			</details>
@@ -306,19 +310,21 @@
 		</div>
 
 		<div class = "eingabe-dauer">
-			<label for="time" class="upload-text">Zubereitungsdauer:
-				<input class="input-rezeptname__feld" size="2" id="time" type="number" name="dauer" min="0" step="1" value="0">min<br />
+			<label for="time" class="upload-text">Zubereitungsdauer:</br>
+				<label class = "eingabe-portionen">
+				<input class="input-rezeptname__feld" size="1" id="time" type="number" name="dauer" min="0" step="1" value="0">min<br />
+				</label>
 			</label>
 		</div>
 
 		<div class = "eingabe-bild">
 			<!-- <form action="manage_uploads.php" method="post" enctype="multipart/form-data"> -->
-			<label class="upload-text">Bilder hochladen:</label>
+			<label class="upload-text">Bilder hochladen:</label></br>
 			<input id="image" name="image" type="file"><br/>
 			
 			<!--	<button>hochladen</button>
 			</form> -->
-		</div>
+		</div></br>
 
 		<div class = "submit-button">
 			<button class="login-button__btn" type="submit" name="rezept-upload">Rezept hochladen</button>

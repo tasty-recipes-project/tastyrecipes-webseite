@@ -761,7 +761,40 @@
   box-sizing: border-box;
   border-radius: 8px;
   font-size: 16px;
+}
 
+.select-kategorie {
+  width: 100%;
+  min-height: 2.75rem;
+  line-height: 1.375rem;
+  padding: 5px;
+  border: 1px solid;
+  border-color: green;
+  box-sizing: border-box;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.eingabe-portionen {
+	font-size: 15px;
+	color: black;
+}
+
+.input-zutat {
+  width: 100%;
+  min-height: 2.75rem;
+  line-height: 1.375rem;
+  padding: 5px;
+  border: 1px solid;
+  border-color: green;
+  box-sizing: border-box;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.container-uploadRecipe {
+		margin-left: 80px;
+		margin-right: 80px;
 }
 
 details[open] summary {
@@ -775,4 +808,33 @@ details[open] summary {
 .duration {
   background-color: grey;
   color: white;
+}
+
+.rezept_header {
+	color: green;
+}
+
+.rezept_Info {
+	margin-left: 80px;
+	margin-right: 80px;
+}
+
+.rezept-inhalt {    
+    text-shadow: 0 -1px 1px #666666, 0 1px 1px #FFFFFF;
+}
+
+.ausgabe-zutatenliste {
+ font-size: 20px;
+}
+
+.ausgabe-schritte {
+ font-size: 20px;
+}
+
+.like-btn {
+  padding: 0;
+  background-color: white;
+  color: red;
+  border: none;
+  border-radius: 0 8px 8px 0;
 }
