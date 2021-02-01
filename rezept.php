@@ -35,30 +35,38 @@
         </div></br>
 		<!--Ausgabe Zutaten -->
 		<div class="ausgabe-zutatenliste">
-		<form action="rezeptrechner.php" method="post">
-		<h2>Zutaten für <input id="pers" type="number" name="portionen" min=" step="1" value="<?php echo $row['PortionenAnzahl'] ?>" size="2">
-					<button class="btn-portionen-berechnen" type="submit" name="rezeptrechner">Portionen</button></br></h2>
-		</form>
+		<div class="row">
+		<h2>Zutaten für <span id="content"><?php echo $row['PortionenAnzahl'] ?></span> Personen</h2>
+		<button class="btn-portionen-berechnen"  id="down"> abziehen </button>
+		<button class="btn-portionen-berechnen"  id="up"> hinzufügen </button>
+		</div>
 			<?php
 				$zutaten = mysqli_query($con, "SELECT * FROM zutaten WHERE RezeptId = '$rezeptId'")
 					or die("Fehler: " . mysqli_error($con));
-				$row2 = mysqli_fetch_array($zutaten);
 				
-				// prüfen, ob Feld leer und diese nicht ausgeben
-				$count = 1;
-				for ($count; $count <= 10; $count++){
-					if (empty($row2["Zutat{$count}"])) {
-						break;
-					} else {
-						echo($row2["Menge{$count}"]);
-						echo " ";
-						echo($row2["Einheit{$count}"]);
-						echo " ";
-						echo($row2["Zutat{$count}"]);
-						echo "<br />";
+					$row2 = mysqli_fetch_array($zutaten);
+					echo ('<table>');		
+					// prüfen, ob Feld leer und diese nicht ausgeben
+					$count = 1;
+					for ($count; $count <= 10; $count++){
+						if (empty($row2["Zutat{$count}"])) {
+							break;
+						} else {
+							
+							echo ('<tr>');
+					
+							echo('<td id="menge">' . $row2["Menge{$count}"] . '</td>');
+							echo('<td>' . $row2["Einheit{$count}"] . '</td>');
+							echo('<td>' . $row2["Zutat{$count}"] . '</td>');
+					
+							echo('</tr>');
 						
-					}
+							
+						}
+					
+				
 				}
+				echo ('</table>');
 			?>
 		
 		<!--Ausgabe Schritte -->
@@ -89,7 +97,7 @@
     </body>
 </html>
 </main>
-            
+<script src="mainjavascript.js" type="text/JavaScript"></script>     
 <?php
     require('footer.php');    
 ?>

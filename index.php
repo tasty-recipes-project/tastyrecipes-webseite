@@ -10,27 +10,38 @@
                     </div>
                  </div>
 
-            <div class="row">
-                    <div class="col-lg-12">
-                        <img class="mySlides" src="images/dummy1.jpg" style="width:100%">
-                        <img class="mySlides" src="images/dummy2.jpg" style="width:100%">
-                        <img class="mySlides" src="images/dummy3.jpg" style="width:100%">
-                   </div>
+            <?php
+                require('includes/dbc.inc.php');
+                 $sliderStartseite = mysqli_query($con, "SELECT Bild FROM rezepte WHERE BewertungDurchschnitt = '1'")
+                 or die("Fehler: " . mysqli_error($con));
 
-                   <div class="col-lg-12">
-                        <div class="w3-section">
-                            <button class="w3-button w3-light-grey" onclick="plusDivs(-1)">❮ Prev</button>
-                            <button class="w3-button w3-light-grey" onclick="plusDivs(1)">Next ❯</button>
-                        </div>
-                        <div>
-                            <button class="w3-button demo" onclick="currentDiv(1)">1</button>
-                            <button class="w3-button demo" onclick="currentDiv(2)">2</button>
-                            <button class="w3-button demo" onclick="currentDiv(3)">3</button>
-                        </div>
-                  </div>
-                  </div>
+            while(     $row = mysqli_fetch_assoc($sliderStartseite)) {
+           
 
-
+            echo '<div class="row">';
+                    echo '<div class="col-lg-12">';
+                    
+                   
+                        echo "<img  src='includes/uploads/" .$row['Bild']."'>";
+                      
+                  
+                   echo '</div>';
+                /* TEst 
+                   echo '<div class="col-lg-12">';
+                        echo '<div class="w3-section">';
+                            echo '<button class="w3-button w3-light-grey" onclick="plusDivs(-1)">❮ Prev</button>';
+                            echo '<button class="w3-button w3-light-grey" onclick="plusDivs(1)">Next ❯</button>';
+                        echo '</div>';
+                        echo '<div>';
+                            echo '<button class="w3-button demo" onclick="currentDiv(1)">1</button>';
+                            echo '<button class="w3-button demo" onclick="currentDiv(2)">2</button>';
+                            echo '<button class="w3-button demo" onclick="currentDiv(3)">3</button>';
+                        echo '</div>';
+                  echo '</div>';
+                  */
+                  echo '</div>';
+            }
+            ?>
 
                 <div class="row">
                         <div class="col-lg-12">
