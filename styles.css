@@ -849,3 +849,8 @@ details[open] summary {
   border: none;
   border-radius: 0 8px 8px 0;
 }
+
+.fav-recipe {
+  color: black;
+  text-shadow: 0 -1px 1px #666666, 0 1px 1px #FFFFFF;
+}
