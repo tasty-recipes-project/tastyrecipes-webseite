@@ -552,11 +552,11 @@
 
 .profile_container {
   width: 100%;
-  height: 400px;
+  height: auto;
 }
 
 .profile-navmenu {
-  height: 100%;
+  height: auto;
   width: 225px;
   margin: 0;
   margin-right: 100px;
@@ -570,6 +570,7 @@
 
 .profilenavmenu-ul {
   padding: 15px;
+  margin: 0;
 }
 
 .profilenavmenu-li {
@@ -640,6 +641,16 @@
 
 .edit:hover {
   text-decoration: none;
+  color: green;
+}
+
+.myData_upload {
+  text-decoration: none;
+  font-family: 'Roboto', arial, sans-serif;
+  color: green;
+}
+
+.myData_upload:hover {
   color: green;
 }
 
@@ -819,7 +830,7 @@ details[open] summary {
 	margin-right: 80px;
 }
 
-.rezept-inhalt {    
+.rezept-inhalt {
     text-shadow: 0 -1px 1px #666666, 0 1px 1px #FFFFFF;
 }
 
