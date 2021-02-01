@@ -169,10 +169,10 @@
                                     <td class="myRecipes-data_left"> <img src="includes/uploads/<?php echo $row['Bild'] ?>" alt="" style="width:250px; height:200px;"> </td>
                                     <td class="myRecipes-data_middle">
                                       <h5>Beschreibung:</h5>
-                                      <?php echo $row['Beschreibung'] ?>
-                                      <br><br>
-                                      <h5>Schwierigkeit: <?php echo $row['Schwierigkeit'] ?></h5>
-                                      <br>
+                                        <?php echo $row['Beschreibung'] ?>
+                                        <br><br>
+                                        <h5>Schwierigkeit: <?php echo $row['Schwierigkeit'] ?></h5>
+                                        <br>
                                       <h5>Kategorie: <?php echo $row['Kategorie'] ?></h5>
                                     </td>
                                     <td class="myRecipes-data_right">
@@ -185,9 +185,7 @@
                               </div>
                             <?php
                           }
-                    ?>
-
-                    <?php
+                    ?><?php
                   }
                   elseif ($_GET['profile'] == "Lieblingsrezepte") {
                     ?>

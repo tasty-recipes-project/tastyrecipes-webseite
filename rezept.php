@@ -19,18 +19,18 @@
 	<body>
 		<div class="rezept_Info">
 		<div class="rezept_header">
-			<h1><?php echo $row['RezeptName'] ?></h1> <h2>von  <?php echo $row['BenutzerName'] ?> </h2> 
+			<h1><?php echo $row['RezeptName'] ?></h1> <h2>von  <?php echo $row['BenutzerName'] ?> </h2>
 			<?php echo "<img  src='includes/uploads/" .$row['Bild']."'>"; ?>
         </div>
         <div class="rezept-inhalt">
 		<form action="addFav.php" method="post">
         <i class='fas fa-pizza-slice'></i> <?php echo $row['Kategorie'] ?> &nbsp;
-		<i class="far fa-clock"></i><?php echo $row['Dauer'] ?> min &nbsp;
-		<i class="fas fa-signal"></i><?php echo $row['Schwierigkeit'] ?>&nbsp;
-		
-		<!--Rezept zu Lieblingsrezepten hinzufügen -->
-		
-		<button type="submit" name="like-submit" class="like-btn"><i class="far fa-heart"></i></button>zu Lieblingsrezepten hinzufügen</br>
+				<i class="far fa-clock"></i> <?php echo $row['Dauer'] ?> min &nbsp;
+				<i class="fas fa-signal"></i> <?php echo $row['Schwierigkeit'] ?>&nbsp;
+
+				<!--Rezept zu Lieblingsrezepten hinzufügen -->
+
+				<button type="submit" name="like-submit" class="like-btn"><i class="far fa-heart"></i> <span class="fav-recipe">zu Lieblingsrezepten hinzufügen</span> </button></br>
 		</form>
         </div></br>
 		<!--Ausgabe Zutaten -->
@@ -43,6 +43,7 @@
 			<?php
 				$zutaten = mysqli_query($con, "SELECT * FROM zutaten WHERE RezeptId = '$rezeptId'")
 					or die("Fehler: " . mysqli_error($con));
+<<<<<<< HEAD
 				
 					$row2 = mysqli_fetch_array($zutaten);
 					echo ('<table>');		
@@ -65,10 +66,28 @@
 						}
 					
 				
+=======
+				$row2 = mysqli_fetch_array($zutaten);
+
+				// prüfen, ob Feld leer und diese nicht ausgeben
+				$count = 1;
+				for ($count; $count <= 10; $count++){
+					if (empty($row2["Zutat{$count}"])) {
+						break;
+					} else {
+						echo($row2["Menge{$count}"]);
+						echo " ";
+						echo($row2["Einheit{$count}"]);
+						echo " ";
+						echo($row2["Zutat{$count}"]);
+						echo "<br />";
+
+					}
+>>>>>>> bd9c6101af3fe328dc5a886a7878a870a1d9332c
 				}
 				echo ('</table>');
 			?>
-		
+
 		<!--Ausgabe Schritte -->
 		</div></br>
 		<div class = "ausgabe-schritte">
@@ -77,7 +96,7 @@
 				$steps = mysqli_query($con, "SELECT * FROM steps WHERE RezeptId = '$rezeptId'")
 					or die("Fehler: " . mysqli_error($con));
 				$row3 = mysqli_fetch_array($steps);
-				
+
 				//prüfen, ab wann Schritte leer, dann break
 				$count = 1;
 				for ($count; $count <= 10; $count++){
@@ -88,7 +107,7 @@
 						echo " ";
 						echo($row3["Schritt{$count}"]);
 						echo "<br />";
-						
+
 					}
 				}
 			?>
@@ -97,7 +116,11 @@
     </body>
 </html>
 </main>
+<<<<<<< HEAD
 <script src="mainjavascript.js" type="text/JavaScript"></script>     
+=======
+
+>>>>>>> bd9c6101af3fe328dc5a886a7878a870a1d9332c
 <?php
-    require('footer.php');    
+    require('footer.php');
 ?>
