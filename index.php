@@ -1,5 +1,18 @@
 <?php
-    require('header.php')
+    require('header.php');
+	require('includes/dbc.inc.php');
+	
+	$rezept1 = mysqli_query($con, "SELECT * FROM rezepte ORDER BY RAND() LIMIT 1")
+        or die("Fehler: " . mysqli_error($con));
+        $row1 = mysqli_fetch_array($rezept1);
+		
+	$rezept2 = mysqli_query($con, "SELECT * FROM rezepte ORDER BY RAND() LIMIT 1")
+        or die("Fehler: " . mysqli_error($con));
+        $row2 = mysqli_fetch_array($rezept2);
+		
+	$rezept3 = mysqli_query($con, "SELECT * FROM rezepte ORDER BY RAND() LIMIT 1")
+        or die("Fehler: " . mysqli_error($con));
+        $row3 = mysqli_fetch_array($rezept3);
 ?>
 
 <main class="main_content">
@@ -12,9 +25,9 @@
 
             <div class="row">
                     <div class="col-lg-12">
-                        <img class="mySlides" src="images/dummy1.jpg" style="width:100%">
-                        <img class="mySlides" src="images/dummy2.jpg" style="width:100%">
-                        <img class="mySlides" src="images/dummy3.jpg" style="width:100%">
+                        <a href="rezept.php?rezept= <?php echo $row1['RezeptId']?> "><img class="mySlides" <?php echo "<img  src='includes/uploads/" .$row1['Bild']."'"; ?>></a>
+                        <a href="rezept.php?rezept= <?php echo $row2['RezeptId']?> "><img class="mySlides" <?php echo "<img  src='includes/uploads/" .$row2['Bild']."'"; ?>></a>
+                        <a href="rezept.php?rezept= <?php echo $row3['RezeptId']?> "><img class="mySlides" <?php echo "<img  src='includes/uploads/" .$row3['Bild']."'"; ?>></a>
                    </div>
 
                    <div class="col-lg-12">
