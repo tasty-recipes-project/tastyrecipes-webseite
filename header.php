@@ -31,27 +31,25 @@
         <!-- Zweite Spalte für das Suchfeld -->
 
             <div class="col-lg-6 col-md-12 col-xs-12 search-col">
-              <form action="suchen.php" method="post" class="search-container">
+              <form class="search-container" action="suchen.php" method="post">
                 <div class="search-button">
                   <button type="submit" name="search-submit" class="search-button__btn"><i class="fas fa-search"></i></button>
                 </div>
                 <div class="input-select">
                   <select class="search-select" name="search-select">
-                    <option value="Alle Rezepte">Alle Rezepte</option>
-                    <option value="Vorspeise">Vorspeisen</option>
-                    <option value="Hauptspeise">Hauptspeisen</option>
-                    <option value="Dessert">Desserts</option>
+                    <option value="AlleRezepte">Alle Rezepte</option>
+                    <option value="Einfach">Einfach</option>
+                    <option value="Mittel">Mittel</option>
+                    <option value="Schwierig">Schwierig</option>
                   </select>
                 </div>
                 <div class="input-search">
                   <input type="text" name="search" placeholder="Suchen.." size="40" class="input-search__feld">
                 </div>
+				
+				
               </form>
             </div>
-
-
-
-
         </div>
 
 
