@@ -36,9 +36,14 @@
 		<!--Ausgabe Zutaten -->
 		<div class="ausgabe-zutatenliste">
 		<div class="row">
-		<h2>Zutaten für <span id="content"><?php echo $row['PortionenAnzahl'] ?></span> Personen</h2>
-		<button class="btn-portionen-berechnen"  id="down"> abziehen </button>
-		<button class="btn-portionen-berechnen"  id="up"> hinzufügen </button>
+			<p>Dieses Rezept ist ausgelegt für <span id="ausgangsMenge"><?php echo $row['PortionenAnzahl'] ?></span> Personen</p>
+		</div>
+		<div class="row">
+		
+		<h2>Zutaten für <span id="neueMenge"><?php echo $row['PortionenAnzahl'] ?></span> Personen</h2><br />
+		<button class="btn-portionen-berechnen"  id="down"> - </button> <br />
+		<button class="btn-portionen-berechnen"  id="up"> + </button><br />
+		<h2>jetzt berechnen</2>
 		</div>
 			<?php
 				$zutaten = mysqli_query($con, "SELECT * FROM zutaten WHERE RezeptId = '$rezeptId'")
@@ -91,9 +96,56 @@
 			?>
 		</div>
 		</div>
+
+		<!-- Rezept Bewertung -->
+		<hr>
+		<div class = "rezept-bewertung">
+		<button class="btn btn-success">Zur Rezeptbewertung</button><br>
+		<form action="includes/bewertung.inc.php" method="post" class="login_area">
+          <div class="welcome">
+            <strong>Bewerte dein Rezept</strong>
+          </div>
+          <div class="input-rezeptId">
+            <input class="input-username__feld" type="text" name="rezept_id" value="<?php echo $row['RezeptId'] ?> " required>
+          </div>
+          <div class="input-rezeptId">
+            <input type="radio" id="ei" name="bewertungnote" value="1"> <strong>Sehr gut</strong>
+           
+          </div>
+          <div class="input-rezeptId">
+            
+            <input type="radio" id="ei" name="bewertungnote" value="2"> <strong>Gut</strong>
+           
+          </div>
+          <div class="input-rezeptId">
+            
+            <input type="radio" id="ei" name="bewertungnote" value="3"> <strong>Befriedigend</strong>
+            
+          </div>
+          
+          <div class="input-rezeptId">
+            
+          <input type="radio" id="ei" name="bewertungnote" value="4"> <strong>Ausreichend</strong>
+            
+          </div>
+          <div class="input-rezeptId">
+            
+          <input type="radio" id="ei" name="bewertungnote" value="5"> <strong>Mangelhaft</strong>
+          </div>
+          <div class="input-rezeptId">
+            
+          <input type="radio" id="ei" name="bewertungnote" value="6"> <strong>Ungenügend</strong>
+            
+          </div>
+          <div class="login-button">
+            <button class="login-button__btn" type="submit" name="bewertung-abgeben">Jetzt bewerten</button>
+          </div>
+        </form>
+		</div>
+		</div>
 		<script src="main.js"></script>
     </body>
-	
+
 </html>
 </main>
 <?php
