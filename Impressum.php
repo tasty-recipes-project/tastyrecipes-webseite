@@ -4,6 +4,7 @@
 
 <!Doctype html>
 <html>
+	<p></p>
 	<h1 style="text-align: left;">Angaben gemäß § 5 TMG:</h1>
 	<p>Tasty Recipes <br />Leipziger Straße 123<br />36037 Fulda</p>
 	<p>Vertreten durch:</p>
