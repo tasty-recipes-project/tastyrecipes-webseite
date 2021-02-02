@@ -1,5 +1,5 @@
 <?php
- session_start();
+ include('header.php')
 ?>
 
 <!Doctype html>
@@ -53,5 +53,8 @@
 	<p><!-- x-tinymce/html --></p>
 	<h2 style="text-align: left;"><strong>Datenschutzerklärung für die Nutzung von Matomo</strong></h2>
 	<p style="text-align: justify;">Diese Website benutzt den Open Source Webanalysedienst Matomo. Matomo verwendet sog. "Cookies". Das sind Textdateien, die auf Ihrem Computer gespeichert werden und die eine Analyse der Benutzung der Website durch Sie ermöglichen. Dazu werden die durch den Cookie erzeugten Informationen über die Benutzung dieser Website auf unserem Server gespeichert. Die IP-Adresse wird vor der Speicherung anonymisiert.<br />Die durch den Cookie erzeugten Informationen über die Benutzung dieser Website werden nicht an Dritte weitergegeben. Sie können die Speicherung der Cookies durch eine entsprechende Einstellung Ihrer Browser-Software verhindern; wir weisen Sie jedoch darauf hin, dass Sie in diesem Fall gegebenenfalls nicht sämtliche Funktionen dieser Website vollumfänglich werden nutzen können.<br />Wenn Sie mit der Speicherung und Nutzung Ihrer Daten nicht einverstanden sind, können Sie die Speicherung und Nutzung hier deaktivieren. In diesem Fall wird in Ihrem Browser ein Opt-Out-Cookie hinterlegt der verhindert, dass Matomo Nutzungsdaten speichert. Wenn Sie Ihre Cookies löschen hat dies zur Folge, dass auch das Matomo Opt-Out-Cookie gelöscht wird. Das Opt-Out muss bei einem erneuten Beuch unserer Seite wieder aktiviert werden.</p>
-	<p><!-- x-tinymce/html --><iframe style="border: 0px currentColor; width: 1000px; height: 200px;" src="piwik/index.php?module=CoreAdminHome&amp;action=optOut&amp;language=de&amp;backgroundColor=&amp;fontColor=&amp;fontSize=14px&amp;fontFamily=arial" width="1000" height="200"> </iframe></p>
 </html>
+
+<?php
+ include('footer.php')
+?>
