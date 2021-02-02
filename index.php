@@ -1,4 +1,7 @@
+
+
 <?php
+//PHP Logik der Startseite
     require('header.php');
 	require('includes/dbc.inc.php');
 	
@@ -23,31 +26,23 @@
                     </div>
                  </div>
 
-          
+            <!-- Slider Section --> 
             <div class="row">
-                    <div class="col-lg-12">
+
+                <div class="slicer">
+                    <figure>
                         <a href="rezept.php?rezept= <?php echo $row1['RezeptId']?> "><img class="mySlides" <?php echo "<img  src='includes/uploads/" .$row1['Bild']."'"; ?>></a>
-                        <a href="rezept.php?rezept= <?php echo $row2['RezeptId']?> "><img class="mySlides" <?php echo "<img  src='includes/uploads/" .$row2['Bild']."'"; ?>></a>
-                        <a href="rezept.php?rezept= <?php echo $row3['RezeptId']?> "><img class="mySlides" <?php echo "<img  src='includes/uploads/" .$row3['Bild']."'"; ?>></a>
-                   </div>
+                        <a href="rezept.php?rezept= <?php echo $row1['RezeptId']?> "><img class="mySlides" <?php echo "<img  src='includes/uploads/" .$row1['Bild']."'"; ?>></a>
+                        <a href="rezept.php?rezept= <?php echo $row1['RezeptId']?> "><img class="mySlides" <?php echo "<img  src='includes/uploads/" .$row1['Bild']."'"; ?>></a>
+                        <a href="rezept.php?rezept= <?php echo $row1['RezeptId']?> "><img class="mySlides" <?php echo "<img  src='includes/uploads/" .$row1['Bild']."'"; ?>></a>
+                        <a href="rezept.php?rezept= <?php echo $row1['RezeptId']?> "><img class="mySlides" <?php echo "<img  src='includes/uploads/" .$row1['Bild']."'"; ?>></a>
+                    </figure>
+                 </div>
 
-                   <div class="col-lg-12">
-                        <div class="w3-section">
-                            <button class="w3-button w3-light-grey" onclick="plusDivs(-1)">❮ Prev</button>
-                            <button class="w3-button w3-light-grey" onclick="plusDivs(1)">Next ❯</button>
-                        </div>
-                        <div>
-                            <button class="w3-button demo" onclick="currentDiv(1)">1</button>
-                            <button class="w3-button demo" onclick="currentDiv(2)">2</button>
-                            <button class="w3-button demo" onclick="currentDiv(3)">3</button>
-                        </div>
-                  </div>
-                  </div>
-
-      
+            </div>
            
-
  
+            
             
 
                 <div class="row">

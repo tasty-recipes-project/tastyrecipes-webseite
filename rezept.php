@@ -112,7 +112,7 @@
 		
 		<!-- Rezept Bewertung Content mit dem entsprechenden Formular --> 
 		<div class="row">
-			<div class="col-lg-6" id="div-bewertung">
+			<div class="col-lg-6 hide" id="div-bewertung">
 			<form  action="includes/bewertung.inc.php" method="post" class="login_area">
           <div class="welcome">
             <strong>Bewerte dein Rezept</strong>
