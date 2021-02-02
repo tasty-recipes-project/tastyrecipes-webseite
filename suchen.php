@@ -5,16 +5,16 @@
 	$suchbegriff = $_POST['search'];
 	
 	if ($_POST['search-select'] == 'Einfach'){
-		$suche = mysqli_query($con, "SELECT * FROM rezepte WHERE RezeptName LIKE '%$suchbegriff%' AND Schwierigkeit = 'einfach' ")
+		$suche = mysqli_query($con, "SELECT * FROM rezepte WHERE (RezeptName LIKE '%$suchbegriff%' OR Beschreibung LIKE '%$suchbegriff%') AND Schwierigkeit = 'einfach' ")
 		or die("Fehler: " . mysqli_error($con));
 	} else if ($_POST['search-select'] == 'Mittel'){
-		$suche = mysqli_query($con, "SELECT * FROM rezepte WHERE RezeptName LIKE '%$suchbegriff%' AND Schwierigkeit = 'mittel' ")
+		$suche = mysqli_query($con, "SELECT * FROM rezepte WHERE (RezeptName LIKE '%$suchbegriff%' OR Beschreibung LIKE '%$suchbegriff%') AND Schwierigkeit = 'mittel' ")
 		or die("Fehler: " . mysqli_error($con));
 	} else if ($_POST['search-select'] == 'Schwierig'){
-		$suche = mysqli_query($con, "SELECT * FROM rezepte WHERE RezeptName LIKE '%$suchbegriff%' AND Schwierigkeit = 'schwer' ")
+		$suche = mysqli_query($con, "SELECT * FROM rezepte WHERE RezeptName LIKE ('%$suchbegriff%' OR Beschreibung LIKE '%$suchbegriff%') AND Schwierigkeit = 'schwer' ")
 		or die("Fehler: " . mysqli_error($con));
 	} else {
-	$suche = mysqli_query($con, "SELECT * FROM rezepte WHERE RezeptName LIKE '%$suchbegriff%' ")
+	$suche = mysqli_query($con, "SELECT * FROM rezepte WHERE RezeptName LIKE '%$suchbegriff%' OR Beschreibung LIKE '%$suchbegriff%' ")
 		or die("Fehler: " . mysqli_error($con));
 	}
 	
