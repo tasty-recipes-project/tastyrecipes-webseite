@@ -4,7 +4,7 @@
 
 <?php
     //Die E-Mail Adresse, an die die Kontaktanfragen gesendet werden
-    $empfaenger = "your.mail@example.com";
+    $empfaenger = "patricknuhn52@gmail.com";
     if(isset($_REQUEST["submit"])){
         if(empty($_REQUEST["name"]) || empty($_REQUEST["email"]) || empty($_REQUEST["nachricht"])){
             $error = "Bitte f&uuml;llen Sie alle Felder aus";
@@ -13,9 +13,9 @@
             //Text der E-Mail Nachricht
             $mailnachricht="Sie haben eine Anfrage über ihr Kontaktformular erhalten:\n";
             $mailnachricht .= "Name: ".$_REQUEST["name"]."\n".
-                      "E-Mail: ".$_REQUEST["email"]."\n".
-                      "Datum: ".date("d.m.Y H:i")."\n".
-                      "\n\n".$_REQUEST["nachricht"]."\n";            
+                      	      "E-Mail: ".$_REQUEST["email"]."\n".
+                      	      "Datum: ".date("d.m.Y H:i")."\n".
+                      	      "\n\n".$_REQUEST["nachricht"]."\n";            
             //Betreff der E-Mail Nachricht
             $mailbetreff = "Neue Kontaktanfrage von ".$_REQUEST["name"]." (".$_REQUEST["email"].")";
             //Hier wird die E-Mail versendet
@@ -41,7 +41,10 @@
 	
 	<body>
 		<h1>Ihr Kontakt zu Uns</h1>
-		
+		<p></p>
+		<p>Habt Ihr Fragen oder Anregungen oder Probleme, dann meldet euch unverbindlich über das Kontaktformular oder telefonisch.</p>
+		<p>Wir werden versuchen, euch so schnell wie möglich zu helfen.</p>
+		<p></p>
 		<div id="kontaktformular">
 		<?php if(isset($success)){
         echo "<div>".$success."</div>"; 
@@ -49,6 +52,15 @@
 		else { ?>
 		<form id="kontaktform" action="" method="post" class="pure-form pure-form-aligned">
         <fieldset>
+	    <div class="pure-control-group">
+                <label for="name">Grund</label>
+		   <select class="pure-control-group" name="name">
+		        <option value="waehle">Bitte wählen</option>
+			<option value="rueckruf">Rückruf</option>
+			<option value="termin">Termin</option>
+			<option value="sonstiges">Sonstiges</option>
+                    </select>
+		</div>
             <div class="pure-control-group">
                 <label for="name">Name</label>
                 <input id="name" name="name" required size="40" placeholder="Name">
@@ -56,6 +68,10 @@
             <div class="pure-control-group">
                 <label for="email">E-Mail</label>
                 <input id="email" name="email" type="email" required size="40" placeholder="E-Mail">
+            </div>
+	    <div class="pure-control-group">
+                <label for="name">Betreff</label>
+                <input id="betreff" name="Betreff" required size="40" placeholder="Betreff">
             </div>
             <div class="pure-control-group">
                 <label for="nachricht">Nachricht</label>
