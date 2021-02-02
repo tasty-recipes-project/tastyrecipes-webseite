@@ -854,3 +854,11 @@ details[open] summary {
   color: black;
   text-shadow: 0 -1px 1px #666666, 0 1px 1px #FFFFFF;
 }
+
+
+
+/*Rezept bewerten*/
+
+.hide {
+  display: none;
+}

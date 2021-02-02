@@ -2,6 +2,9 @@
 
 window.addEventListener("load", function() {
 
+
+    
+    // Hier beginnt Javascript für den Bereich der Rezeptbewertung
     let buttonUp = document.getElementById("up"); 
     let buttonDown = document.getElementById("down");
    
@@ -27,6 +30,12 @@ window.addEventListener("load", function() {
           }
         })
 
+        let buttonRezeptBewertung = document.getElementById("rezept-bewertung");
+
+        buttonRezeptBewertung.addEventListener("click", function() {
+            let divBewertung = document.getElementById("div-bewertung");
+            divBewertung.classList.toggle("hide");
+        })
      
     
     }, false);

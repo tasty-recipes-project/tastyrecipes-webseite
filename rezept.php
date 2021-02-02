@@ -41,9 +41,9 @@
 		<div class="row">
 		
 		<h2>Zutaten für <span id="neueMenge"><?php echo $row['PortionenAnzahl'] ?></span> Personen</h2><br />
-		<button class="btn-portionen-berechnen"  id="down"> - </button> <br />
-		<button class="btn-portionen-berechnen"  id="up"> + </button><br />
-		<h2>jetzt berechnen</2>
+		<button class="#"  id="down">-</button> <br />
+		<button class="#"  id="up">+</button><br />
+		<h2>jetzt berechnen</h2>
 		</div>
 			<?php
 				$zutaten = mysqli_query($con, "SELECT * FROM zutaten WHERE RezeptId = '$rezeptId'")
@@ -99,9 +99,21 @@
 
 		<!-- Rezept Bewertung -->
 		<hr>
-		<div class = "rezept-bewertung">
-		<button class="btn btn-success">Zur Rezeptbewertung</button><br>
-		<form action="includes/bewertung.inc.php" method="post" class="login_area">
+
+		<!-- Rezept Bewertung Header mit Buttons -->
+		<div class="row">
+			<div class="col-lg-6">
+				<button class="btn btn-success" id="rezept-bewertung">Zur Rezeptbewertung</button><br>
+			</div>
+			<div class="col-lg-6">
+				<button class="btn btn-success" onclick="window.print()">Rezept Drucken</button><br>
+			</div>
+		</div>
+		
+		<!-- Rezept Bewertung Content mit dem entsprechenden Formular --> 
+		<div class="row">
+			<div class="col-lg-6" id="div-bewertung">
+			<form  action="includes/bewertung.inc.php" method="post" class="login_area">
           <div class="welcome">
             <strong>Bewerte dein Rezept</strong>
           </div>
@@ -141,9 +153,14 @@
             <button class="login-button__btn" type="submit" name="bewertung-abgeben">Jetzt bewerten</button>
           </div>
         </form>
-		</div>
+			</div>
+			<div class="col-lg-6">
+				<!-- Aktuell Leerer Bereich --> 
+			</div>
+		</div>		
 		</div>
 		<script src="main.js"></script>
+
     </body>
 
 </html>

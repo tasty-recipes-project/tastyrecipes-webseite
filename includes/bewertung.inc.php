@@ -39,7 +39,7 @@
 
       } else {
         mysqli_stmt_execute($stmt);
-        header("Location: ../rezept.php");
+        header("Location: ../index.php");
         exit();
       }
       //Schliessen der Datenbankverbindung
@@ -52,14 +52,14 @@
     $sql = "INSERT INTO bewertung (RezeptId, AnzahlBewertung, BewertungNote, BewertungNoteGesamt, BewertungDurchschnitt) VALUES (?, ?, ?, ?, ?)";
     $stmt = mysqli_stmt_init($con);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
-      header("Location: ../bewertung.php?error=sqlerror");
+      header("Location: ../rezept.php?error=sqlerror");
       exit();
 
     } else {
       
       mysqli_stmt_bind_param($stmt, "iiidi", $rezeptid, $anzahlbewertung, $note, $note, $note);
       mysqli_stmt_execute($stmt);
-      header("Location: ../rezept.php");
+      header("Location: ../index.php");
       exit();
     }
      //Schliessen der Datenbankverbindung

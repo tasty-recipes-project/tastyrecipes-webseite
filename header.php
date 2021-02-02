@@ -78,7 +78,6 @@
                                     <a class="menu-li-a" href="profile.php?profile=MeineRezepte">Meine Rezepte</a>
                                     <a class="menu-li-a" href="#">Lieblingsrezepte</a>
                                     <a class="menu-li-a" href="uploadRecipe.php">Rezept hochladen</a>
-                                    <a class="menu-li-a" href="bewertung.php">Rezept bewerten</a>
                                     <a class="menu-li-a" href="includes/logout.inc.php">Logout</a>
                                 </div>
                             </li>
