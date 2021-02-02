@@ -61,7 +61,6 @@
                 <label for="nachricht">Nachricht</label>
                 <textarea id="nachricht" name="nachricht" required cols="39" rows="10" placeholder="Nachricht"></textarea>
             </div>
-            <div style="float:right;font-size: 50%; text-align: right">by <a href="https://www.devno.com/kontaktformular">devno</a></div>
             <div style="clear:both;"></div> 
             <div class="pure-control-group">
                 <label for="submit"></label>
