@@ -43,7 +43,6 @@
 			<?php
 				$zutaten = mysqli_query($con, "SELECT * FROM zutaten WHERE RezeptId = '$rezeptId'")
 					or die("Fehler: " . mysqli_error($con));
-<<<<<<< HEAD
 				
 					$row2 = mysqli_fetch_array($zutaten);
 					echo ('<table>');		
@@ -56,7 +55,7 @@
 							
 							echo ('<tr>');
 					
-							echo('<td id="menge">' . $row2["Menge{$count}"] . '</td>');
+							echo('<td class="menge">' . $row2["Menge{$count}"] . '</td>');
 							echo('<td>' . $row2["Einheit{$count}"] . '</td>');
 							echo('<td>' . $row2["Zutat{$count}"] . '</td>');
 					
@@ -64,26 +63,6 @@
 						
 							
 						}
-					
-				
-=======
-				$row2 = mysqli_fetch_array($zutaten);
-
-				// prüfen, ob Feld leer und diese nicht ausgeben
-				$count = 1;
-				for ($count; $count <= 10; $count++){
-					if (empty($row2["Zutat{$count}"])) {
-						break;
-					} else {
-						echo($row2["Menge{$count}"]);
-						echo " ";
-						echo($row2["Einheit{$count}"]);
-						echo " ";
-						echo($row2["Zutat{$count}"]);
-						echo "<br />";
-
-					}
->>>>>>> bd9c6101af3fe328dc5a886a7878a870a1d9332c
 				}
 				echo ('</table>');
 			?>
@@ -107,20 +86,16 @@
 						echo " ";
 						echo($row3["Schritt{$count}"]);
 						echo "<br />";
-
 					}
 				}
 			?>
 		</div>
 		</div>
+		<script src="main.js"></script>
     </body>
+	
 </html>
 </main>
-<<<<<<< HEAD
-<script src="mainjavascript.js" type="text/JavaScript"></script>     
-=======
-
->>>>>>> bd9c6101af3fe328dc5a886a7878a870a1d9332c
 <?php
     require('footer.php');
 ?>

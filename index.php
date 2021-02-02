@@ -23,12 +23,7 @@
                     </div>
                  </div>
 
-<<<<<<< HEAD
-            <?php
-                require('includes/dbc.inc.php');
-                 $sliderStartseite = mysqli_query($con, "SELECT Bild FROM rezepte WHERE BewertungDurchschnitt = '1'")
-                 or die("Fehler: " . mysqli_error($con));
-=======
+          
             <div class="row">
                     <div class="col-lg-12">
                         <a href="rezept.php?rezept= <?php echo $row1['RezeptId']?> "><img class="mySlides" <?php echo "<img  src='includes/uploads/" .$row1['Bild']."'"; ?>></a>
@@ -48,35 +43,12 @@
                         </div>
                   </div>
                   </div>
->>>>>>> bd9c6101af3fe328dc5a886a7878a870a1d9332c
 
-            while(     $row = mysqli_fetch_assoc($sliderStartseite)) {
+      
            
 
-            echo '<div class="row">';
-                    echo '<div class="col-lg-12">';
-                    
-                   
-                        echo "<img  src='includes/uploads/" .$row['Bild']."'>";
-                      
-                  
-                   echo '</div>';
-                /* TEst 
-                   echo '<div class="col-lg-12">';
-                        echo '<div class="w3-section">';
-                            echo '<button class="w3-button w3-light-grey" onclick="plusDivs(-1)">❮ Prev</button>';
-                            echo '<button class="w3-button w3-light-grey" onclick="plusDivs(1)">Next ❯</button>';
-                        echo '</div>';
-                        echo '<div>';
-                            echo '<button class="w3-button demo" onclick="currentDiv(1)">1</button>';
-                            echo '<button class="w3-button demo" onclick="currentDiv(2)">2</button>';
-                            echo '<button class="w3-button demo" onclick="currentDiv(3)">3</button>';
-                        echo '</div>';
-                  echo '</div>';
-                  */
-                  echo '</div>';
-            }
-            ?>
+ 
+            
 
                 <div class="row">
                         <div class="col-lg-12">
