@@ -171,9 +171,9 @@
                                       <h5>Beschreibung:</h5>
                                         <?php echo $row['Beschreibung'] ?>
                                         <br><br>
-                                        <h5>Schwierigkeit: <?php echo $row['Schwierigkeit'] ?></h5>
+                                        <h5><i class="fas fa-signal"></i> <?php echo $row['Schwierigkeit'] ?></h5>
                                         <br>
-                                      <h5>Kategorie: <?php echo $row['Kategorie'] ?></h5>
+                                      <h5><i class='fas fa-pizza-slice'></i> <?php echo $row['Kategorie'] ?></h5>
                                     </td>
                                     <td class="myRecipes-data_right">
                                       <input type="button" class="myRecipes-btn" name="edit_recipe" value="bearbeiten" onclick="window.location.href=''">
