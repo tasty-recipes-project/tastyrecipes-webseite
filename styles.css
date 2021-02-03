@@ -657,13 +657,12 @@
   float: right;
   font-family: 'Roboto', arial, sans-serif;
   font-size: 18px;
-  text-decoration: underline;
+  text-decoration: none;
   color: green;
   margin-right: 260px;
 }
 
 .edit:hover {
-  text-decoration: none;
   color: green;
 }
 
@@ -908,6 +907,5 @@ details[open] summary {
 }
 
 .linksaboutus{
-	float: left;
-	margin-right: 10px;
+
 }

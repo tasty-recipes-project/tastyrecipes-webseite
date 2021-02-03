@@ -153,8 +153,30 @@
                     <br>
                     <?php
                       require('includes/dbc.inc.php');
-                      $ersteller = mysqli_query($con, "SELECT * FROM rezepte WHERE BenutzerName = '$_SESSION[nameBenutzer]'")
-                          or die("Fehler: " . mysqli_error($con));
+
+                      //Daten aus Datenbank ziehen
+                      $sql = "SELECT * FROM rezepte WHERE BenutzerName = '$_SESSION[nameBenutzer]'";
+                      $stmt = mysqli_stmt_init($con);
+                      if (!mysqli_stmt_prepare($stmt, $sql)) {
+                          header("Location: ../profile.php?error=sqlerror");
+                          exit();
+                      } else {
+                        mysqli_stmt_execute($stmt);
+                        mysqli_stmt_store_result($stmt);
+                        $result = mysqli_stmt_num_rows($stmt);
+                        //Abfrage ob Rezepte gefunden wurden
+                        if ($result < 1) {
+                          //Ausgabe wenn Benutzer keine Rezepte hochgeladen hat
+                          ?>
+                          <label class="myData">
+                            Sie haben noch kein Rezept erstellt. <br>
+                            Wollen Sie jetzt ein <a class="myData_upload" href="uploadRecipe.php">Rezept hochladen</a>?
+                          </label>
+                          <?php
+                        } else {
+                          //Rezepte werden ausgegeben
+                          $ersteller = mysqli_query($con, "SELECT * FROM rezepte WHERE BenutzerName = '$_SESSION[nameBenutzer]'")
+                              or die("Fehler: " . mysqli_error($con));
 
                           while ($row = mysqli_fetch_array($ersteller)) {
                             ?>
@@ -185,6 +207,10 @@
                               </div>
                             <?php
                           }
+                        }
+                      }
+
+
                     ?><?php
                   }
                   elseif ($_GET['profile'] == "Lieblingsrezepte") {
@@ -192,6 +218,65 @@
                     <h3>Meine Lieblingsrezepte</h3>
                     <br>
                     <?php
+                    //Daten aus Datenbank ziehen
+                    $sql = "SELECT * FROM favoriten WHERE BenutzerName = '$_SESSION[nameBenutzer]'";
+                    $stmt = mysqli_stmt_init($con);
+                    if (!mysqli_stmt_prepare($stmt, $sql)) {
+                        header("Location: ../profile.php?error=sqlerror");
+                        exit();
+                    } else {
+                      mysqli_stmt_execute($stmt);
+                      mysqli_stmt_store_result($stmt);
+                      $result = mysqli_stmt_num_rows($stmt);
+                      //Abfrage ob Rezepte gefunden wurden
+                      if ($result < 1) {
+                        //Ausgabe wenn Benutzer keine Rezepte hochgeladen hat
+                        ?>
+                        <label class="myData">
+                          Sie haben noch keine  Lieblingsrezepte. <br>
+                        </label>
+                        <?php
+                      } else {
+                        //RezeptIDs aus Favoriten Danbank laden
+                        $favorites = mysqli_query($con, "SELECT * FROM favoriten WHERE BenutzerName = '$_SESSION[nameBenutzer]'")
+                            or die("Fehler: " . mysqli_error($con));
+
+                        while ($id = mysqli_fetch_array($favorites)) {
+                          $rezeptID = $id['RezeptId'];
+                          //Daten aus Rezeptdatenbank ziehen
+                          $ersteller = mysqli_query($con, "SELECT * FROM rezepte WHERE RezeptId = '$rezeptID'")
+                              or die("Fehler: " . mysqli_error($con));
+
+                          while ($row = mysqli_fetch_array($ersteller)) {
+                            ?>
+                              <div class="recipe-container">
+                                <table class="myRecipes">
+                                  <tr class="myRecipes-row">
+                                    <th> <h3><?php echo $row['RezeptName'] ?></h3> </th>
+                                    <th></th>
+                                    <th></th>
+                                  </tr>
+                                  <tr class="myRecipes-row">
+                                    <td class="myRecipes-data_left"> <img src="includes/uploads/<?php echo $row['Bild'] ?>" alt="" style="width:250px; height:200px;"> </td>
+                                    <td class="myRecipes-data_middle">
+                                      <h5>Beschreibung:</h5>
+                                        <?php echo $row['Beschreibung'] ?>
+                                        <br><br>
+                                        <h5><i class="fas fa-signal"></i> <?php echo $row['Schwierigkeit'] ?></h5>
+                                        <br>
+                                      <h5><i class='fas fa-pizza-slice'></i> <?php echo $row['Kategorie'] ?></h5>
+                                    </td>
+                                    <td class="myRecipes-data_right">
+                                      <input type="button" class="myRecipes-btn" name="edit_recipe" value="entfernen" onclick="window.location.href='includes/addFav.inc.php?rezeptID=<?php echo $row['RezeptId'] ?>&fav=del&src=p'">
+                                    </td>
+                                  </tr>
+                                </table>
+                              </div>
+                            <?php
+                          }
+                        }
+                      }
+                    }
                   }
                   elseif ($_GET['profile'] == "edit-pw") {
                     //UserID aus Datenbank abrufen

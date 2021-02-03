@@ -11,6 +11,9 @@
 
 	<body>
 		<main class="main_content">
+		<div class="">
+
+
 		<div class="aboutUs_img">
 
 		<p><img id="bildaboutus" src="images/bild.jpg" width="100%"></p>
@@ -37,19 +40,23 @@
 		<h1><center>Unser Team</center></h1>
 		<p><center>Unser Team besteht aus 4 Mitgliedern, die unterschiedliche Tätigkeiten wahrnehmen.</center></p>
 		<p></p>
+		<div class="row">
+		<div class="col-lg-12">
 		<img class="linksaboutus" src="images/bild.jpg" width="220" height="180" border="0" alt="Banner">
-		<p>Olivia Dornberger
-		</p>
+		<p>Olivia Dornberger</p>
 		<p></p>
 		<img class="linksaboutus" src="images/bild.jpg" width="220" height="180" border="0" alt="Banner">
-		<p>Jonas Grafe
+		<p>Jonas Grafe</p>
 		<p></p>
 		<img class="linksaboutus" src="images/bild.jpg" width="220" height="180" border="0" alt="Banner">
-		<p>Florian Rabe
+		<p>Florian Rabe</p>
 		<p></p>
 		<img class="linksaboutus" src="images/bild.jpg" width="220" height="180" border="0" alt="Banner">
-		<p>Patrick Nuhn
+		<p>Patrick Nuhn</p>
+		</div>
+		</div>
 		<br></br>
+		</div>
 		</main>
 	</body>
 </html>
