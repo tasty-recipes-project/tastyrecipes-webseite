@@ -899,13 +899,12 @@ details[open] summary {
   display: none;
 }
 
-/*Bild auf der Über uns Seite*/
-.bild.jpg{
-	display: block;
-	width: 100%;
-	height: auto;
+/*Bilder auf der Über uns Seite*/
+.bild1, .bild2, .bild3, .bild4 {
+  width: 25%;
+  float: left;
 }
 
-.linksaboutus{
-
+.linksaboutus {
+  align-self: center;
 }
