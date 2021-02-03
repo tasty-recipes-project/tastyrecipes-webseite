@@ -9,8 +9,13 @@
 		<title>Willkommen bei Tasty Recipes</title>
 		<meta charset="utf8" />
 	</head>
+	<div>
+   <?php
+	echo "<p><img id='bildaboutus' src='bild.jpg'/></p>";
+   ?>
+	</div>
 	<body>
-		<h1>Willkommen bei Tasty Recipes</h1>
+		<h1><center>Über Uns</center></h1>
 		<p></p>
 		<p>
 		<center>
@@ -25,7 +30,25 @@
 		</p>
 		<p>
 		"Jede Jeck is anders", sagt man im Rheinland. So gehen wir mit tastyrecipes auf die persönlichen Vorlieben jedes/r Nutzers/in ein und bieten personalisierte Rezepte, die jedem einen leichten und dennoch geschmackhaften Zugang zu gutem Essen erleichtert. Wir von tastyrecipes sind der Meinung, dass es nicht jeden Tag Fast Food sein muss, um glücklich zu sein.
-		</p>	
+		</p>
+		<p></p>
+		<br></br>
+		<h1><center>Unser Team</center></h1>
+		<p><center>Unser Team besteht aus 4 Mitgliedern, die unterschiedliche Tätigkeiten wahrnehmen.</center></p>
+		<p></p>
+		<img class="linksaboutus" src="bild.jpg" width="220" height="180" border="0" alt="Banner">
+		<p>Olivia Dornberger
+		</p>
+		<p></p>
+		<img class="linksaboutus" src="bild.jpg" width="220" height="180" border="0" alt="Banner">
+		<p>Jonas Grafe
+		<p></p>
+		<img class="linksaboutus" src="bild.jpg" width="220" height="180" border="0" alt="Banner">
+		<p>Florian Rabe
+		<p></p>
+		<img class="linksaboutus" src="bild.jpg" width="220" height="180" border="0" alt="Banner">
+		<p>Patrick Nuhn
+		<br></br>
 	</body>
 </html>
 </main>
