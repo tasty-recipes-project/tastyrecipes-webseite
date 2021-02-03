@@ -463,6 +463,7 @@
     font-weight: 400;
     font-size: 16px;
     padding-top: 40px;
+    padding-bottom: 40px;
 }
 
 /*CSS bezieht sich auf den Registrierungsprozess */
@@ -501,12 +502,12 @@
 
 #slider figure img {
   width: 20%;
-  float: left; 
+  float: left;
 }
 
 @keyframes slider {
    0% {
-     left: 0; 
+     left: 0;
    }
 
    20% {
@@ -743,11 +744,11 @@
 
 .container-footer {
   width: 100%;
-  height: 200px;
+  height: 100%;
   padding: 0px;
   padding-top: 0px;
-  padding-bottom: 40px;
   margin: 0px;
+  margin-bottom: 20px;
   border: 0px;
   background-color: #e6ffff;
 }
@@ -764,6 +765,7 @@
   float: left;
   text-align: left;
   padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .footer-right {
@@ -780,7 +782,15 @@
 
 .footer-items {
   text-decoration: none;
+}
 
+.dsgvo {
+  float: left;
+}
+
+.impressum {
+  float: right;
+  padding-right: 70px;
 }
 
 /* Rezept hochladen */

@@ -5,6 +5,7 @@
     <title>Login | TastyRecipes</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js" charset="utf-8"></script>
+    <link rel="icon" href="images/logo_tastyrecipes.jpg">
   </head>
 
   <body class="login">

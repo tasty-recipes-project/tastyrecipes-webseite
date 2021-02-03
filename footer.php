@@ -13,15 +13,15 @@
 	<body>
 
 	<!-- Footer Bereich ist responsiv und besteht aus Datenschutzerklärung und Impressum-->
-		 <div class="container-footer">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="container-footer">
   		 <div class="footer-left">
   			<img src="images/logo_tastyrecipes.jpg" height="100px" width="100px">
   			<p class="footer-company-name">© 2020 Tasty Recipes</p>
        </div>
 
 		   <div class="footer-center">
-			      <p><a href="Datenschutzerklärung.php">Datenschutzerklärung</a></p>
-			      <p><a href="Impressum.php">Impressum</a></p>
 
 			      <div>
 					         <p><i class="fas fa-map-marker-alt"></i>   Leipziger Straße 123, 36037 Fulda</p>
@@ -36,6 +36,13 @@
 					         <p><i class="fa fa-envelope"></i><a href="mailto:support@tastyrecipes.de">    support@tastyrecipes.de</a></p>
 
 				    </div>
+            <br>
+            <div>
+              <p>
+                <a class="dsgvo" href="Datenschutzerklärung.php">Datenschutzerklärung</a>
+  			        <a class="impressum" href="Impressum.php">Impressum</a>
+              </p>
+            </div>
         </div>
 
 				<div class="footer-right">
@@ -50,5 +57,9 @@
 				</div>
 			</div>
     </div>
+  </div>
+</div>
+
+
 	</body>
 </html>

@@ -17,19 +17,19 @@
                     $rezeptTeaserInfo = mysqli_query($con, "SELECT * FROM rezepte WHERE Kategorie = 'dessert'")
                         or die("Fehler: " . mysqli_error($con));
 
-                        while ($row = mysqli_fetch_array($rezeptTeaserInfo)) 
+                        while ($row = mysqli_fetch_array($rezeptTeaserInfo))
                         {
-                
-                
+
+
                 //Ausgabebereich für Rezepte
-                    echo '<div class="container"';
+                    echo '<div class="recipe-container"';
                             echo '<div class="row">';
                                 echo '<div class="col-lg-6">';
                                     echo '<div class="card">';
 
                                     //Bild Section im Card Header
                                         echo "<img  src='includes/uploads/" .$row['Bild']."'>";
-                                    
+
                                     //Teaser Informationen über das Gericht
                                         echo '<div class="card-body">';
                                             echo('<p><b>RezeptId:</b> ' . $row['RezeptId'] . '</p>');
@@ -43,14 +43,14 @@
                                 echo '</div>';
 
 
-                                
+
                             echo '</div>';
                     echo '</div>';
-                        
+
                     }
                 ?>
 
-                
+
         </div>
     </div>
 </main>

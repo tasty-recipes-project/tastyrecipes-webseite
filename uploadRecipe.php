@@ -1,16 +1,17 @@
-<?php
-	require('header.php')
-?>
 
 <!DOCTYPE html>
-<main class="main_content">
 <html>
 	<head>
-		<title>Rezept hochladen</title>
+		<title>Rezept hochladen | TastyRecipes</title>
 		<meta charset="utf8" />
-		
+		<link rel="icon" href="images/logo_tastyrecipes.jpg">
+
 	</head>
 	<body>
+		<?php
+			require('header.php')
+		?>
+	<main class="main_content">
 		<div class="container-uploadRecipe">
 			<form action="includes/upload.inc.php" method = "post" enctype="multipart/form-data">
 			<h1>Rezept hochladen</h1>
@@ -26,7 +27,7 @@
 				<textarea id="des" name="rezeptdescr" cols="130" rows="4" placeholder="z.B. glutenfreies und leckeres Rezept" class="input-rezeptname__feld"></textarea><br />
 			</label>
 		</div>
-		
+
 		<div class = "eingabe-kategorie">
 			<label for="cat" class="upload-text">Kategorie:</br>
 				<select class="select-kategorie" name="kategorie" size="1">
@@ -46,12 +47,12 @@
 
 		<div class = "eingabe-zutaten">
 			<label for="zut" class="upload-text">Zutaten und Mengenangaben:</label></br>
-			
+
 			<label>
 			<!-- Zutaten ansatzweise dynamisch, mit details/summary -->
 			<details open="">
 				<summary>Zutat 1</summary>
-				<p>	
+				<p>
 					<div class="input-zutat2">
 					<div class="Zutat" style="float:left">
                     <input type="text" name="zutat1" placeholder="Zutat" class="input-zutat">
@@ -65,7 +66,7 @@
 					</div>
 				</p>
 			</details>
-			
+
 			<details>
 				<summary>Zutat 2</summary>
 				<p>
@@ -80,7 +81,7 @@
 					</div>
 				</p>
 			</details>
-			
+
 			<details>
 				<summary>Zutat 3</summary>
 				<p>
@@ -95,7 +96,7 @@
 					</div>
 				</p>
 			</details>
-			
+
 			<details>
 				<summary>Zutat 4</summary>
 				<p>
@@ -110,7 +111,7 @@
 					</div>
 				</p>
 			</details>
-			
+
 			<details>
 				<summary>Zutat 5</summary>
 				<p>
@@ -125,7 +126,7 @@
 					</div>
 				</p>
 			</details>
-			
+
 			<details>
 				<summary>Zutat 6</summary>
 				<p>
@@ -140,7 +141,7 @@
 					</div>
 				</p>
 			</details>
-			
+
 			<details>
 				<summary>Zutat 7</summary>
 				<p>
@@ -155,7 +156,7 @@
 					</div>
 				</p>
 			</details>
-			
+
 			<details>
 				<summary>Zutat 8</summary>
 				<p>
@@ -170,7 +171,7 @@
 					</div>
 				</p>
 			</details>
-			
+
 			<details>
 				<summary>Zutat 9</summary>
 				<p>
@@ -185,7 +186,7 @@
 					</div>
 				</p>
 			</details>
-			
+
 			<details>
 				<summary>Zutat 10</summary>
 				<p>
@@ -202,10 +203,10 @@
 			</details>
 			</label>
 		</div>
-		
+
 		<div class = "eingabe-schritte">
 			<label for="step" class="upload-text">Schritte:</label></br>
-			
+
 			<label>
 			<!-- Schritte ansatzweise dynamisch, mit details/summary -->
 			<details open="">
@@ -214,7 +215,7 @@
                     <input type="text" name="schritt1" size="130" placeholder="z.B. Backofen auf 160° vorheizen" class="input-rezeptname__feld">
 				</p>
 			</details>
-			
+
 			<details>
 				<summary>Schritt 2</summary>
 				<p>
@@ -223,7 +224,7 @@
 					</div>
 				</p>
 			</details>
-			
+
 			<details>
 				<summary>Schritt 3</summary>
 				<p>
@@ -232,7 +233,7 @@
 					</div>
 				</p>
 			</details>
-			
+
 			<details>
 				<summary>Schritt 4</summary>
 				<p>
@@ -241,7 +242,7 @@
 					</div>
 				</p>
 			</details>
-			
+
 			<details>
 				<summary>Schritt 5</summary>
 				<p>
@@ -250,7 +251,7 @@
 					</div>
 				</p>
 			</details>
-			
+
 			<details>
 				<summary>Schritt 6</summary>
 				<p>
@@ -259,7 +260,7 @@
 					</div>
 				</p>
 			</details>
-			
+
 			<details>
 				<summary>Schritt 7</summary>
 				<p>
@@ -268,7 +269,7 @@
 					</div>
 				</p>
 			</details>
-			
+
 			<details>
 				<summary>Schritt 8</summary>
 				<p>
@@ -277,7 +278,7 @@
 					</div>
 				</p>
 			</details>
-			
+
 			<details>
 				<summary>Schritt 9</summary>
 				<p>
@@ -286,7 +287,7 @@
 					</div>
 				</p>
 			</details>
-			
+
 			<details>
 				<summary>Schritt 10</summary>
 				<p>
@@ -297,7 +298,7 @@
 			</details>
 			</label>
 		</div>
-			
+
 		<div class = "eingabe-schwierigkeitsgrad">
 			<label class="upload-text">Schwierigkeitsgrad:</label><br />
 
@@ -321,7 +322,7 @@
 			<!-- <form action="manage_uploads.php" method="post" enctype="multipart/form-data"> -->
 			<label class="upload-text">Bilder hochladen:</label></br>
 			<input id="image" name="image" type="file"><br/>
-			
+
 			<!--	<button>hochladen</button>
 			</form> -->
 		</div></br>
@@ -342,10 +343,10 @@
 				}
 			}
 		?>
-
+		</main>
 	</body>
 </html>
-</main>
+
 
 <?php
 	require('footer.php')

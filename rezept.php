@@ -10,19 +10,19 @@
 ?>
 
 <!DOCTYPE html>
-<main class="main_content_rezept">
 <html>
 	<head>
 		<title>Rezept anzeigen</title>
 		<meta charset="utf8" />
 	</head>
 	<body>
+		<main class="main_content_rezept">
 		<div class="rezept_Info">
 		<div class="rezept_header">
 			<h1><?php echo $row['RezeptName'] ?></h1> <h2>von  <?php echo $row['BenutzerName'] ?> </h2>
 			<?php echo ("Beschreibung: " . $row['Beschreibung']) ?></br>
 			<?php echo "<img  src='includes/uploads/" .$row['Bild']."'>"; ?>
-			
+
         </div>
         <div class="rezept-inhalt">
 		<form action="addFav.php" method="post">
@@ -41,7 +41,7 @@
 			<p>Dieses Rezept ist ausgelegt für <span id="ausgangsMenge"><?php echo $row['PortionenAnzahl'] ?></span> Personen</p>
 		</div>
 		<div class="row">
-		
+
 		<h2>Zutaten für <span id="neueMenge"><?php echo $row['PortionenAnzahl'] ?></span> Personen</h2><br />
 		<button class="#"  id="down">-</button> <br />
 		<button class="#"  id="up">+</button><br />
@@ -50,25 +50,25 @@
 			<?php
 				$zutaten = mysqli_query($con, "SELECT * FROM zutaten WHERE RezeptId = '$rezeptId'")
 					or die("Fehler: " . mysqli_error($con));
-				
+
 					$row2 = mysqli_fetch_array($zutaten);
-					echo ('<table>');		
+					echo ('<table>');
 					// prüfen, ob Feld leer und diese nicht ausgeben
 					$count = 1;
 					for ($count; $count <= 10; $count++){
 						if (empty($row2["Zutat{$count}"])) {
 							break;
 						} else {
-							
+
 							echo ('<tr>');
-					
+
 							echo('<td class="menge">' . $row2["Menge{$count}"] . '</td>');
 							echo('<td>' . $row2["Einheit{$count}"] . '</td>');
 							echo('<td>' . $row2["Zutat{$count}"] . '</td>');
-					
+
 							echo('</tr>');
-						
-							
+
+
 						}
 				}
 				echo ('</table>');
@@ -111,8 +111,8 @@
 				<button class="btn btn-success" onclick="window.print()">Rezept Drucken</button><br>
 			</div>
 		</div>
-		
-		<!-- Rezept Bewertung Content mit dem entsprechenden Formular --> 
+
+		<!-- Rezept Bewertung Content mit dem entsprechenden Formular -->
 		<div class="row">
 			<div class="col-lg-6 hide" id="div-bewertung">
 			<form  action="includes/bewertung.inc.php" method="post" class="login_area">
@@ -124,32 +124,32 @@
           </div>
           <div class="input-rezeptId">
             <input type="radio" id="ei" name="bewertungnote" value="1"> <strong>Sehr gut</strong>
-           
+
           </div>
           <div class="input-rezeptId">
-            
+
             <input type="radio" id="ei" name="bewertungnote" value="2"> <strong>Gut</strong>
-           
+
           </div>
           <div class="input-rezeptId">
-            
+
             <input type="radio" id="ei" name="bewertungnote" value="3"> <strong>Befriedigend</strong>
-            
+
           </div>
-          
+
           <div class="input-rezeptId">
-            
+
           <input type="radio" id="ei" name="bewertungnote" value="4"> <strong>Ausreichend</strong>
-            
+
           </div>
           <div class="input-rezeptId">
-            
+
           <input type="radio" id="ei" name="bewertungnote" value="5"> <strong>Mangelhaft</strong>
           </div>
           <div class="input-rezeptId">
-            
+
           <input type="radio" id="ei" name="bewertungnote" value="6"> <strong>Ungenügend</strong>
-            
+
           </div>
           <div class="login-button">
             <button class="login-button__btn" type="submit" name="bewertung-abgeben">Jetzt bewerten</button>
@@ -157,16 +157,16 @@
         </form>
 			</div>
 			<div class="col-lg-6">
-				<!-- Aktuell Leerer Bereich --> 
+				<!-- Aktuell Leerer Bereich -->
 			</div>
-		</div>		
+		</div>
 		</div>
 		<script src="main.js"></script>
-
+		</main>
     </body>
 
 </html>
-</main>
+
 <?php
     require('footer.php');
 ?>
