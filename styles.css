@@ -884,3 +884,10 @@ details[open] summary {
 .hide {
   display: none;
 }
+
+/*Bild auf der Über uns Seite*/
+.bild.jpg{
+	display: block;
+	width: 100%;
+	height: auto;
+}	
