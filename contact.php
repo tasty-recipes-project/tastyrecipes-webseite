@@ -40,7 +40,7 @@
 	</head>
 	
 	<body>
-		<h1>Ihr Kontakt zu Uns</h1>
+		<h1><center>Ihr Kontakt zu Uns</center></h1>
 		<p></p>
 		<p>Habt Ihr Fragen oder Anregungen oder Probleme, dann meldet euch unverbindlich über das Kontaktformular oder telefonisch.</p>
 		<p>Wir werden versuchen, euch so schnell wie möglich zu helfen.</p>
