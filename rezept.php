@@ -20,7 +20,9 @@
 		<div class="rezept_Info">
 		<div class="rezept_header">
 			<h1><?php echo $row['RezeptName'] ?></h1> <h2>von  <?php echo $row['BenutzerName'] ?> </h2>
+			<?php echo ("Beschreibung: " . $row['Beschreibung']) ?></br>
 			<?php echo "<img  src='includes/uploads/" .$row['Bild']."'>"; ?>
+			
         </div>
         <div class="rezept-inhalt">
 		<form action="addFav.php" method="post">
