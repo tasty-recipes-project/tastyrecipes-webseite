@@ -13,7 +13,7 @@
 		<main class="main_content">
 			<div class="aboutUS_content">
 				<div class="aboutUs_img">
-					<p><img id="bildaboutus" src="images/bild.jpg" width="100%"></p>
+					<p><center><img id="bildaboutus" src="images/bild.jpg" width="80%"></center></p>
 				</div>
 
 				<div class="aboutUs_info">
@@ -42,32 +42,36 @@
 						<div class="bild1">
 							<center>
 								<figure>
-									<img class="linksaboutus" src="images/bild.jpg" width="220" height="180" border="0" alt="Banner">
+									<img class="linksaboutus" src="images/bild2.jpg" width="220" height="180" border="0" alt="Banner">
 									<figcaption>Olivia Dornberger</figcaption>
+									<p>SEO&Geschäftsführung</p>
 								</figure>
 							</center>
 						</div>
 						<div class="bild2">
 							<center>
 								<figure>
-									<img class="linksaboutus" src="images/bild.jpg" width="220" height="180" border="0" alt="Banner">
+									<img class="linksaboutus" src="images/bild1.jpg" width="220" height="180" border="0" alt="Banner">
 									<figcaption>Florian Rabe</figcaption>
+									<p>SEO&Geschäftsführung</p>
 								</figure>
 							</center>
 						</div>
 						<div class="bild3">
 							<center>
 								<figure>
-									<img class="linksaboutus" src="images/bild.jpg" width="220" height="180" border="0" alt="Banner">
-									<figcaption>Patrick Nuhn</figcaption>
+									<img class="linksaboutus" src="images/bild4.jpg" width="220" height="180" border="0" alt="Banner">
+									<figcaption>Jonas Grafe</figcaption>
+									<p>SEO&Geschäftsführung</p>
 								</figure>
 							</center>
 						</div>
 						<div class="bild4">
 							<center>
 								<figure>
-									<img class="linksaboutus" src="images/bild.jpg" width="220" height="180" border="0" alt="Banner">
-									<figcaption>Jonas Grafe</figcaption>
+									<img class="linksaboutus" src="images/bild3.jpg" width="220" height="180" border="0" alt="Banner">
+									<figcaption>Patrick Nuhn</figcaption>
+									<p>SEO&Geschäftsführung</p>
 								</figure>
 							</center>
 						</div>
@@ -76,7 +80,6 @@
 		</main>
 	</body>
 </html>
-
 
 <?php
 	require('footer.php');
