@@ -20,6 +20,7 @@
     $rezeptBild = $_FILES['image']['name'];
     $kategorie = $_POST['kategorie'];
 
+    //Bilddatei in Ordner verschieben
     $target = "uploads/".basename($_FILES['image']['name']);
     if(move_uploaded_file($_FILES['image']['tmp_name'], $target)) {
 

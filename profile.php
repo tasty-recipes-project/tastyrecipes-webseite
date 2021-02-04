@@ -198,7 +198,7 @@
                                       <h5><i class='fas fa-pizza-slice'></i> <?php echo $row['Kategorie'] ?></h5>
                                     </td>
                                     <td class="myRecipes-data_right">
-                                      <input type="button" class="myRecipes-btn" name="edit_recipe" value="bearbeiten" onclick="window.location.href=''">
+                                      <input type="button" class="myRecipes-btn" name="edit_recipe" value="bearbeiten" onclick="window.location.href='Rezept-bearbeiten.php?rezeptID=<?php echo $row['RezeptId'] ?>'">
                                       <br><br>
                                       <input type="button" class="myRecipes-btn" name="edit_recipe" value="löschen" onclick="window.location.href='includes/edit.inc.php?rezeptID=<?php echo $row['RezeptId'] ?>&rezept=delete'">
                                     </td>

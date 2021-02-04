@@ -148,8 +148,6 @@
       }
       mysqli_stmt_close($stmt);
       mysqli_close($con);
-    } elseif (isset($_GET[''])) {
-      // code...
     }
   //Rezeptdaten ändern
   } elseif (isset($_GET['rezeptID'])) {
@@ -185,9 +183,37 @@
         //Datenbankverbindung trennen
         mysqli_stmt_close($stmt);
         mysqli_close($con);
-        
+
         //Weiterleitung auf Seite
         header("Location: ../profile.php?profile=MeineRezepte");
+
+      //Rezept bearbeiten
+      } elseif ($_GET['rezept'] == "edit") {
+        //Daten aus Formular ziehen
+        $rezeptname = $_POST['rezeptname'];
+        $rezeptdescr = $_POST['rezeptdescr'];
+        $kategorie = $_POST['kategorie'];
+        $portionen = $_POST['portionen'];
+        $difficulty = $_POST['Schwierigkeitsgrad'];
+        $dauer = $_POST['dauer'];
+        $rezeptBild = $_FILES['image']['name'];
+
+        //Überprüfen, ob Bild geändert werden soll oder nicht
+        if (empty($rezeptBild)) {
+          //Bild wird nicht geändert
+
+          //Überprüfen ob alle anderen Felder ausgefüllt sind
+          if (empty($rezeptname) || ($rezeptdescr) || empty($kategorie) || empty($portionen) || empty($difficulty) || empty($dauer)) {
+            //Errorhandling auf Bearbeiten Seite
+            header("Location: ../Rezept-bearbeiten.php?rezeptID=2&error=emptyfields");
+            exit();
+          } else {
+            //Daten in Datenbank speichern
+
+          }
+        } else {
+          //Bild wird geändert
+        }
       }
     }
   }
