@@ -26,43 +26,59 @@
         </div>
         <div class="rezept-inhalt">
 					<?php
-						//Überprüfen ob Rezept bereits zu Lieblingsrezepten hinzugefügt wurde
-						$sql = "SELECT * FROM favoriten WHERE BenutzerName = '$_SESSION[nameBenutzer]' AND RezeptId = '$rezeptId'";
-						$stmt = mysqli_stmt_init($con);
-						if (!mysqli_stmt_prepare($stmt, $sql)) {
-								//header("Location: ../profile.php?error=sqlerror");
-								exit();
+						//Überprüfen ob Benutzer angemeldet
+						if (!isset($_SESSION['nameBenutzer'])) {
+							//Option für Wunschliste ausblenden
+							?>
+							<form action="includes/addFav.inc.php?rezeptID=<?php echo $rezeptId ?>&fav=add&src=r" method="post">
+									<i class='fas fa-pizza-slice'></i> <?php echo $row['Kategorie'] ?> &nbsp;
+									<i class="far fa-clock"></i> <?php echo $row['Dauer'] ?> min &nbsp;
+									<i class="fas fa-signal"></i> <?php echo $row['Schwierigkeit'] ?>&nbsp;
+									</br>
+							</form>
+							<?php
 						} else {
-							mysqli_stmt_execute($stmt);
-							mysqli_stmt_store_result($stmt);
-							$result = mysqli_stmt_num_rows($stmt);
-
-							if ($result < 1) {
-								//Rezept ist nicht zu Lieblingsrezepten hinzugefügt
-								?>
-								<form action="includes/addFav.inc.php?rezeptID=<?php echo $rezeptId ?>&fav=add&src=r" method="post">
-						        <i class='fas fa-pizza-slice'></i> <?php echo $row['Kategorie'] ?> &nbsp;
-										<i class="far fa-clock"></i> <?php echo $row['Dauer'] ?> min &nbsp;
-										<i class="fas fa-signal"></i> <?php echo $row['Schwierigkeit'] ?>&nbsp;
-
-										<!--Rezept zu Lieblingsrezepten hinzufügen -->
-
-										<button type="submit" name="like-submit" class="like-btn"><i class="far fa-heart"></i> <span class="fav-recipe">zu Lieblingsrezepten hinzufügen</span> </button></br>
-								</form>
-								<?php
+							//Option mit Wunschliste anzeigen
+							//Überprüfen ob Rezept bereits zu Lieblingsrezepten hinzugefügt wurde
+							$sql = "SELECT * FROM favoriten WHERE BenutzerName = '$_SESSION[nameBenutzer]' AND RezeptId = '$rezeptId'";
+							$stmt = mysqli_stmt_init($con);
+							if (!mysqli_stmt_prepare($stmt, $sql)) {
+									//header("Location: ../profile.php?error=sqlerror");
+									exit();
 							} else {
-								//Rezept ist zu Lieblingsrezepten hinzugefügt
-								?>
-								<form action="includes/addFav.inc.php?rezeptID=<?php echo $rezeptId ?>&fav=del&src=r" method="post">
-						        <i class='fas fa-pizza-slice'></i> <?php echo $row['Kategorie'] ?> &nbsp;
-										<i class="far fa-clock"></i> <?php echo $row['Dauer'] ?> min &nbsp;
-										<i class="fas fa-signal"></i> <?php echo $row['Schwierigkeit'] ?>&nbsp;
+								mysqli_stmt_execute($stmt);
+								mysqli_stmt_store_result($stmt);
+								$result = mysqli_stmt_num_rows($stmt);
 
-										<!--Rezept zu Lieblingsrezepten hinzufügen -->
+								if ($result < 1) {
+									//Rezept ist nicht zu Lieblingsrezepten hinzugefügt
+									//Option anzeigen zu Lieblingsrezepten hinzufügen
+									?>
+									<form action="includes/addFav.inc.php?rezeptID=<?php echo $rezeptId ?>&fav=add&src=r" method="post">
+							        <i class='fas fa-pizza-slice'></i> <?php echo $row['Kategorie'] ?> &nbsp;
+											<i class="far fa-clock"></i> <?php echo $row['Dauer'] ?> min &nbsp;
+											<i class="fas fa-signal"></i> <?php echo $row['Schwierigkeit'] ?>&nbsp;
 
-										<button type="submit" name="like-submit" class="like-btn"><i class="fas fa-heart"></i> <span class="fav-recipe">aus Lieblingsrezepten entfernen</span> </button></br>
-								</form>
-								<?php
+											<!--Rezept zu Lieblingsrezepten hinzufügen -->
+
+											<button type="submit" name="like-submit" class="like-btn"><i class="far fa-heart"></i> <span class="fav-recipe">zu Lieblingsrezepten hinzufügen</span> </button></br>
+									</form>
+									<?php
+								} else {
+									//Rezept ist zu Lieblingsrezepten hinzugefügt
+									//Option anzeigen  aus Lieblingsrezepten entfernen
+									?>
+									<form action="includes/addFav.inc.php?rezeptID=<?php echo $rezeptId ?>&fav=del&src=r" method="post">
+							        <i class='fas fa-pizza-slice'></i> <?php echo $row['Kategorie'] ?> &nbsp;
+											<i class="far fa-clock"></i> <?php echo $row['Dauer'] ?> min &nbsp;
+											<i class="fas fa-signal"></i> <?php echo $row['Schwierigkeit'] ?>&nbsp;
+
+											<!--Rezept zu Lieblingsrezepten hinzufügen -->
+
+											<button type="submit" name="like-submit" class="like-btn"><i class="fas fa-heart"></i> <span class="fav-recipe">aus Lieblingsrezepten entfernen</span> </button></br>
+									</form>
+									<?php
+								}
 							}
 						}
 					?>
