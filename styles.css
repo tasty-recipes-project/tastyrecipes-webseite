@@ -487,37 +487,87 @@
 }
 
 
-/*CSS Slider */
-#slider {
+/*CSS Start Slider */
+
+.slider {
+  width: 1000px; 
+  height: 400px;
   overflow: hidden;
 }
 
-#slider figure {
+.mittig {
   position: relative;
-  width: 500%;
-  margin: 0;
-  left: 0;
-  animation: 20s slider infinite;
+  margin-top: 15em;
+  left: 50%;
+  width: 1000px;
+  height: 400px;
+  transform: translate(-50%, -50%);
+
 }
 
-#slider figure img {
-  width: 20%;
-  float: left;
+.navigation{
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex; 
 }
 
-@keyframes slider {
-   0% {
-     left: 0;
-   }
-
-   20% {
-     left: 0;
-   }
-
-   25% {
-     left: -100%;
-   }
+.downbar{
+  width: 50px;
+  height: 10px;
+  border: 2px solid white; 
+  margin: 6px; 
+  cursor: pointer; 
+  transition: 0.4s; 
 }
+
+.downbar:hover{
+  background: white 
+}
+
+input[name="radio"] {
+  position: absolute; 
+  visibility: hidden;
+}
+
+.slides {
+  width: 500%; 
+  height: 100%; 
+  display: flex; 
+}
+
+.slide {
+  width: 20%; 
+  transition: 0.6s; 
+}
+
+.slide img {
+  width: 100%;
+  height: 100%; 
+}
+
+#radio1:checked ~ .s1 {
+  margin-left: 0;
+}
+
+#radio2:checked ~ .s1 {
+  margin-left: -20%;
+}
+
+#radio3:checked ~ .s1 {
+  margin-left: -40%;
+}
+
+#radio4:checked ~ .s1 {
+  margin-left: -60%;
+}
+
+#radio5:checked ~ .s1 {
+  margin-left: -80%;
+}
+
+/* CSS Slider Startseite Ende */
 
 
 /*Was kochen Bereich */

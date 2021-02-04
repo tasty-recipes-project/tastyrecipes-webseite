@@ -3,14 +3,28 @@
     require('includes/dbc.inc.php');
     $rezeptId = $_GET["rezept"];
 
+	//Hole Informationen aus Tabelle Rezepte
     $ersteller = mysqli_query($con, "SELECT * FROM rezepte WHERE RezeptId = '$rezeptId'")
         or die("Fehler: " . mysqli_error($con));
         $row = mysqli_fetch_array($ersteller);
-            //Ausgabebereich für Rezepte
+	
+	//Hole Informationen aus Tabelle Bewertung
+	$bewertung = mysqli_query($con, "SELECT * FROM bewertung WHERE RezeptId = '$rezeptId'")
+        or die("Fehler: " . mysqli_error($con));
+        $row2 = mysqli_fetch_array($bewertung);
+			
+		$bewertung2 = mysqli_query($con, "SELECT BewertungDurchschnitt FROM bewertung WHERE RezeptId = '$rezeptId'")
+        or die("Fehler: " . mysqli_error($con));
+        $row3 = mysqli_fetch_row($bewertung2); 
+		
+		$row3[0] = (float)$row3[0];
+		
 ?>
 
+<!-- Ausgabebereich für Rezepte --> 
 <!DOCTYPE html>
 <html>
+
 	<head>
 		<title>Rezept anzeigen</title>
 		<meta charset="utf8" />
@@ -19,8 +33,12 @@
 		<main class="main_content_rezept">
 		<div class="rezept_Info">
 		<div class="rezept_header">
+
+	
 			<h1><?php echo $row['RezeptName'] ?></h1> <h2>von  <?php echo $row['BenutzerName'] ?> </h2>
 			<?php echo ("Beschreibung: " . $row['Beschreibung']) ?></br>
+			<?php echo ("Durchschnittsbewertung: " . round($row3[0], 2))?></br>
+			<?php echo ("Dieses Rezept hat aktuell " . $row2['AnzahlBewertung'] . " Bewertungen")?></br>
 			<?php echo "<img  src='includes/uploads/" .$row['Bild']."'>"; ?>
 
         </div>

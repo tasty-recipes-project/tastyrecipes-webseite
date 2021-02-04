@@ -32,7 +32,6 @@
                                     
                                     //Teaser Informationen über das Gericht
                                         echo '<div class="card-body">';
-                                            echo('<p><b>RezeptId:</b> ' . $row['RezeptId'] . '</p>');
                                             echo('<p><h3>RezeptName: ' . $row['RezeptName'] . '</h3></p>');
                                             echo('<p><b>Ersteller:</b> ' . $row['BenutzerName'] . '</p>');
                                             echo('<p class="duration"><b>Dauer:</b> ' . $row['Dauer'] . ' Minuten</p>');

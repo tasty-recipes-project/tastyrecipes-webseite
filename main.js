@@ -19,7 +19,9 @@ window.addEventListener("load", function() {
           //Berechne alles in der ZutatenListe    
           for (let i = 0; i < menge.length; i++) {
              menge[i].innerHTML = menge[i].innerHTML / ausgangsMenge.innerHTML * neueMenge.innerHTML;
+             
           }
+          ausgangsMenge.innerHTML++;
         })
 
         buttonDown.addEventListener("click", function() {
@@ -28,6 +30,7 @@ window.addEventListener("load", function() {
           for (let i = 0; i < menge.length; i++) {
              menge[i].innerHTML = menge[i].innerHTML / ausgangsMenge.innerHTML * neueMenge.innerHTML; 
           }
+          ausgangsMenge.innerHTML--;
         })
 
         let buttonRezeptBewertung = document.getElementById("rezept-bewertung");
@@ -36,6 +39,6 @@ window.addEventListener("load", function() {
             let divBewertung = document.getElementById("div-bewertung");
             divBewertung.classList.toggle("hide");
         })
-     
+  
     
     }, false);
