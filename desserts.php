@@ -22,7 +22,7 @@
 
 
                 //Ausgabebereich für Rezepte
-                    echo '<div class="recipe-container"';
+                    echo '<div class="dessert-container"';
                             echo '<div class="row">';
                                 echo '<div class="col-lg-6">';
                                     echo '<div class="card">';

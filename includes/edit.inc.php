@@ -168,6 +168,14 @@
         }
 
         //Daten aus Tabelle zutaten löschen
+        $sql = "DELETE FROM zutaten WHERE RezeptId = '$rezeptID'";
+        $stmt = mysqli_stmt_init($con);
+        if (!mysqli_stmt_prepare($stmt, $sql)) {
+            exit();
+        }
+        else {
+          mysqli_stmt_execute($stmt);
+        }
 
         //Daten aus Tabelle steps löschen
         $sql = "DELETE FROM steps WHERE RezeptId = '$rezeptID'";
@@ -179,6 +187,14 @@
           mysqli_stmt_execute($stmt);
         }
         //Daten aus Tabelle favoriten löschen
+        $sql = "DELETE FROM favoriten WHERE RezeptId = '$rezeptID'";
+        $stmt = mysqli_stmt_init($con);
+        if (!mysqli_stmt_prepare($stmt, $sql)) {
+            exit();
+        }
+        else {
+          mysqli_stmt_execute($stmt);
+        }
 
         //Datenbankverbindung trennen
         mysqli_stmt_close($stmt);
@@ -203,16 +219,53 @@
           //Bild wird nicht geändert
 
           //Überprüfen ob alle anderen Felder ausgefüllt sind
-          if (empty($rezeptname) || ($rezeptdescr) || empty($kategorie) || empty($portionen) || empty($difficulty) || empty($dauer)) {
+          if (empty($rezeptname) || empty($rezeptdescr) || empty($kategorie) || empty($portionen) || empty($difficulty) || empty($dauer)) {
             //Errorhandling auf Bearbeiten Seite
-            header("Location: ../Rezept-bearbeiten.php?rezeptID=2&error=emptyfields");
+            header("Location: ../Rezept-bearbeiten.php?rezeptID=$rezeptID&error=emptyfields");
             exit();
           } else {
             //Daten in Datenbank speichern
-
+            $sql = "UPDATE rezepte SET RezeptName = '$rezeptname', Beschreibung = '$rezeptdescr', PortionenAnzahl = '$portionen', Schwierigkeit = '$difficulty', Dauer = '$dauer', Kategorie = '$kategorie' WHERE RezeptId = '$rezeptID'";
+            $stmt = mysqli_stmt_init($con);
+            if (!mysqli_stmt_prepare($stmt, $sql)) {
+                header("Location: ../Rezept-bearbeiten.php?rezeptID=$rezeptID&error=sqlerror");
+                exit();
+            }
+            else {
+              mysqli_stmt_execute($stmt);
+            }
+            //Weiterleitung auf Profilseite für Rezepte
+            header("Location: ../profile.php?profile=MeineRezepte");
           }
         } else {
           //Bild wird geändert
+          $target = "uploads/".basename($_FILES['image']['name']);
+          if(move_uploaded_file($_FILES['image']['tmp_name'], $target)) {
+
+              $nachricht = "Das Bild wurde erfolgreich hochgeladen";
+
+          } else {
+              $nachricht = "Ein Problem ist aufgetreten";
+          }
+
+          if (empty($rezeptname) || empty($rezeptdescr) || empty($kategorie) || empty($portionen) || empty($difficulty) || empty($dauer) || empty($rezeptBild)) {
+            //Errorhandling auf Bearbeiten Seite
+            header("Location: ../Rezept-bearbeiten.php?rezeptID=$rezeptID&error=emptyfields");
+            exit();
+          } else {
+            //Daten in Datenbank speichern
+            $sql = "UPDATE rezepte SET RezeptName = '$rezeptname', Beschreibung = '$rezeptdescr', PortionenAnzahl = '$portionen', Schwierigkeit = '$difficulty', Dauer = '$dauer', Bild = '$rezeptBild', Kategorie = '$kategorie' WHERE RezeptId = '$rezeptID'";
+            $stmt = mysqli_stmt_init($con);
+            if (!mysqli_stmt_prepare($stmt, $sql)) {
+                header("Location: ../Rezept-bearbeiten.php?rezeptID=$rezeptID&error=sqlerror");
+                exit();
+            }
+            else {
+              mysqli_stmt_execute($stmt);
+            }
+            //Weiterleitung auf Profilseite für Rezepte
+            header("Location: ../profile.php?profile=MeineRezepte");
+          }
         }
       }
     }

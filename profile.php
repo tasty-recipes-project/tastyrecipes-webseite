@@ -183,9 +183,9 @@
                               <div class="recipe-container">
                                 <table class="myRecipes">
                                   <tr class="myRecipes-row">
-                                    <th> <h3><?php echo $row['RezeptName'] ?></h3> </th>
+                                    <th> <h3> <a class="show_recipe" href="rezept.php?rezept=<?php echo $row['RezeptId'] ?>"><?php echo $row['RezeptName'] ?></a></h3> </th>
                                     <th></th>
-                                    <th></th>
+                                    <th><input type="button" class="myRecipes-btn" name="edit_recipe" value="zum Rezept" onclick="window.location.href='rezept.php?rezept=<?php echo $row['RezeptId'] ?>'"></th>
                                   </tr>
                                   <tr class="myRecipes-row">
                                     <td class="myRecipes-data_left"> <img src="includes/uploads/<?php echo $row['Bild'] ?>" alt="" style="width:250px; height:200px;"> </td>
@@ -254,7 +254,7 @@
                                   <tr class="myRecipes-row">
                                     <th> <h3><?php echo $row['RezeptName'] ?></h3> </th>
                                     <th></th>
-                                    <th></th>
+                                    <th><input type="button" class="myRecipes-btn" name="edit_recipe" value="zum Rezept" onclick="window.location.href='rezept.php?rezept=<?php echo $row['RezeptId'] ?>'"></th>
                                   </tr>
                                   <tr class="myRecipes-row">
                                     <td class="myRecipes-data_left"> <img src="includes/uploads/<?php echo $row['Bild'] ?>" alt="" style="width:250px; height:200px;"> </td>
