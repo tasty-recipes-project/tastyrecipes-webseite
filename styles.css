@@ -938,6 +938,10 @@ details[open] summary {
   margin-left: 20px;
 }
 
+.rezept_image {
+  min-width: 300px;
+}
+
 
 /*Rezept bewerten*/
 

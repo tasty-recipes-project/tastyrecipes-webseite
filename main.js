@@ -19,7 +19,6 @@ window.addEventListener("load", function() {
           //Berechne alles in der ZutatenListe    
           for (let i = 0; i < menge.length; i++) {
              menge[i].innerHTML = menge[i].innerHTML / ausgangsMenge.innerHTML * neueMenge.innerHTML;
-             
           }
           ausgangsMenge.innerHTML++;
         })

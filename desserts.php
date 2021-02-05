@@ -10,7 +10,7 @@
             <h2>Desserts</h2>
                 <hr class="hr_black">
 
-                <!-- Hier sollen die Inhalte der Rezept Datenbank ausgegeben werden -->
+                <!-- Hier sollen die Inhalte der Rezept Tablle ausgegeben werden -->
                 <?php
                     require('includes/dbc.inc.php');
 
@@ -28,10 +28,10 @@
                                     echo '<div class="card">';
 
                                     //Bild Section im Card Header
-                                        echo "<img  src='includes/uploads/" .$row['Bild']."'>";
+                                        echo "<img class='rezept_image' src='includes/uploads/" .$row['Bild']."'>";
 
                                     //Teaser Informationen über das Gericht
-                                        echo '<div class="card-body">';
+                                        echo '<div class="card-body rezept_image">';
                                             echo('<p><h3>RezeptName: ' . $row['RezeptName'] . '</h3></p>');
                                             echo('<p><b>Ersteller:</b> ' . $row['BenutzerName'] . '</p>');
                                             echo('<p class="duration"><b>Dauer:</b> ' . $row['Dauer'] . ' Minuten</p>');
