@@ -567,59 +567,24 @@ input[name="radio"] {
   margin-left: -80%;
 }
 
+.slider {
+  border: 2px solid green; 
+}
+
 /* CSS Slider Startseite Ende */
 
-
-/*Was kochen Bereich */
-.waskochen {
-    font-family: 'Roboto', arial, sans-serif;
+.kat_container {
+  border: 2px solid green; 
 }
 
-.kat1 h2 {
-    text-align: center;
-    font-family: 'Roboto', arial, sans-serif;
+.cart {
+  min-height: 400px ;
 }
 
-.kat1 img {
-    max-width: 90%;
-    max-height: 90%;
-}
 
-.kat2 img {
-    max-width: 90%;
-    max-height: 90%;
-}
 
-.kat3 img {
-    max-width: 90%;
-    max-height: 90%;
-}
 
-.kat2 h2 {
-    text-align: center;
-    font-family: 'Roboto', arial, sans-serif;
-}
 
-.kat3 h2 {
-    text-align: center;
-    font-family: 'Roboto', arial, sans-serif;
-}
-
-.kategorien {
-    width: 100%;
-    background: linear-gradient(60deg, green, yellowgreen);
-    text-align: center;
-    margin: 0px;
-    font-family: 'Roboto', arial, sans-serif;
-}
-
-.waskochen_button {
-    margin-top: 20px;
-    width: 60%;
-    background-color: green;
-    color: white;
-    border-radius: 10px;
-}
 
 /* Beginn Profilbereich */
 

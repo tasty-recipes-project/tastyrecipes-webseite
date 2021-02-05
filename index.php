@@ -16,6 +16,10 @@
 	$rezept3 = mysqli_query($con, "SELECT * FROM rezepte ORDER BY RAND() LIMIT 1")
         or die("Fehler: " . mysqli_error($con));
         $row3 = mysqli_fetch_array($rezept3);
+
+    $katVorspeise = mysqli_query($con, "SELECT * FROM rezepte WHERE Kategorie='vorspeise' ORDER BY RAND() LIMIT 1 ")
+    or die("Fehler: " . mysqli_error($con));
+        $vorspeise = mysqli_fetch_array($katVorspeise);
 ?>
 
 <main class="main_content">
@@ -40,16 +44,16 @@
             <img src="includes/uploads/SchinkenNudeln.jpg" alt="">
         </div>
         <div class="slide">
-        <img src="includes/uploads/MangoMousse.jpg" alt="">
+            <img src="includes/uploads/MangoMousse.jpg" alt="">
         </div>
         <div class="slide">
-        <img src="includes/uploads/Hackbällchen.jpg" alt="">
+            <img src="includes/uploads/Hackbällchen.jpg" alt="">
         </div>
         <div class="slide">
-        <img src="includes/uploads/Gulaschsuppe.jpg" alt="">
+            <img src="includes/uploads/Gulaschsuppe.jpg" alt="">
         </div>
         <div class="slide">
-        <img src="includes/uploads/Bananenbrot.jpg" alt="">
+            <img src="includes/uploads/Bananenbrot.jpg" alt="">
         </div>
     </div>  
 
@@ -65,31 +69,43 @@
 
 
         <!-- Was koche ich Section -->
-    <div class="row">
-        <div class="col-lg-12">
-            <h2>Was koche ich heute?</h2>
-                <hr class="hr_black">
-        </div>
+<div class="row">
+    <div class="col-lg-12">
+        <h2>Was koche ich heute?</h2>
+            <hr class="hr_black">
     </div>
+</div>
 
 
-    <div class="row kategorien">
-        <div class="col-lg-4 kat1">
-            <h2>Vorspeise</h2>
-            <img src="images/vorkat1.jpg" /></br>
-            <button onclick="window.location.href='vorspeisen.php'" class="waskochen_button">Zum Rezept</button>
+    <div class="row kat_container"> 
+        <div class="col-lg-4">
+            <div class="card">
+            <h3>Vorspeise</h3>
+            <?php echo "<img  src='includes/uploads/" .$vorspeise['Bild']."'>"; ?>
+                <div class="card-body">
+                <?php echo('<a href="rezept.php?rezept='. $vorspeise['RezeptId'] . ' " class="btn btn-success">Mehr erfahren</a>'); ?>
+                </div>
+            </div>
         </div>
 
-        <div class="col-lg-4 kat2">
-                <h2>Hauptgang</h2>
-                <img src="images/hauptkat2.jpg" /></br>
-                <button onclick="window.location.href='haupspeisen.php'" class="waskochen_button">Zum Rezept</button>
+        <div class="col-lg-4">
+            <div class="card">
+            <h3>Hauptspeise</h3>
+                <img src="includes/uploads/SchinkenNudeln.jpg" alt="">
+                <div class="card-body">
+                <button class="button_kat" onclick="window.location.href='hauptspeisen.php'" class="waskochen_button">Zum Rezept</button>
+                </div>   
+            </div>
         </div>
                         
-        <div class="col-lg-4 kat3">
-            <h2>Dessert</h2>
-                <img src="images/dessertkat3.jpg" /><br>
-                <button src="desserts.php" class="waskochen_button">Zum Rezept</button>
+        <div class="col-lg-4">
+            <div class="card">
+            <h3>Dessert</h3>
+                <img src="includes/uploads/MangoMousse.jpg" alt="">
+                <div class="card-body">
+                <button class="button_kat" onclick="window.location.href='desserts.php'" class="waskochen_button">Zum Rezept</button>
+                </div>
+            </div>
         </div>
     </div>
     
