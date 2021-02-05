@@ -986,3 +986,51 @@ details[open] summary {
 .linksaboutus {
   align-self: center;
 }
+
+/*Styles für die Partnerseite*/
+details {
+  border: 1px solid gainsboro;
+  grid-column: 2 / 3;
+  height: min-content;
+  transition: all .5s;
+  border: thin solid;
+}
+
+summary {
+  padding-left: 1em;
+  position: relative;
+  line-height: 300%;
+  background: green;
+}
+
+summary::marker {
+   color: transparent;
+}
+
+summary::after {
+   content:  "+"; 
+   color: yellow;
+   font-size: 2em;
+   font-weight: bold; 
+   right: 1em;
+   transition: all 0.5s;
+   animation: sliding 1s forwards;
+} 
+
+details[open] summary::after {
+ color: red;
+ transform: scale(1,-1);
+ padding-left: 1em;
+}
+
+details[open] summary {
+  background: green;
+  margin-bottom: 1em;
+  background: #ccffe6;
+  border-width: 2px;
+  margin-left: 2px;
+}
+
+h1 {
+  grid-column: 1 / -1;
+}
