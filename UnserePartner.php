@@ -7,7 +7,7 @@
 	<head>
 		<title>Unsere Partner</title>
 		<meta charset="utf-8">
-        <link link rel="stylesheet" href="styles.css">
+        <link link rel="stylesheet" href="partner.css">
 	</head>
 	
 	<body>
