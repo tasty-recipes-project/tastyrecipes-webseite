@@ -69,6 +69,7 @@
                       </li>
                       <li class="menu-li"><a class="menu-li-a" href="aboutUs.php">Über uns</a></li>
                       <li class="menu-li"><a class="menu-li-a" href="contact.php">Kontakt</a></li>
+                      <li class="menu-li"><a class="menu-li-a" href="UnserePartner.php">Partner</a></li>
                       <?php
                           if (isset($_SESSION['nameBenutzer'])) {
                             ?>
