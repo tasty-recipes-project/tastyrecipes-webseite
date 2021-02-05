@@ -17,9 +17,18 @@
         or die("Fehler: " . mysqli_error($con));
         $row3 = mysqli_fetch_array($rezept3);
 
+    //Abfrage aus der Tabelle Rezepte für zufällige Ausgabe der Bilder im Bereich Was koche ich heute //
     $katVorspeise = mysqli_query($con, "SELECT * FROM rezepte WHERE Kategorie='vorspeise' ORDER BY RAND() LIMIT 1 ")
     or die("Fehler: " . mysqli_error($con));
         $vorspeise = mysqli_fetch_array($katVorspeise);
+
+    $katHauptspeise = mysqli_query($con, "SELECT * FROM rezepte WHERE Kategorie='hauptspeise' ORDER BY RAND() LIMIT 1 ")
+    or die("Fehler: " . mysqli_error($con));
+        $hauptspeise = mysqli_fetch_array($katHauptspeise);
+
+    $katDessert = mysqli_query($con, "SELECT * FROM rezepte WHERE Kategorie='dessert' ORDER BY RAND() LIMIT 1 ")
+    or die("Fehler: " . mysqli_error($con));
+        $dessert = mysqli_fetch_array($katDessert);
 ?>
 
 <main class="main_content">
@@ -91,9 +100,9 @@
         <div class="col-lg-4">
             <div class="card">
             <h3>Hauptspeise</h3>
-                <img src="includes/uploads/SchinkenNudeln.jpg" alt="">
+            <?php echo "<img  src='includes/uploads/" .$hauptspeise['Bild']."'>"; ?>
                 <div class="card-body">
-                <button class="button_kat" onclick="window.location.href='hauptspeisen.php'" class="waskochen_button">Zum Rezept</button>
+                <?php echo('<a href="rezept.php?rezept='. $hauptspeise['RezeptId'] . ' " class="btn btn-success">Mehr erfahren</a>'); ?>
                 </div>   
             </div>
         </div>
@@ -101,9 +110,9 @@
         <div class="col-lg-4">
             <div class="card">
             <h3>Dessert</h3>
-                <img src="includes/uploads/MangoMousse.jpg" alt="">
+            <?php echo "<img  src='includes/uploads/" .$dessert['Bild']."'>"; ?>
                 <div class="card-body">
-                <button class="button_kat" onclick="window.location.href='desserts.php'" class="waskochen_button">Zum Rezept</button>
+                <?php echo('<a href="rezept.php?rezept='. $dessert['RezeptId'] . ' " class="btn btn-success">Mehr erfahren</a>'); ?>
                 </div>
             </div>
         </div>

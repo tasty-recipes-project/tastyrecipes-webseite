@@ -109,10 +109,11 @@
 		</div>
 		<div class="row">
 
-		<h2>Zutaten für <span id="neueMenge"><?php echo $row['PortionenAnzahl'] ?></span> Personen</h2><br />
-		<button class="#"  id="down">-</button> <br />
-		<button class="#"  id="up">+</button><br />
-		<h2>jetzt berechnen</h2>
+		<h2>Zutaten für <span id="neueMenge"><?php echo $row['PortionenAnzahl'] ?></span> Personen jetzt berechnen</h2>
+		</div>
+		<div class="row">
+			<span class="button_rechner"><button class="btn btn-success"  id="down">-</button></span>
+			<span class="button_rechner"><button class="btn btn-success"  id="up">+</button></span>
 		</div>
 			<?php
 				$zutaten = mysqli_query($con, "SELECT * FROM zutaten WHERE RezeptId = '$rezeptId'")

@@ -311,9 +311,9 @@
 		</div>
 
 		<div class = "eingabe-dauer">
-			<label for="time" class="upload-text">Zubereitungsdauer:</br>
+			<label for="time" class="upload-text">Zubereitungsdauer in Minuten:</br>
 				<label class = "eingabe-portionen">
-				<input class="input-rezeptname__feld" size="1" id="time" type="number" name="dauer" min="0" step="1" value="0">min<br />
+				<input class="input-rezeptname__feld" size="1" id="time" type="number" name="dauer" min="0" step="1" value="0"><br />
 				</label>
 			</label>
 		</div>

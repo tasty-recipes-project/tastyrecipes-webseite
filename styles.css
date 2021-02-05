@@ -573,13 +573,13 @@ input[name="radio"] {
 
 /* CSS Slider Startseite Ende */
 
+/*Was kochen Bereich */
+
 .kat_container {
   border: 2px solid green; 
 }
 
-.cart {
-  min-height: 400px ;
-}
+/*Was kochen Bereich Ende*/
 
 
 
@@ -906,6 +906,9 @@ details[open] summary {
   text-shadow: 0 -1px 1px #666666, 0 1px 1px #FFFFFF;
 }
 
+.button_rechner {
+  margin-left: 20px;
+}
 
 
 /*Rezept bewerten*/

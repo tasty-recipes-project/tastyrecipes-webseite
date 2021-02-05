@@ -43,7 +43,7 @@
 		<h1><center>Ihr Kontakt zu Uns</center></h1>
 		<p></p>
 		<p><center>Habt Ihr Fragen oder Anregungen oder Probleme, dann meldet euch unverbindlich über das Kontaktformular oder telefonisch.</center></p>
-		<p>Wir werden versuchen, euch so schnell wie möglich zu helfen.</p>
+		<p><center>Wir werden versuchen, euch so schnell wie möglich zu helfen.</center></p>
 		<p></p>
 		<div id="kontaktformular">
 		<?php if(isset($success)){
