@@ -190,12 +190,19 @@
                                   <tr class="myRecipes-row">
                                     <td class="myRecipes-data_left"> <img src="includes/uploads/<?php echo $row['Bild'] ?>" alt="" style="width:250px; height:200px;"> </td>
                                     <td class="myRecipes-data_middle">
-                                      <h5>Beschreibung:</h5>
-                                        <?php echo $row['Beschreibung'] ?>
+                                      <div class="myRecipes-data_middle-top">
+                                        <h4>Beschreibung:</h4>
+                                        <label class="myData"><?php echo $row['Beschreibung'] ?></label>
                                         <br><br>
-                                        <h5><i class="fas fa-signal"></i> <?php echo $row['Schwierigkeit'] ?></h5>
-                                        <br>
-                                      <h5><i class='fas fa-pizza-slice'></i> <?php echo $row['Kategorie'] ?></h5>
+                                      </div>
+                                      <div class="myRecipes-data_middle-bottom">
+                                        <div class="myRecipes-attr">
+                                          <h6><i class="fas fa-signal"></i> <?php echo $row['Schwierigkeit'] ?></h6>
+                                        </div>
+                                        <div class="myRecipes-attr">
+                                          <h6><i class='fas fa-pizza-slice'></i> <?php echo $row['Kategorie'] ?></h6>
+                                        </div>
+                                      </div>
                                     </td>
                                     <td class="myRecipes-data_right">
                                       <input type="button" class="myRecipes-btn" name="edit_recipe" value="bearbeiten" onclick="window.location.href='Rezept-bearbeiten.php?rezeptID=<?php echo $row['RezeptId'] ?>'">
@@ -259,12 +266,19 @@
                                   <tr class="myRecipes-row">
                                     <td class="myRecipes-data_left"> <img src="includes/uploads/<?php echo $row['Bild'] ?>" alt="" style="width:250px; height:200px;"> </td>
                                     <td class="myRecipes-data_middle">
-                                      <h5>Beschreibung:</h5>
-                                        <?php echo $row['Beschreibung'] ?>
+                                      <div class="myRecipes-data_middle-top">
+                                        <h4>Beschreibung:</h4>
+                                        <label class="myData"><?php echo $row['Beschreibung'] ?></label>
                                         <br><br>
-                                        <h5><i class="fas fa-signal"></i> <?php echo $row['Schwierigkeit'] ?></h5>
-                                        <br>
-                                      <h5><i class='fas fa-pizza-slice'></i> <?php echo $row['Kategorie'] ?></h5>
+                                      </div>
+                                      <div class="myRecipes-data_middle-bottom">
+                                        <div class="myRecipes-attr">
+                                          <h6><i class="fas fa-signal"></i> <?php echo $row['Schwierigkeit'] ?></h6>
+                                        </div>
+                                        <div class="myRecipes-attr">
+                                          <h6><i class='fas fa-pizza-slice'></i> <?php echo $row['Kategorie'] ?></h6>
+                                        </div>
+                                      </div>
                                     </td>
                                     <td class="myRecipes-data_right">
                                       <input type="button" class="myRecipes-btn" name="edit_recipe" value="entfernen" onclick="window.location.href='includes/addFav.inc.php?rezeptID=<?php echo $row['RezeptId'] ?>&fav=del&src=p'">

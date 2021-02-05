@@ -723,7 +723,6 @@ input[name="radio"] {
 
 .show_recipe:hover {
   color: green;
-  text-decoration: none;
 }
 
 .myData_upload {
@@ -769,16 +768,34 @@ input[name="radio"] {
 
 .myRecipes-data_middle {
   vertical-align: text-top;
+  height: 80%;
   width: 50%;
   padding: 10px;
   border: 0;
 }
 
+.myRecipes-data_middle-top {
+  height: 100%;
+}
+
+.myRecipes-data_middle-bottom {
+  vertical-align: bottom;
+  width: 100%;
+  height: 20%;
+}
+
+.myRecipes-attr {
+  
+  width: 50%;
+  float: left;
+}
+
 .myRecipes-data_right {
   width: 15%;
   padding: 5px;
+  padding-bottom: 20px;
   border: 0;
-  text-align: justify;
+  vertical-align: bottom;
 }
 
 .myRecipes-btn {
