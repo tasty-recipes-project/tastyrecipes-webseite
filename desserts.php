@@ -3,8 +3,6 @@
 ?>
 
 <main class="main_content">
-
-
     <div class="row">
         <div class="col-lg-12">
             <h2>Desserts</h2>
@@ -13,43 +11,31 @@
                 <!-- Hier sollen die Inhalte der Rezept Tablle ausgegeben werden -->
                 <?php
                     require('includes/dbc.inc.php');
-
-                    $rezeptTeaserInfo = mysqli_query($con, "SELECT * FROM rezepte WHERE Kategorie = 'dessert'")
+                    $rezeptTeaserInfoLeft = mysqli_query($con, "SELECT * FROM rezepte WHERE Kategorie = 'dessert'")
                         or die("Fehler: " . mysqli_error($con));
 
-                        while ($row = mysqli_fetch_array($rezeptTeaserInfo))
+
+                    while ($colleft = mysqli_fetch_array($rezeptTeaserInfoLeft))
                         {
-
-
-                //Ausgabebereich für Rezepte
-                    echo '<div class="dessert-container"';
-                            echo '<div class="row">';
-                                echo '<div class="col-lg-6">';
-                                    echo '<div class="card">';
-
+                            //Ausgabebereich für Rezepte
+                        echo '<div class="row">';
+                            echo '<div class="col-lg-6">';
+                                echo '<div class="card">';
                                     //Bild Section im Card Header
-                                        echo "<img class='rezept_image' src='includes/uploads/" .$row['Bild']."'>";
-
-                                    //Teaser Informationen über das Gericht
+                                    echo "<img class='rezept_image' src='includes/uploads/" .$colleft['Bild']."'>";
+                                        //Teaser Informationen über das Gericht
                                         echo '<div class="card-body rezept_image">';
-                                            echo('<p><h3>RezeptName: ' . $row['RezeptName'] . '</h3></p>');
-                                            echo('<p><b>Ersteller:</b> ' . $row['BenutzerName'] . '</p>');
-                                            echo('<p class="duration"><b>Dauer:</b> ' . $row['Dauer'] . ' Minuten</p>');
-                                            echo('<p class="duration"><b>Schwierigkeitsgrad:</b> ' . $row['Schwierigkeit'] . '</p>');
-                                            echo('<a href="rezept.php?rezept='. $row['RezeptId'] . ' " class="btn btn-success">Mehr erfahren</a>');
+                                            echo('<p><h3>RezeptName: ' . $colleft['RezeptName'] . '</h3></p>');
+                                            echo('<p><b>Ersteller:</b> ' . $colleft['BenutzerName'] . '</p>');
+                                            echo('<p class="duration"><b>Dauer:</b> ' . $colleft['Dauer'] . ' Minuten</p>');
+                                            echo('<p class="duration"><b>Schwierigkeitsgrad:</b> ' . $colleft['Schwierigkeit'] . '</p>');
+                                            echo('<a href="rezept.php?rezept='. $colleft['RezeptId'] . ' " class="btn btn-success">Mehr erfahren</a>');
                                         echo '</div>';
                                     echo '</div>';
                                 echo '</div>';
-
-
-
                             echo '</div>';
-                    echo '</div>';
-
                     }
                 ?>
-
-
         </div>
     </div>
 </main>

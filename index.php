@@ -32,15 +32,15 @@
 ?>
 
 <main class="main_content">
-    <!-- Header Section -->
+    <!-- Slider Header Section -->
     <div class="row">
         <div class="col-lg-12">
-            <h2>Unsere besten Jeder Kategorie</h2>
+            <h2>Einige Unserer Rezepte</h2>
                 <hr class="hr_black">
         </div>
     </div>
 
-            <!-- Slider Section --> 
+    <!-- Slider Section --> 
 
 <div class="slider mittig">
     <div class="slides">
@@ -77,7 +77,7 @@
 
 
 
-        <!-- Was koche ich Section -->
+        <!-- Was koche ich Section Header -->
 <div class="row">
     <div class="col-lg-12">
         <h2>Was koche ich heute?</h2>
@@ -85,12 +85,12 @@
     </div>
 </div>
 
-
+    <!-- Was koche ich Section Content --> 
     <div class="row kat_container"> 
         <div class="col-lg-4">
             <div class="card">
             <h3>Vorspeise</h3>
-            <?php echo "<img  src='includes/uploads/" .$vorspeise['Bild']."'>"; ?>
+            <?php echo "<img  src='includes/uploads/" .$vorspeise['Bild']."' height='400px' width='400px'>"; ?>
                 <div class="card-body">
                 <?php echo('<a href="rezept.php?rezept='. $vorspeise['RezeptId'] . ' " class="btn btn-success">Mehr erfahren</a>'); ?>
                 </div>
@@ -100,7 +100,7 @@
         <div class="col-lg-4">
             <div class="card">
             <h3>Hauptspeise</h3>
-            <?php echo "<img  src='includes/uploads/" .$hauptspeise['Bild']."'>"; ?>
+            <?php echo "<img  src='includes/uploads/" .$hauptspeise['Bild']."' height='400px' width='400px'>"; ?>
                 <div class="card-body">
                 <?php echo('<a href="rezept.php?rezept='. $hauptspeise['RezeptId'] . ' " class="btn btn-success">Mehr erfahren</a>'); ?>
                 </div>   
@@ -110,7 +110,7 @@
         <div class="col-lg-4">
             <div class="card">
             <h3>Dessert</h3>
-            <?php echo "<img  src='includes/uploads/" .$dessert['Bild']."'>"; ?>
+            <?php echo "<img  src='includes/uploads/" .$dessert['Bild']."' height='400px' width='400px'>"; ?>
                 <div class="card-body">
                 <?php echo('<a href="rezept.php?rezept='. $dessert['RezeptId'] . ' " class="btn btn-success">Mehr erfahren</a>'); ?>
                 </div>

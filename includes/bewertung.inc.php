@@ -59,7 +59,8 @@
       
       mysqli_stmt_bind_param($stmt, "iiidi", $rezeptid, $anzahlbewertung, $note, $note, $note);
       mysqli_stmt_execute($stmt);
-      header("Location: ../index.php");
+      header("Location: ../rezept.php");
+      
       exit();
     }
      //Schliessen der Datenbankverbindung

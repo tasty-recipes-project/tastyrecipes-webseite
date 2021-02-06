@@ -9,20 +9,14 @@
         <div class="col-lg-12">
             <h2>Vorspeisen</h2>
                 <hr class="hr_black">
-
                 <!-- Hier sollen die Inhalte der Rezept Datenbank ausgegeben werden -->
                 <?php
                     require('includes/dbc.inc.php');
-
                     $rezeptTeaserInfo = mysqli_query($con, "SELECT * FROM rezepte WHERE Kategorie = 'vorspeise'")
                         or die("Fehler: " . mysqli_error($con));
-
                         while ($row = mysqli_fetch_array($rezeptTeaserInfo))
                         {
-
-
                 //Ausgabebereich für Rezepte
-
                             echo '<div class="row">';
                                 echo '<div class="col-lg-6">';
                                     echo '<div class="card">';
@@ -40,16 +34,9 @@
                                         echo '</div>';
                                     echo '</div>';
                                 echo '</div>';
-
-
-
                             echo '</div>';
-                    
-
                     }
                 ?>
-
-
         </div>
     </div>
 </main>
