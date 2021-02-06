@@ -8,14 +8,14 @@
     //Einbinden der Datenbankverbindung
     require 'dbc.inc.php';
 
-    
-    
+
+
 
     //Informationen aus Formular laden
-  
+
     $rezeptid = $_POST['rezept_id'];
     $note = $_POST['bewertungnote'];
-  
+
 
     $res = mysqli_query($con, "SELECT * FROM bewertung WHERE RezeptId = '$rezeptid'");
     $num = mysqli_num_rows($res);
@@ -29,8 +29,8 @@
       $anzahlbewertung++;
       $noteGesamt += $note;
       $noteDurchschnitt = $noteGesamt / $anzahlbewertung;
-     
-      
+
+
       $sql = "UPDATE bewertung SET BewertungNote = '$note', AnzahlBewertung = '$anzahlbewertung', BewertungNoteGesamt = '$noteGesamt', BewertungDurchschnitt = '$noteDurchschnitt' WHERE RezeptId = '$rezeptid'";
       $stmt = mysqli_stmt_init($con);
       if (!mysqli_stmt_prepare($stmt, $sql)) {
@@ -39,7 +39,7 @@
 
       } else {
         mysqli_stmt_execute($stmt);
-        header("Location: ../index.php");
+        header("Location: ../rezept.php?rezept=$rezeptid");
         exit();
       }
       //Schliessen der Datenbankverbindung
@@ -56,19 +56,19 @@
       exit();
 
     } else {
-      
+
       mysqli_stmt_bind_param($stmt, "iiidi", $rezeptid, $anzahlbewertung, $note, $note, $note);
       mysqli_stmt_execute($stmt);
-      header("Location: ../index.php");
-      
+      header("Location: ../rezept.php?rezept=$rezeptid");
+
       exit();
     }
      //Schliessen der Datenbankverbindung
      mysqli_stmt_close($stmt);
      mysqli_close($con);
-   
-  } 
+
+  }
   }
 
-    
+
 ?>
