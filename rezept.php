@@ -104,7 +104,7 @@
         </div></br>
 		<!--Ausgabe Zutaten -->
 		<div class="ausgabe-zutatenliste">
-		<div class="row">
+		<div class="row" style="display: none">
 			<p>Dieses Rezept ist ausgelegt für <span id="ausgangsMenge"><?php echo $row['PortionenAnzahl'] ?></span> Personen</p>
 		</div>
 		<div class="row">
