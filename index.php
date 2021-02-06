@@ -5,6 +5,7 @@
     require('header.php');
 	require('includes/dbc.inc.php');
 	
+	// Drei Rezepte zufällig aus der Datenbank auslesen
 	$rezept1 = mysqli_query($con, "SELECT * FROM rezepte ORDER BY RAND() LIMIT 1")
         or die("Fehler: " . mysqli_error($con));
         $row1 = mysqli_fetch_array($rezept1);
@@ -47,22 +48,16 @@
             <input type="radio" name="radio" id="radio1" checked>
             <input type="radio" name="radio" id="radio2">
             <input type="radio" name="radio" id="radio3">
-            <input type="radio" name="radio" id="radio4">
-            <input type="radio" name="radio" id="radio5">
+        
+		<!-- Bilder mit Verlinkung in Slides einbauen -->
         <div class="slide s1">
-            <img src="includes/uploads/SchinkenNudeln.jpg" alt="">
+		<a href="rezept.php?rezept=<?php echo $row1['RezeptId'] ?>"><img src="includes/uploads/<?php echo $row1['Bild'] ?>"></a>
         </div>
         <div class="slide">
-            <img src="includes/uploads/MangoMousse.jpg" alt="">
+		<a href="rezept.php?rezept=<?php echo $row2['RezeptId'] ?>"><img src="includes/uploads/<?php echo $row2['Bild'] ?>"></a>
         </div>
         <div class="slide">
-            <img src="includes/uploads/Hackbällchen.jpg" alt="">
-        </div>
-        <div class="slide">
-            <img src="includes/uploads/Gulaschsuppe.jpg" alt="">
-        </div>
-        <div class="slide">
-            <img src="includes/uploads/Bananenbrot.jpg" alt="">
+        <a href="rezept.php?rezept=<?php echo $row3['RezeptId'] ?>"><img src="includes/uploads/<?php echo $row3['Bild'] ?>"></a>
         </div>
     </div>  
 
@@ -70,8 +65,7 @@
         <label for="radio1" class="downbar"></label>
         <label for="radio2" class="downbar"></label>
         <label for="radio3" class="downbar"></label>
-        <label for="radio4" class="downbar"></label>
-        <label for="radio5" class="downbar"></label>
+        
     </div>
 </div>
 

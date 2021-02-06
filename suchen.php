@@ -4,20 +4,63 @@
 					
 	$suchbegriff = $_POST['search'];
 	
+	// Nach Katgorien und dem Suchbegriff filtern 
 	if ($_POST['search-select'] == 'Einfach'){
 		$suche = mysqli_query($con, "SELECT * FROM rezepte WHERE (RezeptName LIKE '%$suchbegriff%' OR Beschreibung LIKE '%$suchbegriff%') AND Schwierigkeit = 'einfach' ")
-		or die("Fehler: " . mysqli_error($con));
+		or die("Fehler: " . mysqli_error($con));	 
+		
+		// Wenn keine Ergebnisse, dann Meldung ausgeben
+		if (mysqli_num_rows($suche) < 1){
+			?>
+			<label class="myData">
+			</br>
+			Es wurden keine Rezepte entsprechend ihrer Suche gefunden. </br>
+			</br>
+			</label>
+			<?php
+		}
 	} else if ($_POST['search-select'] == 'Mittel'){
 		$suche = mysqli_query($con, "SELECT * FROM rezepte WHERE (RezeptName LIKE '%$suchbegriff%' OR Beschreibung LIKE '%$suchbegriff%') AND Schwierigkeit = 'mittel' ")
 		or die("Fehler: " . mysqli_error($con));
+			 
+		if (mysqli_num_rows($suche) < 1){
+			?>
+			<label class="myData">
+			</br>
+			Es wurden keine Rezepte entsprechend ihrer Suche gefunden. </br>
+			</br>
+			</label>
+			<?php
+		}
 	} else if ($_POST['search-select'] == 'Schwierig'){
 		$suche = mysqli_query($con, "SELECT * FROM rezepte WHERE RezeptName LIKE ('%$suchbegriff%' OR Beschreibung LIKE '%$suchbegriff%') AND Schwierigkeit = 'schwer' ")
 		or die("Fehler: " . mysqli_error($con));
+		 
+		if (mysqli_num_rows($suche) < 1){
+			?>
+			<label class="myData">
+			</br>
+			Es wurden keine Rezepte entsprechend ihrer Suche gefunden. </br>
+			</br>
+			</label>
+			<?php
+		}
 	} else {
 	$suche = mysqli_query($con, "SELECT * FROM rezepte WHERE RezeptName LIKE '%$suchbegriff%' OR Beschreibung LIKE '%$suchbegriff%' ")
 		or die("Fehler: " . mysqli_error($con));
+	 
+		if (mysqli_num_rows($suche) < 1){
+			?>
+			<label class="myData">
+			</br>
+			Es wurden keine Rezepte entsprechend ihrer Suche gefunden. </br>
+			</br>
+			</label>
+			<?php
+		}
 	}
 	
+	// alle passenden Rezepte ausgeben
 	while ($rowSuche = mysqli_fetch_array($suche)) 
     {
                 
