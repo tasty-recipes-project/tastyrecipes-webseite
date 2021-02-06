@@ -7,21 +7,21 @@
     $ersteller = mysqli_query($con, "SELECT * FROM rezepte WHERE RezeptId = '$rezeptId'")
         or die("Fehler: " . mysqli_error($con));
         $row = mysqli_fetch_array($ersteller);
-	
+
 	//Hole Informationen aus Tabelle Bewertung
 	$bewertung = mysqli_query($con, "SELECT * FROM bewertung WHERE RezeptId = '$rezeptId'")
         or die("Fehler: " . mysqli_error($con));
         $row2 = mysqli_fetch_array($bewertung);
-			
+
 		$bewertung2 = mysqli_query($con, "SELECT BewertungDurchschnitt FROM bewertung WHERE RezeptId = '$rezeptId'")
         or die("Fehler: " . mysqli_error($con));
-        $row3 = mysqli_fetch_row($bewertung2); 
-		
+        $row3 = mysqli_fetch_row($bewertung2);
+
 		$row3[0] = (float)$row3[0];
-		
+
 ?>
 
-<!-- Ausgabebereich für Rezepte --> 
+<!-- Ausgabebereich für Rezepte -->
 <!DOCTYPE html>
 <html>
 
@@ -34,7 +34,7 @@
 		<div class="rezept_Info">
 		<div class="rezept_header">
 
-	
+
 			<h1><?php echo $row['RezeptName'] ?></h1> <h2>von  <?php echo $row['BenutzerName'] ?> </h2>
 			<?php echo ("Beschreibung: " . $row['Beschreibung']) ?></br>
 			<?php echo ("Durchschnittsbewertung: " . round($row3[0], 2))?></br>
@@ -104,7 +104,7 @@
         </div></br>
 		<!--Ausgabe Zutaten -->
 		<div class="ausgabe-zutatenliste">
-		<div class="row">
+		<div class="row" style="display: none">
 			<p>Dieses Rezept ist ausgelegt für <span id="ausgangsMenge"><?php echo $row['PortionenAnzahl'] ?></span> Personen</p>
 		</div>
 		<div class="row">
@@ -183,7 +183,7 @@
 		<!-- Rezept Bewertung Content mit dem entsprechenden Formular -->
 		<div class="row">
 			<div class="col-lg-6 hide" id="div-bewertung">
-			<form  action="includes/bewertung.inc.php" method="post" class="login_area">
+			<form  action="includes/bewertung.inc.php?rezeptID=<?php echo $row['RezeptId'] ?>" method="post" class="login_area">
           <div class="welcome">
             <strong>Bewerte dein Rezept</strong>
           </div>
